@@ -114,3 +114,21 @@ The RETURN statement terminates execution of a stored function and returns th
  used to exit a stored program of those types.
 """
 RETURN expr
+
+-- while
+WHILE search_condition DO
+    statement_list
+END WHILE [end_label]
+
+DELIMITER $$
+CREATE PROCEDURE my_proc_WHILE(IN n INT)
+BEGIN
+    SET @sum = 0;
+    SET @x = 1;
+    WHILE @x<n DO
+        IF mod(@x, 2) <> 0 THEN   -- <> operator is the same as !=
+            SET @sum = @sum + @x;   
+        END IF;   
+        SET @x = @x + 1;   
+    END WHILE;
+END$$
