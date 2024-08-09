@@ -1,4 +1,5 @@
 https://www.w3resource.com/mysql/mysql-triggers.php
+https://dev.mysql.com/doc/refman/5.7/en/trigger-syntax.html
 """
     A trigger is a set of actions that are run automatically when a specified change operation
     (INSERT, UPDATE, or DELETE statement) is performed on a specified table.

@@ -1,8 +1,9 @@
 """ 
     Indexing:
-
     https://www.youtube.com/watch?v=lYh6LrSIDvY
     https://www.youtube.com/watch?v=YuRO9-rOgv4
+    https://www.liquidweb.com/blog/mysql-optimization-how-to-leverage-mysql-database-indexing/
+    https://dev.mysql.com/doc/refman/5.7/en/create-index.html
     Indexes are used to find rows with specific column values quickly.
     Without an index, MySQL must begin with the first row and then read
     through the entire table to find the relevant rows. The larger the table,

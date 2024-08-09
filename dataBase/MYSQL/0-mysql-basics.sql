@@ -41,6 +41,7 @@ USE dbName
 SHOW tables FROM dbName;
 
 --tables
+https://dev.mysql.com/doc/refman/5.7/en/create-table.html
 CREATE TABLE IF NOT EXISTS table_name (
 	id INT UNIQUE NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	name VARCHAR(256)

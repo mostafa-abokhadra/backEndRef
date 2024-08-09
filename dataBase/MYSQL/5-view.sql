@@ -1,3 +1,5 @@
+https://www.w3resource.com/mysql/mysql-views.php
+https://dev.mysql.com/doc/refman/5.7/en/create-view.html
 """
     View is a data object which does not contain any data.
     Contents of the view are the resultant of a base table.

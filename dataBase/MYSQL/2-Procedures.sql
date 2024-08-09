@@ -1,6 +1,8 @@
 """
     procedures:
-
+    https://www.w3resource.com/mysql/mysql-procedure.php
+    https://dev.mysql.com/doc/refman/5.7/en/create-procedure.html
+    
     -A procedure (often called a stored procedure) is a subroutine like a subprogram in a regular computing language,
     stored in database, A procedure has a name, a parameter list, and SQL statement(s).
     -All most all relational database system supports stored procedure, MySQL 5.6 supports (routines)
