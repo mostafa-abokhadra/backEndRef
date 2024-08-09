@@ -39,12 +39,39 @@ ITERATE label
 
 -- leave statement
 """
-LEAVE statement is used to exit the flow control
-construct that has the given label. If the label
-is for the outermost stored program block, LEAVE
-exits the program. LEAVE can be used within BEGIN
-... END or loop constructs (LOOP, REPEAT, WHILE).
+    LEAVE statement is used to exit the flow control
+    construct that has the given label. If the label
+    is for the outermost stored program block, LEAVE
+    exits the program. LEAVE can be used within BEGIN
+    ... END or loop constructs (LOOP, REPEAT, WHILE).
 """
 -- Here is the syntax :
 LEAVE label
 
+-- loop statment
+"""
+    used to create repeated execution of the statement list
+    statement_list consists one or more statements, each statement
+    terminated by a semicolon (;). the statements within the loop
+    are repeated until the loop is terminated. Usually, LEAVE statement
+    is used to exit the loop construct. Within a stored function,
+    RETURN can also be used, which exits the function entirely.
+    A LOOP statement can be labeled.      
+"""
+LOOP       
+    statement_list  
+END LOOP
+
+DELIMITER $$
+CREATE PROCEDURE `my_proc_LOOP` (IN num INT)
+BEGIN
+    DECLARE x INT;
+    SET x = 0;
+    loop_label: LOOP
+        INSERT INTO number VALUES (rand());
+        SET x = x + 1;
+        IF x >= num THEN
+            LEAVE loop_label;
+        END IF;
+    END LOOP;
+END$$
