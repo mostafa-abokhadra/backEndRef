@@ -132,3 +132,6 @@ BEGIN
         SET @x = @x + 1;   
     END WHILE;
 END$$
+
+--read cursors from
+https://www.w3resource.com/mysql/mysql-procedure.php
