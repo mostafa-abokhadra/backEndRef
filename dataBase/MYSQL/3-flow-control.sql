@@ -12,3 +12,19 @@ IF user_id = "scott123" THEN
 ELSE IF user_id = "ferp6734" THEN
     SET user_name = "Palash";
 END IF;
+
+-- case statement
+CASE
+WHEN (salary>10000) THEN
+    (SELECT COUNT(job_id) INTO no_employees 
+    FROM jobs 
+    WHERE min_salary>10000);
+WHEN (salary<10000) THEN
+    (SELECT COUNT(job_id) INTO no_employees 
+    FROM jobs 
+    WHERE min_salary<10000);
+ELSE
+    (SELECT COUNT(job_id) INTO no_employees 
+    FROM jobs WHERE min_salary=10000);
+END CASE;
+
