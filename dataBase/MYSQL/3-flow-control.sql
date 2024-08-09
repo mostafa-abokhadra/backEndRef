@@ -75,3 +75,32 @@ BEGIN
         END IF;
     END LOOP;
 END$$
+
+-- repeat statement
+"""
+    The REPEAT statement executes the statement(s)
+    repeatedly as long as the condition is true.
+    The condition is checked every time at the end 
+"""
+
+[begin_label:] 
+REPEAT     
+statement_list 
+UNTIL search_condition 
+END 
+REPEAT 
+[end_label]
+
+DELIMITER $$
+CREATE PROCEDURE my_proc_REPEAT (IN n INT)
+BEGIN
+SET @sum = 0;
+SET @x = 1;  
+REPEAT   
+    IF mod(@x, 2) = 0 THEN
+        SET @sum = @sum + @x;
+    END IF;
+    SET @x = @x + 1;
+    UNTIL @x > n 
+END REPEAT;
+END $$
