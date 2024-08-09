@@ -104,3 +104,13 @@ REPEAT
     UNTIL @x > n 
 END REPEAT;
 END $$
+
+-- return statement
+"""
+The RETURN statement terminates execution of a stored function and returns th
+ value expr to the function caller. There must be at least one RETURN statement
+ in a stored function. There may be more than one if the function has multiple exit points.
+ This statement is not used in stored procedures or triggers. The LEAVE statement can be
+ used to exit a stored program of those types.
+"""
+RETURN expr
