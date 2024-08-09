@@ -28,3 +28,23 @@ ELSE
     FROM jobs WHERE min_salary=10000);
 END CASE;
 
+-- iterate statement
+"""
+    ITERATE means "start the loop again".
+    ITERATE can appear only within LOOP, REPEAT,
+    and WHILE statements.
+"""
+-- Here is the syntax:
+ITERATE label
+
+-- leave statement
+"""
+LEAVE statement is used to exit the flow control
+construct that has the given label. If the label
+is for the outermost stored program block, LEAVE
+exits the program. LEAVE can be used within BEGIN
+... END or loop constructs (LOOP, REPEAT, WHILE).
+"""
+-- Here is the syntax :
+LEAVE label
+
