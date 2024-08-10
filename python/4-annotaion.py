@@ -48,3 +48,22 @@ user_b = get_user_name(-1) # fails type checking; an int is not a UserId
 
 def add(a: float, b: float) -> float:{}
 def concat(str1: str, str2: str) -> str:{}
+
+from typing import List, Union, Tuple, Callable, Iterable, Sequence, Any, Mapping, TypeVar
+def sum_list(input_list: List[float]) -> float:
+def sum_mixed_list(mxd_lst: List[Union[int, float]]) -> float:
+"""mixedList is of type list that can hold integer or flaot values only"""
+def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
+"""
+v: is either an integer or a float, the function returns a tuple
+constist of 2 items the first is string and the other is float
+"""
+def make_multiplier(multiplier: float) -> Callable[[float], float]:
+"""the function return a callable (a function), this function take
+one argumentas a float and returns a float value"""
+    return lambda x: x * multiplier
+def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
+    return [(i, len(i)) for i in lst]
+def safe_first_element(lst: Sequence[Any]) -> Union[Any, None]:
+T = TypeVar('T')
+def safely_get_value(dct: Mapping, key: Any, default: Union[T, None] = None) -> Union[Any, T]:
