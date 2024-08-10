@@ -23,3 +23,10 @@ async for i in aiter():
 result = [i async for i in aiter() if i % 2]
 # The PEP also makes it possible to use the await expressions in all kinds of comprehensions:
 result = [await fun() for fun in funcs]
+
+dataset = {data for line in aiter()
+                async for data in line
+                if check(data)}
+"""
+    Asynchronous comprehensions are only allowed inside an async def function.
+"""
