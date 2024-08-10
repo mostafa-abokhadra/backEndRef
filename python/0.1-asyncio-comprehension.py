@@ -8,3 +8,8 @@ https://stackoverflow.com/questions/42531143/how-to-type-hint-a-generator-in-pyt
     How to use async comprehensions
     How to type-annotate generators
 """
+
+"""
+    Python has extensive support for synchronous comprehensions,
+    allowing to produce lists, dicts, and sets with a simple and concise syntax.
+"""
