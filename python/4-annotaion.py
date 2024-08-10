@@ -28,3 +28,23 @@ def show(value: str, excitement: int = 10) -> None:
 type Vector = list[float]
 type ConnectionOptions = dict[str, str]
 type Address = tuple[str, int]
+
+### newType
+from typing import NewType, List, Set, Dict, Tuple, Union, Optional,  Callable
+from typing import NewType, Iterator
+
+x: List[int] = [1]
+x: Set[int] = {6, 7}
+x: Dict[str, float] = {"field": 2.0}
+x: Tuple[int, str, float] = (3, "yes", 7.5)
+x: Tuple[int, ...] = (1, 2, 3)
+
+UserId = NewType('UserId', int)
+some_id = UserId(524313)
+def get_user_name(user_id: UserId) -> str:
+    ...
+user_a = get_user_name(UserId(42351)) # passes type checking
+user_b = get_user_name(-1) # fails type checking; an int is not a UserId
+
+def add(a: float, b: float) -> float:{}
+def concat(str1: str, str2: str) -> str:{}
