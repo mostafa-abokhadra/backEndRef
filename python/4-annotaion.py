@@ -1,6 +1,13 @@
 https://docs.python.org/3/library/typing.html
 https://mypy.readthedocs.io/en/latest/cheat_sheet_py3.html # mypy cheatsheet
 
+## learning objectives
+"""
+    Type annotations in Python 3
+    How you can use type annotations to specify function signatures and variable types
+    Duck typing
+    How to validate your code with mypy
+"""
 # Python is a dynamically-typed language. That means that variable
 # types are dynamically set at run-time, upon assignment of a value to a variable.
 age: int = 1
