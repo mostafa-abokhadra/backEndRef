@@ -13,6 +13,47 @@ https://stackoverflow.com/questions/42531143/how-to-type-hint-a-generator-in-pyt
     Python has extensive support for synchronous comprehensions,
     allowing to produce lists, dicts, and sets with a simple and concise syntax.
 """
+"""
+    In Python, aiter() is a built-in function that returns an asynchronous iterator 
+    from an asynchronous iterable. It is used when working with asynchronous code,
+    particularly with async for loops.
+    Asynchronous Iteration: Just like iter() is used to get an iterator from a regular iterable
+    (e.g., lists, tuples), aiter() is used to get an asynchronous iterator from an asynchronous iterable.
+    Async Iterables: These are objects that implement the __aiter__() method and optionally the __anext__() method.
+    Usage Context: Typically used in asynchronous programming with async for loops,
+    allowing you to iterate over asynchronous data sources.
+"""
+class AsyncIterable:
+    def __init__(self):
+        self.count = 0
+    def __aiter__(self):
+        return self
+    async def __anext__(self):
+        if self.count < 5:
+            self.count += 1
+            return self.count
+        else:
+            raise StopAsyncIteration
+"""
+    What Happens Here:
+    AsyncIterable Class: This class defines an asynchronous iterable that counts from 1 to 5.
+    __aiter__ Method: Returns the asynchronous iterator itself (self).
+    __anext__ Method: Defines the next item to be returned in the iteration.
+        It will increment the counter until it reaches 5, then it raises StopAsyncIteration to end the loop.
+    aiter(AsyncIterable()): This converts the AsyncIterable instance into an asynchronous iterator.
+    async for Loop: Iterates over the asynchronous iterator, printing the numbers from 1 to 5.
+    In summary, aiter() is essential when you need to obtain an asynchronous iterator from an asynchronous iterable
+    in Python, enabling asynchronous iteration with async for.
+"""
+
+async def main():
+    async for number in aiter(AsyncIterable()):
+        print(number)
+
+import asyncio
+asyncio.run(main())
+
+
 # To illustrate the readability improvement, consider the following example
 result = []
 async for i in aiter():
