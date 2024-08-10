@@ -67,3 +67,7 @@ if __name__ == '__main__':
         event_loop.run_until_complete(main())
     finally:
         event_loop.close()
+"""
+    Technically the numbers function is an asynchronous generator
+    that is yielding values to our asynchronous list comprehension.
+"""
