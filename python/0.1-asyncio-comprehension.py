@@ -71,3 +71,27 @@ if __name__ == '__main__':
     Technically the numbers function is an asynchronous generator
     that is yielding values to our asynchronous list comprehension.
 """
+
+"""
+    The return type of generator functions can be annotated
+    by the generic type Generator[yield_type, send_type, return_type] 
+"""
+from typing import Generator
+def generate() -> Generator[int, None, None]:
+    for i in range(10):
+        yield i
+l = [i for i in generate()]
+
+## better way
+"""
+    I'm using the typing specification below, using Iterator[int] instead of Generator.
+    The validation is OK. I think it is a lot clearer. It better describes the code
+    intention and is recommended by Python docs
+    It would also allow future refactorings if you change your Generator for a list or other iterable.
+"""
+from typing import Iterator
+# from collections.abc import Iterator python 3.10 and above
+
+def generate() -> Iterator[int]:
+    for i in range(10):
+        yield i
