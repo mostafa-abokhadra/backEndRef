@@ -1,6 +1,8 @@
+https://docs.python.org/3/library/typing.html
+https://mypy.readthedocs.io/en/latest/cheat_sheet_py3.html # mypy cheatsheet
+
 # Python is a dynamically-typed language. That means that variable
 # types are dynamically set at run-time, upon assignment of a value to a variable.
-
 age: int = 1
 num: float = 1.0
 x: bool = True
