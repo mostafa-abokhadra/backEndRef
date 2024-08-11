@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let titleName = `Elzero`,
+        descriptionIs = `Elzero web school`,
+        date = `25/10`;
+      let myElement = `
+            <div>
+                <h3>Hello ${titleName}</h3>
+                <p>${descriptionIs}</p>
+                <span>${date}</span>
+            </div>
+        `;
+      for (let i = 0; i < 4; i++) {
+        document.write(myElement);
+      }
+    </script>
+  </body>
+</html>
