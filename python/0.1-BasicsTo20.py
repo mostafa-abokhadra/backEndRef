@@ -20,12 +20,21 @@ print(my_str[0: 10: 2]) # [start: end: steps]
 print(my_str[:10])
 print(my_str[3:])
 print(my_str[:]) # the whole string
-
-# methods
-a_str = "     e        spaces       e  "
 len(my_str)
+
+# strip()
+a_str = "     e        spaces       e  "
 print (a_str.strip()) # it removes leading and trailing spaces
 print(a_str.rstrip()) # right strip only, (remove the trailing spaces)
 print(a_str.lstrip()) # left strip only (remove leading spaces)
 print(a_str.strip("#@%$#")) # you can specify the characters to remove
-                         # you can specify more than one character
+                            # you can specify more than one character
+# title() capatilize first char from each word and letters after numbers also is capatilized
+
+num_str = "1"
+# capitalize() capatilize first char from each word
+# zfill() zero fill, it takes the width of the needed output
+# for example num_str.zfill(3) will produce the output 001
+# upper() convert all letters in the word to capital letters
+# small() "" "" to small letters
+
