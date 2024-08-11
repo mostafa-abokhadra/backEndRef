@@ -46,3 +46,11 @@ print(a_str.split('-', 2)) # takes the delimeter and max time split
 # max split is 2 times so the remaining string will be in the last string in the list 
 # ["mos", "ta", "fa-abokhadra"]
 # rsplit() # it splits but from right
+# center(9) # takes the number of character you want to return 
+name = "mostafa"
+print(name.center(11)) #  mostafa  
+print(name.center(11, '$')) # $$mostafa$$ 
+
+a_str.count("someStr", 0, 10) # count how many time a substr is
+# repeated in a certain string from position 0 to 10
+name.swapcase() # convert small to capital and capital to small
