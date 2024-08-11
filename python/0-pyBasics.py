@@ -30,3 +30,16 @@ print("hello mostafa ",end=""); print("abokhadra:)") # hello mostafa abokhadra:)
 # note that """ """ is not a multiple line comment!
 # it's just a string that is not assigned to any var
 # so it act as a multiple line comment
+
+# variables not containing the data it's only refer
+# or point to it's location in the memmory
+# all data in python is objects
+# int, float, str, bool, tuple, set, list, dict
+myName = "mostafa" # camelCase
+my_name = "mostafa" # snake_case
+a, b, c = 1, 2, 3
+# it's a dymamically typed lang meaning you can change data
+# types in the run time
+help("keywords") # will show you all reserved keywords of the 
+# lang, you can't name your var the same name as any of these
+type(myName) # str
