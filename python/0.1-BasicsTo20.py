@@ -38,3 +38,11 @@ num_str = "1"
 # upper() convert all letters in the word to capital letters
 # small() "" "" to small letters
 
+a_str = "mostafa abokhadra"
+print(a_str.split()) # ["mostafa", "abokhadra"]
+# you can choose a separator
+a_str = "mos-ta-fa-abokhadra"
+print(a_str.split('-', 2)) # takes the delimeter and max time split
+# max split is 2 times so the remaining string will be in the last string in the list 
+# ["mos", "ta", "fa-abokhadra"]
+# rsplit() # it splits but from right
