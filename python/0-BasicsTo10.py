@@ -48,4 +48,3 @@ print(myName + " " + last_name)
 print("messi " + 10) # error: you can't concate str with num
 
 ##############################################################################################
-# 10-20 elzero
