@@ -19,9 +19,14 @@
 # or ./filename.py # but your file should include #!/usr/bin/python3
 # at the first line or better #!/use/bin/env python3
 
-# output
 # the only case that you can use semicolon in python is
 # when you write multiple commands at the same line
 print("hello mostafa ",end=""); print("abokhadra:)") # hello mostafa abokhadra:)
 # normally print function add a new line automatically ,
 # to disable this we use end=""
+
+# comments
+# using # symbol
+# note that """ """ is not a multiple line comment!
+# it's just a string that is not assigned to any var
+# so it act as a multiple line comment
