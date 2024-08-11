@@ -36,10 +36,13 @@ print("hello mostafa ",end=""); print("abokhadra:)") # hello mostafa abokhadra:)
 # all data in python is objects
 # int, float, str, bool, tuple, set, list, dict
 myName = "mostafa" # camelCase
-my_name = "mostafa" # snake_case
+last_name = "abokhadra" # snake_case
 a, b, c = 1, 2, 3
 # it's a dymamically typed lang meaning you can change data
 # types in the run time
 help("keywords") # will show you all reserved keywords of the 
 # lang, you can't name your var the same name as any of these
 type(myName) # str
+# use escape char "\" to escape special characters
+print(myName + " " + last_name)
+print("messi " + 10) # error: you can't concate str with num
