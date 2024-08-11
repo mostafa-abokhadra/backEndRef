@@ -24,6 +24,7 @@ print(my_str[:]) # the whole string
 # methods
 a_str = "             spaces         "
 len(my_str)
-a_str.strip() # it removes beginning and trailing spaces
-a_str.rstrip() # right strip only, (remove the beginning spaces)
-a_str.lstrip() # left strip only (remove trailing spaces)
+print (a_str.strip()) # it removes leading and trailing spaces
+print(a_str.rstrip()) # right strip only, (remove the trailing spaces)
+print(a_str.lstrip()) # left strip only (remove leading spaces)
+# print(a_str.strip())
