@@ -20,3 +20,10 @@ print(my_str[0: 10: 2]) # [start: end: steps]
 print(my_str[:10])
 print(my_str[3:])
 print(my_str[:]) # the whole string
+
+# methods
+a_str = "             spaces         "
+len(my_str)
+a_str.strip() # it removes beginning and trailing spaces
+a_str.rstrip() # right strip only, (remove the beginning spaces)
+a_str.lstrip() # left strip only (remove trailing spaces)
