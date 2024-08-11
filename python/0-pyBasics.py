@@ -1,6 +1,6 @@
 # elzero 1 - 10
-# it can do anything :)
 """
+    python can do anything :)
     web: django, flask
     games: pyGame
     desktop apps: pyGUI, Tkinter
@@ -46,3 +46,6 @@ type(myName) # str
 # use escape char "\" to escape special characters
 print(myName + " " + last_name)
 print("messi " + 10) # error: you can't concate str with num
+
+##############################################################################################
+# 10-20 elzero
