@@ -22,9 +22,10 @@ print(my_str[3:])
 print(my_str[:]) # the whole string
 
 # methods
-a_str = "             spaces         "
+a_str = "     e        spaces       e  "
 len(my_str)
 print (a_str.strip()) # it removes leading and trailing spaces
 print(a_str.rstrip()) # right strip only, (remove the trailing spaces)
 print(a_str.lstrip()) # left strip only (remove leading spaces)
-# print(a_str.strip())
+print(a_str.strip("#@%$#")) # you can specify the characters to remove
+                         # you can specify more than one character
