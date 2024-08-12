@@ -1,5 +1,4 @@
 """
-    https://www.youtube.com/watch?v=qUV2j3XBRHc
     https://www.youtube.com/watch?v=E-1xI85Zog8
     https://www.youtube.com/watch?v=CB9G5Dvv-EE
     https://www.mongodb.com/docs/manual/aggregation/
@@ -9,9 +8,11 @@
 """
 """
         # https://riak.com/resources/nosql-databases/
+        # https://www.youtube.com/watch?v=qUV2j3XBRHc
             What NoSQL means
             What is difference between SQL and NoSQL
-        What is ACID
+        # https://www.geeksforgeeks.org/acid-properties-in-dbms/
+            What is ACID
         What is a document storage
         What are NoSQL types
         What are benefits of a NoSQL database
@@ -37,4 +38,20 @@
     4- Graph stores: # A graph database uses graph structures to store, map, and query relationships.
                     # They provide index-free adjacency, so that adjacent elements are linked together
                     # without using an index.
+"""
+# ACID in DBMS
+"""
+    Atomicity: Atomicity ensures that a transaction is treated as a single, indivisible unit of work.
+        Either all the operations within the transaction are completed successfully, or none of them are.
+        If any part of the transaction fails, the entire transaction is rolled back to its original state,
+        ensuring data consistency and integrity.
+    Consistency: Consistency ensures that a transaction takes the database from one consistent state to another
+        consistent state. The database is in a consistent state both before and after the transaction is executed.
+        Constraints, such as unique keys and foreign keys, must be maintained to ensure data consistency.
+    Isolation: Isolation ensures that multiple transactions can execute concurrently without interfering with each other.
+        Each transaction must be isolated from other transactions until it is completed. This isolation prevents dirty
+        reads, non-repeatable reads, and phantom reads.
+    Durability: Durability ensures that once a transaction is committed, its changes are permanent and will survive any
+        subsequent system failures. The transaction’s changes are saved to the database permanently, and even if the
+        system crashes, the changes remain intact and can be recovered.
 """
