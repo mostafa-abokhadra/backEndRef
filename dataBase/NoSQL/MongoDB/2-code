@@ -30,3 +30,35 @@ db.collection_name.insertOne({...})
 
 # to set the id your self add a value to the key insertedId
 insertedId: "somevalue"
+
+# mongodb cursor
+# is a pointer that references the documents of the collection returned by the find() method.
+db.student.find().pretty()
+# This find() method returns a cursor containing all documents present in the student collection.
+var mycursor = db.student.find({studentId:3}).pretty()
+mycursor # will print only studentid = 3 data
+
+#  next() cursor method to access the next document
+var mycursor = db.student.find({studentId:{$gt:1}});
+> while(mycursor.hasNext()){
+... print(tojson(mycursor.next()));
+... }
+"""
+    In this example, studentId 2 and 3 documents are displayed because, in the first line,
+    we exclusively took the cursor to start with the studentId > 1. So it skipped 1st
+    document and retrieved the remaining documents. Here, the print(tojson()) method
+    is used to display the result. You can also use printjson() method to display the result.
+"""
+
+# forEach() method to iterate the cursor.
+# This function applies a JavaScript function
+# to each document from the cursor.
+db.collection.find().forEach(<function>)
+var mycursor = db.student.find({studentId:3}).pretty()
+mycursor.forEach(printjson)
+"""
+    Here, first we store the cursor returned by the find()
+    method(i.e., studentId:3) in the mycursor variable. Now,
+    we use the forEach() method to iterate the cursor and
+    display the resultant document using printjson.
+"""
