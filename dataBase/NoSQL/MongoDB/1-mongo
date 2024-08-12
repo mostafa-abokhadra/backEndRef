@@ -20,24 +20,41 @@
         How to insert/update/delete information from a NoSQL database
         How to use MongoDB
 """
+
+# about NoSQL
+# https://www.geeksforgeeks.org/introduction-to-nosql/
 """
-    NoSQL is particularly useful for storing unstructured data,
-    which is growing far more rapidly than structured data and
-    does not fit the relational schemas of RDBMS. Common types
-    of unstructured data include: user and session data;
-    chat, messaging, and log data; time series data such as
-    IoT and device data; and large objects such as video and images.
+    NoSQL is a type of database management system (DBMS) that is designed
+    to handle and store large volumes of unstructured and semi-structured data
+    Unlike traditional relational databases that use tables with pre-defined
+    schemas to store data, NoSQL databases use flexible data models that can
+    adapt to changes in data structures and are capable of scaling horizontally 
+    to handle growing amounts of data.
+    -The term NoSQL originally referred to “non-SQL” or “non-relational” databases,
+    but the term has since evolved to mean “not only SQL,” as NoSQL databases have
+    expanded to include a wide range of different database architectures and data models.
 """
 # Types of NoSQL Databases
 """
-    1-Key-value data stores: # Stored values can be any type of binary object (text, video, JSON document, etc.) 
-    2-Document stores: # store self-describing JSON, XML, and BSON documents. They are similar to key-value stores,
-                    # but in this case, a value is a single document that stores all data related to a specific key
-    3-Wide-column stores: Wide-column NoSQL databases store data in tables with rows and columns similar to RDBMS,
-                            but names and formats of columns can vary from row to row across the table.
-    4- Graph stores: # A graph database uses graph structures to store, map, and query relationships.
-                    # They provide index-free adjacency, so that adjacent elements are linked together
-                    # without using an index.
+    1-Key-value data stores: e:g Memcached, Redis, Coherence
+    2-Document stores: store self-describing JSON, XML, and BSON documents.
+        They are similar to key-value stores, but in this case, a value is
+        a single document that stores all data related to a specific key
+        queried using document-oriented query languages.
+        e:g MongoDB, CouchDB, Cloudant
+    3-Wide-column stores: Wide-column NoSQL databases store data in
+        tables with rows and columns similar to RDBMS, but names and
+        formats of columns can vary from row to row across the table.
+        e:g  Hbase, Big Table, Accumulo, Cassandra
+    4- Graph stores: These databases store data as nodes and edges,
+         are designed to handle complex relationships between data.
+         e:g Amazon Neptune
+"""
+"""
+    NoSQL databases are often used in applications where there is a high volume
+    of data that needs to be processed and analyzed in real-time, such as social
+    media analytics, e-commerce, and gaming. They can also be used for other applications,
+    such as content management systems, document management, and customer relationship management.
 """
 # ACID in DBMS
 """
@@ -54,4 +71,36 @@
     Durability: Durability ensures that once a transaction is committed, its changes are permanent and will survive any
         subsequent system failures. The transaction’s changes are saved to the database permanently, and even if the
         system crashes, the changes remain intact and can be recovered.
+"""
+
+# MongoDB
+# https://www.geeksforgeeks.org/mongodb-tutorial/
+"""
+    MongoDb is a document-oriented NoSQL database system
+    that provides high scalability, flexibility, and performance.
+    it stores data in a JSON document structure form.
+    -For example, “Take, for instance, a database that holds data
+    regarding employees.”. In a relational database, this information
+    might be stored in tables, with one table for employee information
+    and another table for department information. In a document database,
+    each employee would be stored as a separate document, with all of
+    their information contained within the document.
+    -open-source and cross-platform database System.
+    -mongo Database is a container for collections, Each database
+    gets its own set of files, A single MongoDB server can has multiple databases.
+    -Collection is a group of documents, it is equivalent to RDBMS table, it does not enforce a schema.
+"""
+
+# key features
+"""
+    Dynamic schema, Horizontal scalability, Document-based or Key-value-based or 
+    Column-based, Distributed and high availability, Flexibility, Performance
+"""
+# when to use NoSQL
+"""
+    When a huge amount of data needs to be stored and retrieved.
+    The relationship between the data you store is not that important
+    The data changes over time and is not structured.
+    Support of Constraints and Joins is not required at the database level
+    The data is growing continuously and you need to scale the database regularly to handle the data.
 """
