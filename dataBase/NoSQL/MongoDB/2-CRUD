@@ -4,19 +4,28 @@
     documents contain data, they are related to each other. 
 """
 mongo # starts mongo shell
-show db
-use db_name # create and use db
+
 """
     in MongoDB, the database is actually created when you
     start entering data in that database, so if you used
     show command after creating the db you will not see the
     new database created
 """
-# this will make a new collection and insert an item
-db.collection_name.insertOne({...})
-db.student.insertMany([{}, {}, {}, ...])
+# create database, collection
+use db_name
+show db
+db.createCollection("collection_name")
+show collections
 
-# the key value pair
+# drop Database
+use db_name
+db.dropDatabase()
+
+# create
+db.createCollection()
+db.collection_name.insertOne({...})
+db.collection_name.insertMany([{}, {}, {}, ...])
+
 # The field names (keys) are of strings.
 # The _id field name is reserved to use as a primary key.
 # When you create a collection MongoDB automatically creates a unique index on the _id field.
@@ -28,7 +37,20 @@ db.student.insertMany([{}, {}, {}, ...])
 # Tip: When you paste data in the functions always use close parenthesis after
 # pasting the data into the function. If you use close parenthesis before pasting
 # data in the function, then you will get an error.
-# to set the id your self add a value to the key insertedId -> insertedId: "somevalue"
+# to set the id your self add a value to the key insertedId ->
+insertedId: "somevalue"
+
+# Read
+db.collection_name.find().pretty() # decorate result
+
+# Updating
+db.collection_name.updateOne({name: "mostaf"}, {$set: {age: 22}})
+db.collection_name.updateMany({}, {$set: {year: 2020}})
+db.collection_name.replaceOne()
+
+# Delete
+db.collection_name.deleteOne({name: "mostafa"})
+db.collection_name.deleteMany({})
 
 # mongodb cursor https://www.geeksforgeeks.org/mongodb-cursor/
 # is a pointer that references the documents of the collection returned by the find() method.

@@ -11,3 +11,6 @@ MongoDB Compass is a graphical user interface (GUI) tool designed to
 enhance the usability and accessibility of MongoDB databases
 
 https://www.geeksforgeeks.org/mongodb-compass/
+
+Built on top of JavaScript, MongoDB Shell allows users to execute
+JavaScript code directly, making it highly flexible and versatile.
