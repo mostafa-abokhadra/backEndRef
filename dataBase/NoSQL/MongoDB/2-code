@@ -18,3 +18,15 @@ db.collection_name.insertOne({...})
 # the key value pair
 # The field names (keys) are of strings.
 # The _id field name is reserved to use as a primary key.
+# When you create a collection MongoDB automatically creates a unique index on the _id field.
+# The value of the _id field can be set by the user or by the system
+# (if the user does not createan _id field, then the system will automatically
+#  generate an ObjectId for _id field). 
+# A single document may contain duplicate fields.
+# The value of the _id field can be of any BSON type except arrays.
+# Tip: When you paste data in the functions always use close parenthesis after
+# pasting the data into the function. If you use close parenthesis before pasting
+# data in the function, then you will get an error.
+
+# to set the id your self add a value to the key insertedId
+insertedId: "somevalue"
