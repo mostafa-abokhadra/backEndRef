@@ -83,3 +83,10 @@ resultdoc
 db.collection_name.find().count()
 # limit() retch limited records from a collection
 db.student.find().limit(2).pretty()
+# sort() If you want to sort the documents in ascending, then set the value of
+# the field to 1 and in descending, then set -1.
+db.student.find().sort({studentId:-1}).pretty()
+# next () method is used to return the next document in a cursor.
+# Usually, it will return the first document as that will be the
+#  result of the first document in the cursor.
+db.student.find().next()
