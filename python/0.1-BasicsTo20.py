@@ -57,3 +57,5 @@ name.swapcase() # convert small to capital and capital to small
 name.startswith("mos") # takes the word, start postion and end position
 name.startswith("mos", 3, 7) # false, as the search will be from the 3rd index
 name.endswith("taf", 0, 6) # true
+
+# to lesson 14 ^
