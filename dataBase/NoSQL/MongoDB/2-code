@@ -77,3 +77,9 @@ resultdoc
 var mycursor = db.student.find().pretty()
 var resultdoc = mycursor[0]
 resultdoc
+
+# cursor methods
+# count() returns the total number of documents present in the given collection.
+db.collection_name.find().count()
+# limit() retch limited records from a collection
+db.student.find().limit(2).pretty()
