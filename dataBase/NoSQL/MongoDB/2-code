@@ -14,6 +14,7 @@ use db_name # create and use db
 """
 # this will make a new collection and insert an item
 db.collection_name.insertOne({...})
+db.student.insertMany([{}, {}, {}, ...])
 
 # the key value pair
 # The field names (keys) are of strings.
@@ -27,11 +28,9 @@ db.collection_name.insertOne({...})
 # Tip: When you paste data in the functions always use close parenthesis after
 # pasting the data into the function. If you use close parenthesis before pasting
 # data in the function, then you will get an error.
+# to set the id your self add a value to the key insertedId -> insertedId: "somevalue"
 
-# to set the id your self add a value to the key insertedId
-insertedId: "somevalue"
-
-# mongodb cursor
+# mongodb cursor https://www.geeksforgeeks.org/mongodb-cursor/
 # is a pointer that references the documents of the collection returned by the find() method.
 db.student.find().pretty()
 # This find() method returns a cursor containing all documents present in the student collection.
@@ -90,3 +89,16 @@ db.student.find().sort({studentId:-1}).pretty()
 # Usually, it will return the first document as that will be the
 #  result of the first document in the cursor.
 db.student.find().next()
+
+# dataTypes in Mongodb https://www.geeksforgeeks.org/datatypes-in-mongodb/
+# string, int, double, boolean, null, Array[], object, objectId, undefined, Date
+
+# Object
+"""
+    Object data type stores embedded documents. Embedded documents
+    are also known as nested documents. Embedded document or nested
+    documents are those types of documents which contain
+    a document inside another document.
+"""
+
+
