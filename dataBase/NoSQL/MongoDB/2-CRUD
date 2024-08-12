@@ -17,12 +17,13 @@ show db
 db.createCollection("collection_name")
 show collections
 
-# drop Database
+# drop Database, collection
 use db_name
 db.dropDatabase()
+db.collection_name.drop()   
 
-# create
-db.createCollection()
+# insert
+db.collection_name.insert()
 db.collection_name.insertOne({...})
 db.collection_name.insertMany([{}, {}, {}, ...])
 
@@ -44,6 +45,7 @@ insertedId: "somevalue"
 db.collection_name.find().pretty() # decorate result
 
 # Updating
+db.collection_name.updat()
 db.collection_name.updateOne({name: "mostaf"}, {$set: {age: 22}})
 db.collection_name.updateMany({}, {$set: {year: 2020}})
 db.collection_name.replaceOne()
@@ -53,7 +55,7 @@ db.collection_name.deleteOne({name: "mostafa"})
 db.collection_name.deleteMany({})
 
 # mongodb cursor https://www.geeksforgeeks.org/mongodb-cursor/
-# is a pointer that references the documents of the collection returned by the find() method.
+    # is a pointer that references the documents of the collection returned by the find() method.
 db.student.find().pretty()
 # This find() method returns a cursor containing all documents present in the student collection.
 var mycursor = db.student.find({studentId:3}).pretty()
