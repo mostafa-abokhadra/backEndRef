@@ -101,4 +101,39 @@ db.student.find().next()
     a document inside another document.
 """
 
-
+# retrieve data
+db.collection_name.find() # all
+# find a single document using findOne() method, 
+# This method returns the first document that matches
+# the given filter query expression.
+db.collection_name.findOne()
+# $eq -> equal to operator
+b.article.find({author:{$eq:"devil"}}).pretty()
+# $gte -> greater than operator
+# $lte -> lesser than operator
+# $exists operator shows all the collection documents if they exist on a given key.
+db.article.find({time:{$exists:"true"}}).pretty()
+"""
+    $and operator comes under the type of MongoDB logical operator which
+    perform logical AND operation on the array of one or more expressions
+    and select or retrieve only those documents that match all the given
+    expression in the array.
+"""
+db.article.find({$and:[{level:{$eq:"high"}},{level:{$exists : "true"}}]}).pretty()
+# $or 
+"""
+    Retrieve articles that are either authored by “Aditya” and have a level of “basic”,
+    or authored by “Rakesh” with a level of “medium”.
+"""
+db.article.find({
+  $or: [
+    { level: "basic", author: "Aditya" },
+    { $and: [
+        { level: "medium" },
+        { author: "Rakesh" }
+      ]
+    }
+  ]
+}).pretty()
+# specify maximum number for a cursor to return
+db. article. find({author : "devil" }). limit(2) . pretty()
