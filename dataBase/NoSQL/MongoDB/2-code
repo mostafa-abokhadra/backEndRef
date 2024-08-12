@@ -12,3 +12,5 @@ use db_name # create and use db
     show command after creating the db you will not see the
     new database created
 """
+# this will make a new collection and insert an item
+db.collection_name.insertOne({...})
