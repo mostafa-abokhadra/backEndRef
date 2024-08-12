@@ -62,3 +62,18 @@ mycursor.forEach(printjson)
     we use the forEach() method to iterate the cursor and
     display the resultant document using printjson.
 """
+# you are allowed to iterate the cursor and display the resultant document in the array using the toArray() method.
+var mycursor = db.student.find().pretty()
+var docs = mycursor.toArray()
+var resultdoc = docs[0]
+resultdoc
+"""
+    Here, first, we assign the returned cursor to the var keyword(i.e. mycursor),
+    in next we create an array from the resultant cursor using the toArray() method
+    and assign the result to the var keyword(i.e. docs). Now we access the documents
+    according to their index e.g. var resultdoc = docs[0], here we display a document whose index is 0.
+"""
+# You can also this method to access a document using index on the cursor.  
+var mycursor = db.student.find().pretty()
+var resultdoc = mycursor[0]
+resultdoc
