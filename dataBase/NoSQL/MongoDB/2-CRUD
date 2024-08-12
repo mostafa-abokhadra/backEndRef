@@ -3,7 +3,7 @@
     and a collection contains documents and the
     documents contain data, they are related to each other. 
 """
-mongo # starts mongo shell
+mongosh # starts mongo shell
 
 """
     in MongoDB, the database is actually created when you
@@ -13,7 +13,7 @@ mongo # starts mongo shell
 """
 # create database, collection
 use db_name
-show db
+show dbs
 db.createCollection("collection_name")
 show collections
 
@@ -161,3 +161,14 @@ db.article.find({
 }).pretty()
 # specify maximum number for a cursor to return
 db. article. find({author : "devil" }). limit(2) . pretty()
+
+mongod
+mongodump
+mongoexport
+mongofiles
+mongoimport
+mongorestore
+mongos
+mongosh
+mongostat
+mongotop
