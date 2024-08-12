@@ -1,0 +1,14 @@
+"""
+    in MongoDB A Database contains a collection,
+    and a collection contains documents and the
+    documents contain data, they are related to each other. 
+"""
+mongo # starts mongo shell
+show db
+use db_name # create and use db
+"""
+    in MongoDB, the database is actually created when you
+    start entering data in that database, so if you used
+    show command after creating the db you will not see the
+    new database created
+"""

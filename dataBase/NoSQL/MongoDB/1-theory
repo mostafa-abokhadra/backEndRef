@@ -89,6 +89,9 @@
     -mongo Database is a container for collections, Each database
     gets its own set of files, A single MongoDB server can has multiple databases.
     -Collection is a group of documents, it is equivalent to RDBMS table, it does not enforce a schema.
+    In MongoDB, the data records are stored as BSON documents. Here, BSON stands for binary
+    representation of JSON documents, although BSON contains more data types as compared to JSON.
+    The document is created using field-value pairs or key-value pairs and the value of the field can be of any BSON type.
 """
 
 # key features
