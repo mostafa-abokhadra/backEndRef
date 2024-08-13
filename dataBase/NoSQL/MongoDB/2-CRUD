@@ -23,7 +23,7 @@ db.dropDatabase()
 db.collection_name.drop()   
 
 # insert
-db.collection_name.insert()
+db.school.insert({name: "Holberton school"})
 db.collection_name.insertOne({...})
 db.collection_name.insertMany([{}, {}, {}, ...])
 
