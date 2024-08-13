@@ -46,3 +46,9 @@ collection_name = dbname["user_1_items"]
 item_details = collection_name.find()
 for item in item_details:
     print(item)
+# Although MongoDB gets the entire data, we
+# can get a Python ‘KeyError’on the last document.
+# find() method returns dictionary object
+# to handle missing date errors in python we use pandas
+# to convert that dictionary to a 'dataframe'
+python -m pip install pandas 
