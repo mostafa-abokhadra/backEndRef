@@ -52,3 +52,9 @@ for item in item_details:
 # to handle missing date errors in python we use pandas
 # to convert that dictionary to a 'dataframe'
 python -m pip install pandas 
+
+from pandas import DataFrame
+# then replace the above loop with
+items_df = DataFrame(item_details)
+print(items_df)
+# the errors are replaced by NaN and NaT for the missing values
