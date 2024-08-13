@@ -58,3 +58,13 @@ from pandas import DataFrame
 items_df = DataFrame(item_details)
 print(items_df)
 # the errors are replaced by NaN and NaT for the missing values
+
+# indexing
+# mongoDB defines indexes at the collection level
+collection_name.find({"category" : "food"})
+# To execute the above query, MongoDB has to scan all the documents.
+# creating index
+from pymongo_get_database import get_datbase
+dbname = get_database()
+collection_name = dbname["user_1_items"]
+category_index =  collection_name.create_index("category")
