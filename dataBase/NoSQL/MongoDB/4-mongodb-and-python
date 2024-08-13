@@ -1,2 +1,20 @@
-pip install mongoengine
-pip install pymongo
+# the standard MongoDB driver library for Python
+python -m venv myenv
+source env/bin/activate
+python -m pip install "pymongo[srv]"
+
+# create mongodb cluster from atlas
+
+# creating the mongodb client
+from pymongo import MongoClient
+def get_database():
+    connection_str = "atlasURLtoConnect"
+    "mongodb+srv://user:pass@cluster.mongodb.net/myfirstDB"
+    client = MongoClient(connection_str) 
+    # Create the database
+    # MongoDB doesn’t create a database until you have
+    # collections and documents in it. 
+    return client['user_shopping_list']
+
+if __name__ == '__main__':
+    dbname = get_database()
