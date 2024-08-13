@@ -10,47 +10,36 @@ from pymongo import MongoClient
 def get_database():
     connection_str = "atlasURLtoConnect"
     "mongodb+srv://user:pass@cluster.mongodb.net/myfirstDB"
+
     client = MongoClient(connection_str) 
-    # Create the database
+
+    # Create and access the database
     # MongoDB doesn’t create a database until you have
     # collections and documents in it. 
-    return client['user_shopping_list']
-
-if __name__ == '__main__':
-    dbname = get_database()
+    db = client['user_shopping_list']
+    return db
 
 # To create a collection, pass the collection name to the database
-from pymongo_get_database import get_database
-dbname = get_database()
-collection_name = dbname["user_1_items"]
+collection = db["user_1_items"] or
+collection = db.user_1_items
 # This creates a collection named user_1_items in the user_shopping_list database.
 # to get a collection already in the database
-collection = client.db_name.collection_name
 
 # inserting
 # for example you already have some python dictionaries
-collection_name.insert_many([dict1, dict2])
-collection_name.insert_one(dict3)
+res = collection.insert_many([dict1, dict2]) # takes list of dictionaries
+res = collection.insert_one(dict3)
+print("Inserted document ID:", res.inserted_id)
 
 def insert_school(mongo_collection, **kwargs):
     doc = collection_name.insert_one(kwargs)
     return doc.inserted_id
 
-# to add date useing pyMongo we use dateutil package
-python -m pip install python-dateutil
-
-from dateutil import parser
-expiry_date = '2021-07-13T00:00:00.000Z'
-expiry = parser.parse(expiry_date)
-# now you can use 'expiry' variable as the value of one of 
-# your dictionary keys that you will add to the db
-
 # to query and retrieve
-from pymongo_get_database import get_database
-dbname = get_database()
-collection_name = dbname["user_1_items"]
-item_details = collection_name.find()
-for item in item_details:
+result = collection.find_one({"name": "Alice"})
+results = collection.find({"age": {"$gt": 20}})
+res = collection.find()
+for item in res:
     print(item)
 # Although MongoDB gets the entire data, we
 # can get a Python ‘KeyError’on the last document.
@@ -58,22 +47,40 @@ for item in item_details:
 # to handle missing date errors in python we use pandas
 # to convert that dictionary to a 'dataframe'
 python -m pip install pandas 
-
 from pandas import DataFrame
 # then replace the above loop with
 items_df = DataFrame(item_details)
 print(items_df)
 # the errors are replaced by NaN and NaT for the missing values
 
+# updating
+result = collection.update_one(
+    {"name": "Alice"},  # Filter
+    {"$set": {"age": 26}}  # Update operation
+)
+print("Documents matched:", result.matched_count)
+print("Documents modified:", result.modified_count)
+result = collection.update_many(
+    {"city": "New York"},
+    {"$set": {"city": "San Francisco"}}
+)
+def update_topics(mongo_collection, name, topics):
+    """changing all school topics based on name
+    """
+    mongo_collection.update_many(
+        {"name": name},
+        {"$set": {"topics": topics}}
+    )
+
+# delete
+result = collection.delete_one({"name": "Alice"})
+print("Documents deleted:", result.deleted_count)
+result = collection.delete_many({"age": {"$lt": 30}})
+print("Documents deleted:", result.deleted_count)
+
 # indexing
 # mongoDB defines indexes at the collection level
-collection_name.find({"category" : "food"})
-# To execute the above query, MongoDB has to scan all the documents.
-# creating index
-from pymongo_get_database import get_datbase
-dbname = get_database()
-collection_name = dbname["user_1_items"]
-category_index =  collection_name.create_index("category")
+category_index =  collection.create_index("category")
 
 """
     PyMongo, the official MongoDB driver for Python, is indeed
@@ -97,5 +104,18 @@ category_index =  collection_name.create_index("category")
     appropriate choice.
 """
 
+def schools_by_topic(collection, topic):
+    """list of school with certain topic
+    """
+    return collection.find({"topics": topic}) # you can do this yes !
+
 # to close db connection
 clien.close()
+
+# to add dates using pyMongo we use dateutil package
+python -m pip install python-dateutil
+from dateutil import parser
+expiry_date = '2021-07-13T00:00:00.000Z'
+expiry = parser.parse(expiry_date)
+# now you can use 'expiry' variable as the value of one of 
+# your dictionary keys that you will add to the db
