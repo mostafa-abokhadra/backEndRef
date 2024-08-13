@@ -47,6 +47,12 @@ db.collection_name.find().pretty() # decorate result
 # Updating
 db.collection_name.updat()
 db.collection_name.updateOne({name: "mostaf"}, {$set: {age: 22}})
+db.school.update(
+    {name: "Holberton school"},
+    {$set: {address: "972 Mission street"}},
+    {multi: true} # this to update all doc that matches with the criteria
+                  # of -> name: Holberton school
+)
 db.collection_name.updateMany({}, {$set: {year: 2020}})
 db.collection_name.replaceOne()
 
