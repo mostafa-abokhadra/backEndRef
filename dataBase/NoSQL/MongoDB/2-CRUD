@@ -58,7 +58,7 @@ db.collection_name.replaceOne()
 
 # Delete
 db.collection_name.deleteOne({name: "mostafa"})
-db.collection_name.deleteMany({})
+db.collection_name.deleteMany({name: "mostafa"}) # will delete all docs with name mostafa
 
 # mongodb cursor https://www.geeksforgeeks.org/mongodb-cursor/
     # is a pointer that references the documents of the collection returned by the find() method.
