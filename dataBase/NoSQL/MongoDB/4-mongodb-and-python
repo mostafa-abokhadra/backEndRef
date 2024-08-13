@@ -90,3 +90,6 @@ category_index =  collection_name.create_index("category")
     an asynchronous Python application, `Motor` would be the
     appropriate choice.
 """
+
+# to close db connection
+clien.close()
