@@ -18,3 +18,9 @@ def get_database():
 
 if __name__ == '__main__':
     dbname = get_database()
+
+# To create a collection, pass the collection name to the database
+from pymongo_get_database import get_database
+dbname = get_database()
+collection_name = dbname["user_1_items"]
+# This creates a collection named user_1_items in the user_shopping_list database.
