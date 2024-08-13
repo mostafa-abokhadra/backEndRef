@@ -1,0 +1,11 @@
+# create your venv
+python3 -m venv venvName
+source venvName/bin/activate
+
+# now install your packages
+python -m pip install 'fastapi[all]'
+python -m pip install 'pymongo[srv]'
+python -m pip install python-dotenv
+etc...
+
+# create you project directory and navigate to it
