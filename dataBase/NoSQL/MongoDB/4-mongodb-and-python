@@ -28,3 +28,6 @@ collection_name = dbname["user_1_items"]
 # inserting
 # for example you already have some python dictionaries
 collection_name.insert_many([dict1, dict2])
+
+# to add date useing pyMongo we use dateutil package
+python -m pip install python-dateutil
