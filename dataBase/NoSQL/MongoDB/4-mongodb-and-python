@@ -38,3 +38,11 @@ expiry_date = '2021-07-13T00:00:00.000Z'
 expiry = parser.parse(expiry_date)
 # now you can use 'expiry' variable as the value of one of 
 # your dictionary keys that you will add to the db
+
+# to query and retrieve
+from pymongo_get_database import get_database
+dbname = get_database()
+collection_name = dbname["user_1_items"]
+item_details = collection_name.find()
+for item in item_details:
+    print(item)
