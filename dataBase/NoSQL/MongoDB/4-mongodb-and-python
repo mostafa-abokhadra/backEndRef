@@ -68,3 +68,25 @@ from pymongo_get_database import get_datbase
 dbname = get_database()
 collection_name = dbname["user_1_items"]
 category_index =  collection_name.create_index("category")
+
+"""
+    PyMongo, the official MongoDB driver for Python, is indeed
+    designed for synchronous operations. This means that when
+    you use PyMongo, each operation blocks the execution of your
+    code until it completes. However, this doesn't mean that
+    MongoDB itself doesn't allow for asynchronous operations.
+    
+    MongoDB can be accessed asynchronously, but for that, you
+    would need to use a different driver or library that supports
+    asynchronous code. In Python, you can use `Motor`, which is
+    an asynchronous driver built on top of PyMongo and is
+    specifically designed to work with asynchronous frameworks
+    like `asyncio` or `Tornado`.
+
+    - PyMongo: Synchronous MongoDB operations.
+    - Motor: Asynchronous MongoDB operations.
+
+    so If you need to perform non-blocking MongoDB operations in
+    an asynchronous Python application, `Motor` would be the
+    appropriate choice.
+"""
