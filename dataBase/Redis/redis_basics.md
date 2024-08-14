@@ -66,7 +66,7 @@ get server: name
 ```
 **the keyspace is server (the database) and it has two keys name and port**
 
-### key expiration
+### key expiration and persistence
 **Key expiration lets you set a timeout for a key, also known as a "time to live", or "TTL". When the time to live elapses, the key is automatically destroyed.**
 
 ```
@@ -74,26 +74,18 @@ set greeting "hello"
 expire greeting 10 // expires in 10 seconds
 ttl greeting // will show the time lift
 // if you want to set the expiration with the value at the same time
-setx greeting 30 "hellow" // expires in 30 sec
+setx greeting 30 "hello" // expires in 30 sec
 persist greeting // if you want to cancel the expiration while time still not out 
 ```
 ##### A few important notes about key expiration:
-- They can be set both using seconds or milliseconds precision.
-- However the expire time resolution is always 1 millisecond.
-- Information about expires are replicated and persisted on disk, the time virtually passes when your Redis server remains stopped (this means that Redis saves the date at which a key will expire).
 
-```
-set key some-value
-expire key 5 # will expire after 5 second
-get key # (immediately)
-"some-value"
-get key # (after 5 second)
-(nil)
-```
+1. You can specify this expiration time in either seconds or milliseconds. For example, you could say, "This key should expire after 5 seconds" or "This key should expire after 5000 milliseconds" (which is the same as 5 seconds).
+2. Precision of Expiration: Even though you can set the expiration time using either seconds or milliseconds, Redis always checks the expiration with millisecond precision. This means that Redis will track and enforce expirations down to the exact millisecond.
+3. Expiration Information is Stored and Replicated: Redis not only keeps track of when each key should expire, but it also saves this information to disk. This is useful in case the server stops or restarts.
+4. Persisting on Disk: When Redis saves data to disk, it also saves the exact time when each key is supposed to expire.
+5. Time Passing Virtually: If your Redis server is turned off or crashes, the expiration times don’t pause. Redis remembers when the keys were supposed to expire, and when the server restarts, it checks if those keys should have already expired and removes them if needed.
 
-1. **The key vanished between the two GET calls, since the second call was delayed more than 5 seconds.**
-2. **In the example above we used EXPIRE in order to set the expire (it can also be used in order to set a different expire to a key already having one, like PERSIST can be used in order to remove the expire and make the key persistent forever).**
-3. **However we can also create keys with expires using other Redis commands.**
+**You can set keys in Redis to expire after a certain time using either seconds or milliseconds, but Redis always handles expiration with millisecond accuracy. Even if the server goes down, Redis remembers when each key was supposed to expire and removes them appropriately when it restarts.**
 
 **For example using SET options:**\
 `
