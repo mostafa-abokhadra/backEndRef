@@ -6,6 +6,7 @@ _italic text_ using _ _ \
 this is a <sub>subscript</sub> text \
 this is a <sup>super</sup> text \
 > this is a qoute using >
+to add new line at the end of the line just use \\ 
 ```
 backticks to format code ``` ``` or just `` 
 ```
@@ -39,10 +40,10 @@ will produce
 3. backend
 **nested lists** is by indentaion
 ### tasks lists
-To create a task list, preface list items with a hyphen and space followed by [ ]. To mark a task as complete, use [x].
-code:
-    -`- [ ] Add delight to the experience when all tasks are complete :tada:`
-    -`- [x] Add delight to the experience when all tasks are complete :tada:`
+To create a task list, preface list items with a hyphen and space followed by [ ]. To mark a task as complete, use [x]. \
+code:\
+`-[ ] Add delight to the experience when all tasks are complete :tada:`
+`- [x] Add delight to the experience when all tasks are complete :tada:`
 - [ ] Add delight to the experience when all tasks are complete :tada:
 - [x] Add delight to the experience when all tasks are complete :tada:
 ### alerts
