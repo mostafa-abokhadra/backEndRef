@@ -98,7 +98,17 @@ persist greeting // if you want to cancel the expiration while time still not ou
 
 **You can set keys in Redis to expire after a certain time using either seconds or milliseconds, but Redis always handles expiration with millisecond accuracy. Even if the server goes down, Redis remembers when each key was supposed to expire and removes them appropriately when it restarts.**
 
-
+### set
+```
+saad cars "ford" // adding to the set
+saad cars "honda"
+saad cars "bmw"
+sismemeber cars "honda" // returns true if honda is memebre of cars set
+smembers cars // returns all members
+scard cars // number of elements (lenght)
+smove cars to newSet "ford" // moving one set member to another set
+srem cars "bmw" // removing item from cars
+```
 
 
 
