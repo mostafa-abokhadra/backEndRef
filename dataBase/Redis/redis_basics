@@ -53,3 +53,6 @@ OK
 (integer) 9
 
 The example above sets a key with the string value 100, having an expire of ten seconds. Later the TTL command is called in order to check the remaining time to live for the key.
+
+# navigating the key space
+To incrementally iterate over the keys in a Redis database in an efficient manner you can sue scan command, Another way to iterate over the keyspace is to use the KEYS command, but this approach should be used with care, since KEYS will block the Redis server until all keys are returned.
