@@ -3,9 +3,7 @@
 **it can be used ads a data structure store, document database, vector database**
 
 #### connect
-`bash
-redis-cli -h 127.0.0.1 -p 6379
-`
+`redis-cli -h 127.0.0.1 -p 6379`
 ```
 SET bike:1 "Process 134"
 GET bike:1
