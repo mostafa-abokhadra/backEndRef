@@ -43,6 +43,7 @@ del name
 flushall // will clear every thing you have set, it is like starting new session, all work you have done will be gone
 type name //return the value type of the key
 mset key1 "hello" key3 "world" // to set multiple key value pair
+mget key1 key2 
 append key1 " world" // appending string to key1 value
 rename key1 greeting
 lpush people "mostafa" // creating lists and adding mostafa, lpush (left push) so it push front

@@ -14,7 +14,16 @@ r = redis.Redis(decode_responses=True)
     you can set decode_responses=True.
 """
 # or
-r = redis.Redis(host="", port="", decode_responses=True)
+r = redis.Redis(host="localhost", port="6379", db=0, password="", socket_timeout="" ,decode_responses=True)
+"""
+    The db parameter is the database number. You can manage multiple databases in Redis at once,
+    and each is identified by an integer. The max number of databases is 16 by default.
+"""
 # or
 r = redis.from_url('redis://host:port')
 r.ping()
+
+# set and get
+r.set('mykey', 'myvalue') 
+r.get('mykey').decode('utf-8') # if you haven't specified decode_response=True
+r.mset({"Croatia": "Zagreb", "Bahamas": "Nassau"})
