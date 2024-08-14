@@ -54,7 +54,7 @@ get key # (after 5 second)
 ```
 
 1. **The key vanished between the two GET calls, since the second call was delayed more than 5 seconds.**
-2. **In the example above we used EXPIRE in order to set the expire (it can also be used in order to set a different expire to a key already having one, like PERSIST can be used in order to remove the expire and make the key persistent forever).**\
+2. **In the example above we used EXPIRE in order to set the expire (it can also be used in order to set a different expire to a key already having one, like PERSIST can be used in order to remove the expire and make the key persistent forever).**
 3. **However we can also create keys with expires using other Redis commands.**
 
 **For example using SET options:**\
@@ -69,3 +69,8 @@ ttl key
 
 ### navigating the key space
 **To incrementally iterate over the keys in a Redis database in an efficient manner you can sue scan command, Another way to iterate over the keyspace is to use the KEYS command, but this approach should be used with care, since KEYS will block the Redis server until all keys are returned.**
+
+### client side caching
+**
+Client-side caching is a technique used to create high performance services. It exploits the memory available on application servers, servers that are usually distinct computers compared to the database nodes, to store some subset of the database information directly in the application side.
+**
