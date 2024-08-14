@@ -1,3 +1,4 @@
+<!doctype html>
 ### md commands to allow me to write my briefs in a more beautiful way 💚 \
 
 **bold text** using ** or __ __ \
