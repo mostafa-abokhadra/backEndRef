@@ -38,7 +38,7 @@ del mykey
 
 ### key expiration
 **Before moving on, we should look at an important Redis feature that works regardless of the type of value you're storing: key expiration.**\
-**Key expiration lets you set a timeout for a key, also known as a "time to live", or "TTL". When the time to live elapses, the key is automatically destroyed.**\
+**Key expiration lets you set a timeout for a key, also known as a "time to live", or "TTL". When the time to live elapses, the key is automatically destroyed.**
 ##### A few important notes about key expiration:
 - They can be set both using seconds or milliseconds precision.
 - However the expire time resolution is always 1 millisecond.
@@ -53,11 +53,11 @@ get key # (after 5 second)
 (nil)
 ```
 
-**The key vanished between the two GET calls, since the second call was delayed more than 5 seconds.**\
-**In the example above we used EXPIRE in order to set the expire (it can also be used in order to set a different expire to a key already having one, like PERSIST can be used in order to remove the expire and make the key persistent forever).**\
-**However we can also create keys with expires using other Redis commands.**
+1. **The key vanished between the two GET calls, since the second call was delayed more than 5 seconds.**
+2. **In the example above we used EXPIRE in order to set the expire (it can also be used in order to set a different expire to a key already having one, like PERSIST can be used in order to remove the expire and make the key persistent forever).**\
+3. **However we can also create keys with expires using other Redis commands.**
 
-**For example using SET options:**
+**For example using SET options:**\
 `
 set key 100 ex 10
 OK
