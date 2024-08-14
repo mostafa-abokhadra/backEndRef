@@ -110,6 +110,18 @@ smove cars to newSet "ford" // moving one set member to another set
 srem cars "bmw" // removing item from cars
 ```
 
+### sorted sets
+```
+// 
+zadd users 1980 "name1" // adding to sortedset called users
+zadd users 1985 "name2" // you add a score and the value
+zadd users 1982 "name3" // the sorted set will be sorted acc. to score
+zadd users 1984 "name4"
+zadd users 1981 "name5"
+zrange users 0 -1
+zincrby users 12 "name3" // this will increment 12 to the score of "name3" 
+```
+
 
 
 **For example using SET options:**\
