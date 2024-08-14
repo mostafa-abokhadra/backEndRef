@@ -91,4 +91,4 @@ horizontal line using 3 underscores ___
 ```
 ___
 
-<color> red </color>
+<span style="color: red;">This text will be red</span>
