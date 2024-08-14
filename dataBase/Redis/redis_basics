@@ -1,1 +1,6 @@
-Redis can be used as a database, cache, streaming engine, message broker, and more
+# Redis stands for Remote Dictionary Server. You can use the same data types as in your local programming environment but on the server side within Redis.
+# Redis can be used as a database, cache, streaming engine, message broker, and more
+
+> redis-cli -h 127.0.0.1 -p 6379
+> SET bike:1 "Process 134"
+> GET bike:1
