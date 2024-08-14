@@ -45,6 +45,14 @@ type name //return the value type of the key
 mset key1 "hello" key3 "world" // to set multiple key value pair
 append key1 " world" // appending string to key1 value
 rename key1 greeting
+lpush people "mostafa" // creating lists and adding mostafa, lpush (left push) so it push front
+lrange people 0 -1 // list all items in people from first to last index
+rpush people "ahmed" // push right (at the end)
+llen people // length of list
+lpop people // delete front
+rpop people // delet end
+linsert people before "mostafa" "newName" // insert middle
+linsert people after "ahmed" "newName" // insert middle
 ```
 
 `quit` **to close connection**
@@ -89,6 +97,9 @@ persist greeting // if you want to cancel the expiration while time still not ou
 5. Time Passing Virtually: If your Redis server is turned off or crashes, the expiration times don’t pause. Redis remembers when the keys were supposed to expire, and when the server restarts, it checks if those keys should have already expired and removes them if needed.
 
 **You can set keys in Redis to expire after a certain time using either seconds or milliseconds, but Redis always handles expiration with millisecond accuracy. Even if the server goes down, Redis remembers when each key was supposed to expire and removes them appropriately when it restarts.**
+
+
+
 
 
 **For example using SET options:**\
