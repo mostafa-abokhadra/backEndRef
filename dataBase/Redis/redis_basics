@@ -21,3 +21,10 @@
 6) "Enduro bikes"
 7) "price"
 8) "4972"
+
+# keySpace
+Redis keys are binary safe; this means that you can use any binary sequence as a key, from a string like "foo" to the content of a JPEG file. The empty string is also a valid key.
+
+> set mykey hello
+> exists mykey # return true if key exists in the database
+> del mykey
