@@ -41,6 +41,7 @@ decr age // decrement
 exists name // check if a key exists
 del name
 flushall // will clear every thing you have set, it is like starting new session, all work you have done will be gone
+type name //return the value type of the key
 ```
 
 `quit` **to close connection**
@@ -65,43 +66,17 @@ get server: name
 ```
 **the keyspace is server (the database) and it has two keys name and port**
 
-#### connect
-`redis-cli -h 127.0.0.1 -p 6379`
-```
-SET bike:1 "Process 134"
-GET bike:1
-```
-```
-HSET bike:1 model Deimos brand Ergonom type 'Enduro bikes' price 4972
-(integer) 4
-HGET bike:1 model
-"Deimos"
-HGET bike:1 price
-"4972"
-HGETALL bike:1
-1) "model"
-2) "Deimos"
-3) "brand"
-4) "Ergonom"
-5) "type"
-6) "Enduro bikes"
-7) "price"
-8) "4972"
-```
-
-### keySpace
-**Redis keys are binary safe; this means that you can use any binary sequence as a key, from a string like "foo" to the content of a JPEG file. The empty string is also a valid key.**
-
-```
-set mykey hello
-type mykey //return the value type of the key
-exists mykey //return true if key exists in the database
-del mykey
-```
-
 ### key expiration
-**Before moving on, we should look at an important Redis feature that works regardless of the type of value you're storing: key expiration.**\
 **Key expiration lets you set a timeout for a key, also known as a "time to live", or "TTL". When the time to live elapses, the key is automatically destroyed.**
+
+```
+set greeting "hello"
+expire greeting 10 // expires in 10 seconds
+ttl greeting // will show the time lift
+// if you want to set the expiration with the value at the same time
+setx greeting 30 "hellow" // expires in 30 sec
+persist greeting // if you want to cancel the expiration while time still not out 
+```
 ##### A few important notes about key expiration:
 - They can be set both using seconds or milliseconds precision.
 - However the expire time resolution is always 1 millisecond.
@@ -152,3 +127,5 @@ ttl key
 
 
 
+#### connect
+`redis-cli -h 127.0.0.1 -p 6379`
