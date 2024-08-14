@@ -10,7 +10,7 @@ to add new line at the end of the line just use \\
 ```
 backticks to format code ``` ``` or just `` 
 ```
-<span style="color: red">using html to color text</span>
+<font style="color: red">using html to color text</font>
 #### creating links: 
 This site was built using [GitHub Pages](https://pages.github.com/).
 ```
