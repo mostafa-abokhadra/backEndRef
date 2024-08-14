@@ -90,5 +90,3 @@ code:
 horizontal line using 3 underscores ___
 ```
 ___
-
-<span style="color: red;">This text will be red</span>
