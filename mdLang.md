@@ -7,10 +7,10 @@ this is a <sub>subscript</sub> text \
 this is a <sup>super</sup> text \
 to add new line at the end of the line just use \\ 
 > this is a qoute using >
-
 ```
 backticks to format code ``` ``` or just `` 
 ```
+<span style="color: red">using html to color text</span>
 #### creating links: 
 This site was built using [GitHub Pages](https://pages.github.com/).
 ```
