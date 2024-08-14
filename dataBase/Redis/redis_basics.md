@@ -18,6 +18,16 @@
 
 **redis is very flexable and very fast, No predetermined schemas or column names is needed, and can be used as a database, cache, streaming engine, message broker, and mor**
 
+### installation
+1. sudo apt-get update
+2. sudo apt-get upgrade
+3. sudo apt-get install redis-server
+
+**to start you shell interface**
+`redis-cli`
+
+**config file** is in /etc/redis/redis.conf
+
 #### connect
 `redis-cli -h 127.0.0.1 -p 6379`
 ```
