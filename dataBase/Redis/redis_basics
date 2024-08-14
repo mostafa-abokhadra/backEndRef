@@ -30,3 +30,17 @@ Redis keys are binary safe; this means that you can use any binary sequence as a
 > exists mykey # return true if key exists in the database
 > del mykey
 
+# key expiration
+Before moving on, we should look at an important Redis feature that works regardless of the type of value you're storing: key expiration. Key expiration lets you set a timeout for a key, also known as a "time to live", or "TTL". When the time to live elapses, the key is automatically destroyed.
+
+A few important notes about key expiration:
+They can be set both using seconds or milliseconds precision.
+However the expire time resolution is always 1 millisecond.
+Information about expires are replicated and persisted on disk, the time virtually passes when your Redis server remains stopped (this means that Redis saves the date at which a key will expire).
+
+> set key some-value
+> expire key 5
+> get key # (immediately)
+"some-value"
+> get key # (after some time)
+(nil)
