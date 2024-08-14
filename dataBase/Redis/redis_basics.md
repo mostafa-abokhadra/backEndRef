@@ -30,7 +30,7 @@
 
 ### getting started
 **in your redis shell**\
-`ping` it will respond with `pong` indicating established connectin\
+`ping` it will respond with `pong` indicating established connectin
 ```
 echo "something"
 set name mostafa
@@ -44,6 +44,26 @@ flushall // will clear every thing you have set, it is like starting new session
 ```
 
 `quit` **to close connection**
+
+### key space
+**In Redis, a keyspace refers to the collection of all the keys stored in a particular database.**
+
+- Redis can store many different keys, each associated with some value, like strings, lists, sets, etc.
+- Redis supports multiple databases, each one holding its own set of keys.
+- The keyspace is just a term for the entire set of keys within a specific Redis database.
+
+##### key points
+- Keyspace Notifications: Redis can notify you about certain events related to the keys (like when a key is created, updated, or deleted). This is known as keyspace notifications.
+- Multiple Databases: Redis typically has multiple databases, and each one has its own separate keyspace.
+
+So, when someone talks about the keyspace in Redis, they're simply referring to all the keys that exist in a particular Redis database.
+
+```
+set server:name someserver
+set server: port 8000
+get server: name
+```
+**the keyspace is server (the database) and it has two keys name and port**
 
 #### connect
 `redis-cli -h 127.0.0.1 -p 6379`
