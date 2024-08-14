@@ -42,11 +42,15 @@ will produce
 - mostafa
 * abokhadra
 + backend
+
 **for ordered list**
+
 precede text with number
+
 1. mostafa
 2. abokhadra
 3. backend
+
 **nested lists** is by indentaion
 ### tasks lists To create a task
 
@@ -55,7 +59,7 @@ as complete, use [x].
 
 code:
 
-`-[ ] Add delight to the experience when all tasks are complete :tada:`\
+`- [ ] Add delight to the experience when all tasks are complete :tada:`\
 `- [x] Add delight to the experience when all tasks are complete :tada:`
 - [ ] Add delight to the experience when all tasks are complete :tada:
 - [x] Add delight to the experience when all tasks are complete :tada:
@@ -86,3 +90,5 @@ code:
 horizontal line using 3 underscores ___
 ```
 ___
+
+<color> red </color>
