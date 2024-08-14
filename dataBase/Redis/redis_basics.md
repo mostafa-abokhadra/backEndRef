@@ -1,7 +1,7 @@
-[Redis docs](https://redis.io/docs/latest/develop/get-started/)
+[Redis docs](https://redis.io/docs/latest/develop/get-started/)\
 [redis crash course](https://www.youtube.com/watch?v=Hbt56gFj998)
 
-1. redis in an open source in memory data structure store which can be use as database and / or a cache and message broker
+1. redis in an open source in memory data structure store which can be use as database or a cache and message broker
 2. NoSQL key/value store
 3. supports multiple data structure
 4. built in replication master/slave
@@ -27,6 +27,23 @@
 `redis-cli`
 
 **config file** is in /etc/redis/redis.conf
+
+### getting started
+**in your redis shell**\
+`ping` it will respond with `pong` indicating established connectin\
+```
+echo "something"
+set name mostafa
+get name
+set age 21
+incr age // will increment age to 22
+decr age // decrement
+exists name // check if a key exists
+del name
+flushall // will clear every thing you have set, it is like starting new session, all work you have done will be gone
+```
+
+`quit` **to close connection**
 
 #### connect
 `redis-cli -h 127.0.0.1 -p 6379`
