@@ -39,8 +39,17 @@ However the expire time resolution is always 1 millisecond.
 Information about expires are replicated and persisted on disk, the time virtually passes when your Redis server remains stopped (this means that Redis saves the date at which a key will expire).
 
 > set key some-value
-> expire key 5
+> expire key 5 # will expire after 5 second
 > get key # (immediately)
 "some-value"
-> get key # (after some time)
+> get key # (after 5 second)
 (nil)
+
+The key vanished between the two GET calls, since the second call was delayed more than 5 seconds. In the example above we used EXPIRE in order to set the expire (it can also be used in order to set a different expire to a key already having one, like PERSIST can be used in order to remove the expire and make the key persistent forever). However we can also create keys with expires using other Redis commands. For example using SET options:
+
+> set key 100 ex 10
+OK
+> ttl key
+(integer) 9
+
+The example above sets a key with the string value 100, having an expire of ten seconds. Later the TTL command is called in order to check the remaining time to live for the key.
