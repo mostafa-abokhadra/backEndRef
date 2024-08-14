@@ -46,11 +46,11 @@ precede text with number
 ### tasks lists To create a task
 
 list, preface list items with a hyphen and space followed by [ ]. To mark a task
-as complete, use [x]. \ 
+as complete, use [x]. 
 
-code:\ 
+code:
 
-`-[ ] Add delight to the experience when all tasks are complete :tada:`
+`-[ ] Add delight to the experience when all tasks are complete :tada:`\
 `- [x] Add delight to the experience when all tasks are complete :tada:`
 - [ ] Add delight to the experience when all tasks are complete :tada:
 - [x] Add delight to the experience when all tasks are complete :tada:
