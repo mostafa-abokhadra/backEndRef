@@ -1,8 +1,22 @@
-[Redis Ref](https://redis.io/docs/latest/develop/get-started/)
+[Redis docs](https://redis.io/docs/latest/develop/get-started/)
+[redis crash course](https://www.youtube.com/watch?v=Hbt56gFj998)
 
-**Redis stands for Remote Dictionary Server. You can use the same data types as in your local programming environment but on the server side within Redis.**\
-**Redis can be used as a database, cache, streaming engine, message broker, and more**\
-**it can be used ads a data structure store, document database, vector database**
+1. redis in an open source in memory data structure store which can be use as database and / or a cache and message broker
+2. NoSQL key/value store
+3. supports multiple data structure
+4. built in replication master/slave
+
+### DataTypes
+- strings
+- lists
+- sets
+- sorted sets
+- hashes
+- bitmaps
+- hyperlogs
+- geospatial indexes
+
+**redis is very flexable and very fast, No predetermined schemas or column names is needed, and can be used as a database, cache, streaming engine, message broker, and mor**
 
 #### connect
 `redis-cli -h 127.0.0.1 -p 6379`
