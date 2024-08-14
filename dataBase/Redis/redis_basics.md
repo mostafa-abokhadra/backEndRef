@@ -122,6 +122,19 @@ zrange users 0 -1
 zincrby users 12 "name3" // this will increment 12 to the score of "name3" 
 ```
 
+### hash
+```
+hset user: "1" name: "mostafa-abokadra"
+hset user: "1" email: "email@.com"
+hgetall user: "1"
+
+hmset user: "1" name "mostafa-abokhadra" email "email.com"
+hkeys user: "1" // returns just the keys
+hval user: "1" // returns just the values
+hicerby user: "1" age 1 // increment user"1" age by 1
+hdel user: "1" age
+hlen user: "1"
+```
 
 
 **For example using SET options:**\
