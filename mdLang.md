@@ -1,4 +1,4 @@
-### md commands to allow me to write my briefs in a more beautiful way 💚 \ 
+### md commands to allow me to write my briefs in a more beautiful way 💚 
 **bold text** using ** or __ __ \ 
 _italic text_ using _ _ \
 ~~strike through~~ using ~~~~ \ 
@@ -6,7 +6,10 @@ this is a <sub>subscript</sub> text \
 this is a <sup>super</sup> text \
 to add new line at the end of the line just use \\
 > this is a qoute using >
-``` backticks to format code ``` ``` or just `` ```
+
+```
+backticks to format code ``` ``` or just ``
+```
 #### creating links:
 This site was built using [GitHubPages](https://pages.github.com/).
 ``` the code: This site was built using [GitHub Pages](https://pages.github.com/). ```
