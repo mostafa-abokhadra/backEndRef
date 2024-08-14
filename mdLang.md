@@ -23,7 +23,7 @@ This site was built using [GitHubPages](https://pages.github.com/). \
 #### images
 You can display an image by adding ! and wrapping the alt text in [ ]. Alt text is a short text
 equivalent of the information in the image. Then, wrap the link for the image in
-parentheses ().\
+parentheses ().
 
 ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising atentacle.](https://myoctocat.com/assets/images/base-octocat.svg)
 ```
