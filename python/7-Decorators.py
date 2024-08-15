@@ -26,3 +26,13 @@ afterDecoration()
     executed and then "after" will be printed then the whole thing
     will be returned as a function
 """
+
+# instead of writing these two lines:
+afterDecoration = myDecorator(sayhello)
+afterDecoration()
+# you can simply just write above the say hello function 
+# @myDecorator and call the function normally
+@myDecorator
+def sayhello():
+    print("hello")
+sayhello()
