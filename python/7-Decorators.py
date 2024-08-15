@@ -1,4 +1,4 @@
-# elzeor from 83 to
+# elzeor from 83 to 85
 
 # function are objects
 # decorator take a function and add some functionality and returns it
@@ -64,3 +64,18 @@ def calculate(n1, n2):
     print(n1 + n2)
 
 calculate(10, 20)
+
+from time import time
+
+def speedTest(func):
+    def wrapper():
+        start = time()
+        func()
+        end = time()
+        print("time: " + end - start)
+    return wrapper
+
+@speedTest
+def algoritmToTest():
+    for i in range(0, 30000):
+        print(i)
