@@ -1,3 +1,6 @@
-redisPy
+redis , redisPy, redisJs
+mongodb, mongopy, mongoJs
+mysql, mysqlpy, mysqlJs
+
 minumum operation
 logparsing
