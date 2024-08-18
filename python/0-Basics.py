@@ -46,5 +46,5 @@ type(myName) # str
 # use escape char "\" to escape special characters
 print(myName + " " + last_name)
 print("messi " + 10) # error: you can't concate str with num
-
+# you can do += in python 
 ##############################################################################################
