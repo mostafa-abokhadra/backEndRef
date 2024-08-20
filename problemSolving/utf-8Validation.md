@@ -25,3 +25,16 @@
 > - It also does the reverse, reading in binary digits and converting them back to characters.
 > - UTF-8 is currently the most popular encoding method on the internet because it can efficiently store text containing any character.
 > - UTF-16 is another encoding method, but is less efficient for storing text files (except for those written in certain non-English languages).
+
+### specify utf-8 in html
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+</html>
+```
+### Ref
+[ref1](https://blog.hubspot.com/website/what-is-utf-8)
+[ref2](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
