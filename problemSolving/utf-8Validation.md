@@ -35,6 +35,15 @@
 </head>
 </html>
 ```
+### bitwise operators in python
+- still
+### least significant bits (LSB)
+- still
+### code
+```
+# still
+```
 ### Ref
-[ref1](https://blog.hubspot.com/website/what-is-utf-8)
-[ref2](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
+- [ref1](https://blog.hubspot.com/website/what-is-utf-8)
+- [ref2](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
+- [ref3](https://www.youtube.com/watch?v=MijmeoH9LT4&list=PPSV)
