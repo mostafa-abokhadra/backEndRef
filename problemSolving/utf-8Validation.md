@@ -13,7 +13,7 @@
 - it is how unicode numbers are translated into binary numbers to be stored in computer
 - UTF-8 encoding will store "hello" like this (binary): 01101000 01100101 01101100 01101100  01101111
 
-[!TIP]
+> [!TIP]
 > Unicode is a character set. It translates characters to numbers.
 > UTf-8 is an encoding standard. It translates numbers into binary.
 
