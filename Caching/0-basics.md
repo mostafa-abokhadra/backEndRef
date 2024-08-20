@@ -42,9 +42,10 @@
 - An explicit removal policy based on a triggered event (such as the data being modified).
 
 ### protect cached data
-**2 main concerns here**\
+**2 main concerns here**
 - The privacy of the data in the cache.
 - The privacy of data as it flows between the cache and the application that's using the cache.
+
 **implement an authentication mechanism that requires that applications specify the following:**
 - Which identities can access data in the cache.
 - Which operations (read and write) that these identities are allowed to perform.
