@@ -1,4 +1,6 @@
 ### Caching
+- Imagine a library where books are stored on shelves. Retrieving a book from a shelf takes time, so a librarian decides to keep a small table near the entrance. This table is like a cache, where the librarian places the most popular or recently borrowed books.
+![photo](https://media.geeksforgeeks.org/wp-content/uploads/20240110183740/Cache-Working.jpg)
 - Caching is a common technique that aims to improve the performance and scalability of a system. It caches data by temporarily copying frequently accessed data to fast storage that's located close to the application.
 - Caching helps applications perform dramatically faster and cost significantly less at scale
 - Cache is a high-speed data storage layer which stores a subset of data, typically transient in nature, so that future requests for that data are served up faster than is possible by accessing the data’s primary storage location.
@@ -50,6 +52,7 @@
 - Which identities can access data in the cache.
 - Which operations (read and write) that these identities are allowed to perform.
 ### Ref
-- [TopRef] (https://learn.microsoft.com/en-us/azure/architecture/best-practices/caching)
+- [Microsoft] (https://learn.microsoft.com/en-us/azure/architecture/best-practices/caching) \
 still to read from "Considerations for implementing caching in Azure"
 - [REf1](https://aws.amazon.com/ar/caching/)
+- [GFG] (https://www.geeksforgeeks.org/caching-system-design-concept-for-beginners/)
