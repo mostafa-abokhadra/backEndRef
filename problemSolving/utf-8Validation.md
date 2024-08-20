@@ -14,8 +14,8 @@
 - UTF-8 encoding will store "hello" like this (binary): 01101000 01100101 01101100 01101100  01101111
 
 [!TIP]
-Unicode is a character set. It translates characters to numbers.
-UTf-8 is an encoding standard. It translates numbers into binary.
+> Unicode is a character set. It translates characters to numbers.
+> UTf-8 is an encoding standard. It translates numbers into binary.
 
 [!IMPORTANT]
 - Computers store data, including text characters, as binary (1s and 0s).
