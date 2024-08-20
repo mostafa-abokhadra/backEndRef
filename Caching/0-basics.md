@@ -8,6 +8,7 @@
 - we don't recommend that you use the cache as the authoritative store of critical information. 
 - The key to using a cache effectively lies in determining the most appropriate data to cache
 - Caching typically works well with data that is immutable or that changes infrequently e: g reference information such as product and pricing information in an e-commerce application, or shared static resources that are costly to construct.
+- Web clients typically use the URI of a resource as the key in the client-side cache, so if the URI changes, the web client ignores any previously cached versions of a resource and fetches the new version instead.
 ### Distributed Application Caching (2 ways)
 - They use a private cache, where data is held locally on the computer that's running an instance of an application or service.
 - They use a shared cache, serving as a common source that can be accessed by multiple processes and machines.
@@ -39,5 +40,15 @@
 - A most-recently-used policy (in the expectation that the data won't be required again).
 - A first-in-first-out policy (oldest data is evicted first).
 - An explicit removal policy based on a triggered event (such as the data being modified).
+
+### protect cached data
+**2 main concerns here**\
+- The privacy of the data in the cache.
+- The privacy of data as it flows between the cache and the application that's using the cache.
+**implement an authentication mechanism that requires that applications specify the following:**
+- Which identities can access data in the cache.
+- Which operations (read and write) that these identities are allowed to perform.
 ### Ref
+- [TopRef] (https://learn.microsoft.com/en-us/azure/architecture/best-practices/caching)
+still to read from "Considerations for implementing caching in Azure"
 - [REf1](https://aws.amazon.com/ar/caching/)
