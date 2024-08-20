@@ -11,6 +11,10 @@
 - The key to using a cache effectively lies in determining the most appropriate data to cache
 - Caching typically works well with data that is immutable or that changes infrequently e: g reference information such as product and pricing information in an e-commerce application, or shared static resources that are costly to construct.
 - Web clients typically use the URI of a resource as the key in the client-side cache, so if the URI changes, the web client ignores any previously cached versions of a resource and fetches the new version instead.
+### Types of Caching
+- There are several types of caching, including in-memory caching, disk caching, and distributed caching.
+- In-memory caching stores data in memory, while disk caching stores data on a local hard drive.
+- Distributed caching involves storing data across multiple systems to improve availability and performance.
 ### Distributed Application Caching (2 ways)
 - They use a private cache, where data is held locally on the computer that's running an instance of an application or service.
 - They use a shared cache, serving as a common source that can be accessed by multiple processes and machines.
@@ -39,8 +43,9 @@
 - it's possible that the cache might fill up if data is allowed to remain resident for a long time. In this case, any requests to add new items to the cache might cause some items to be forcibly removed in a process known as eviction. Cache services typically evict data on a least-recently-used (LRU) basis, but you can usually override this policy and prevent items from being evicted.
 
 **There are several types of eviction policies. These include**
-- A most-recently-used policy (in the expectation that the data won't be required again).
-- A first-in-first-out policy (oldest data is evicted first).
+- One common approach is the Least Recently Used (LRU) policy, which discards the least recently accessed item. This assumes that recently used items are more likely to be used again soon.
+- Another method is the Least Frequently Used (LFU) policy, removing the least frequently accessed items.
+- Alternatively, there’s the First-In-First-Out (FIFO) policy, evicting the oldest cached item.
 - An explicit removal policy based on a triggered event (such as the data being modified).
 
 ### protect cached data
