@@ -9,4 +9,5 @@ os.chdir() # change current directory
 path = '\dir\dir2\dir3\n4' # note that this is a path, but when the comiler reach to \n4
 # it will think it's a new line so use raw string
 path = r"\n1\n4"
+os.remove("filepath") # to delete a file
 ```
