@@ -1,0 +1,1 @@
+- Caching helps applications perform dramatically faster and cost significantly less at scale
