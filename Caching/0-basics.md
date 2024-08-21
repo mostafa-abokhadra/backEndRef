@@ -58,6 +58,6 @@
 - Which operations (read and write) that these identities are allowed to perform.
 ### Ref
 - [Microsoft] (https://learn.microsoft.com/en-us/azure/architecture/best-practices/caching) \
-still to read from "Considerations for implementing caching in Azure"
-- [REf1](https://aws.amazon.com/ar/caching/)
-- [GFG] (https://www.geeksforgeeks.org/caching-system-design-concept-for-beginners/)
+still to read from "Considerations for implementing caching in Azure", read from beginning again
+- [GFG] (https://www.geeksforgeeks.org/caching-system-design-concept-for-beginners/) Read again
+- [REf1](https://aws.amazon.com/ar/caching/) Read again
