@@ -12,6 +12,9 @@
 1. ### FIFO
 - the first data entered into the cache is the first to be removed when the cache reaches its limit. This approach is straightforward and ensures that the oldest data is removed first.
 
+2. ### LIFO
+- the most recently added data is the first to be removed when the cache reaches its limit. This approach is less common in caching but is used in certain scenarios where the most recent data is likely to be the least needed.
+
 ### least recently used
 - A least recently used (LRU) cache replacement policy, where the least fresh object is removed, is a typical freshness-based mechanism ( the least recently used item is evicted to make room for new entries) (The order in which items are accessed. The most recently accessed items are retained, while the least recently accessed items are discarded when the cache is full.)
 
