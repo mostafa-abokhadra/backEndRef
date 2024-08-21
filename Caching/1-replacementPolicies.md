@@ -58,6 +58,7 @@ class FIFOCache(BaseCaching):
 
 2. ### LIFO
 - the most recently added data is the first to be removed when the cache reaches its limit. This approach is less common in caching but is used in certain scenarios where the most recent data is likely to be the least needed.
+- the code implementation is not exactly last in first out, it's last modified first out
 ```python
 BaseCaching = __import__('base_caching').BaseCaching
 class LIFOCache(BaseCaching):
