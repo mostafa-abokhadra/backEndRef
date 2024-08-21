@@ -12,6 +12,14 @@
 - Caching typically works well with data that is immutable or that changes infrequently e: g reference information such as product and pricing information in an e-commerce application, or shared static resources that are costly to construct.
 - Web clients typically use the URI of a resource as the key in the client-side cache, so if the URI changes, the web client ignores any previously cached versions of a resource and fetches the new version instead.
 
+
+### Purpose of a caching system
+
+1. **Improving Performance**: By storing frequently accessed data in a cache, the system can respond more quickly to requests.
+2. **Reducing Latency**: Cached data can be retrieved faster than data from a primary data source, reducing response times.
+3. **Decreasing Load**: Caching reduces the load on backend systems (e.g., databases or remote services) by serving repeated requests from the cache.
+4. **Cost Efficiency**: Caching can reduce operational costs by minimizing the need for expensive computations or data transfers.
+
 ### Types of Caching
 
 1. **in-memory**:  Storing the cache in the system’s RAM for fast access. This is common in local applications and small-scale systems, Examples: Python dictionaries, JavaScript objects, in-memory databases (e.g., Redis).
