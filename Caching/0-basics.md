@@ -78,7 +78,8 @@
 6. **Concurrency Issues**: In systems with high concurrency, ensuring consistency between the cache and the underlying data source can be challenging.
 
 ### Ref
-- [Microsoft] (https://learn.microsoft.com/en-us/azure/architecture/best-practices/caching) \
+- [Microsoft](https://learn.microsoft.com/en-us/azure/architecture/best-practices/caching) \
 still to read from "Considerations for implementing caching in Azure", read from beginning again
-- [GFG] (https://www.geeksforgeeks.org/caching-system-design-concept-for-beginners/) Read again
-- [REf1](https://aws.amazon.com/ar/caching/) Read again
+- [GFG](https://www.geeksforgeeks.org/caching-system-design-concept-for-beginners/) Read again
+- [amzon](https://aws.amazon.com/ar/caching/) Read again
+- [medium article](https://medium.com/@AbdallahM19/what-a-caching-system-is-fifo-lifo-lru-mru-and-lfu-mean-bab6fd8336d7)
