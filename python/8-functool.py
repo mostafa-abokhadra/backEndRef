@@ -3,3 +3,4 @@
     In general, any callable object can be treated as a function for the purposes of this module.
 """
 # https://www.youtube.com/watch?v=B9yM53qkbW0
+from functools import reduce
