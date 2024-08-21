@@ -83,6 +83,54 @@ class LIFOCache(BaseCaching):
 ```
 3. ### least recently used
 - the least recently accessed data is removed first when the cache reaches its limit. This approach is based on the principle that data accessed least recently is less likely to be needed in the future.
+```python
+class LRUCache(BaseCaching):
+    least_used = []
+
+    def __init__(self):
+        super().__init__()
+
+    def put(self, key, item):
+        """ the logic is as follow:
+                - what ever operation (put, get, updata) happens on our self.cache_data
+                we will log these to into the least_used list
+                - the last item in the least will always be the least used to be removed whenever 
+                cache reach it's maximum limits
+                - if size of cache_data before and after put operation is the same that indicate an update operation not appending or adding new value which has it's own logic
+                - if size of cache_data after put operatoin is bigger than before that indicates
+                adding new value which has it's own logic
+                - whenever we "get", or "put" any item we will add this item to the front of the least_used list meaning that this item is recently used so not to be considered when removal time comes, this will also make the last item of the least_used list always the least recently used which we pop from the list when time comes and from the cache_data
+        """
+        if key is None or item is None:
+            return
+        copy = self.cache_data.copy()
+        self.cache_data[key] = item
+        if len(copy) == len(self.cache_data): 
+            if not LRUCache.least_used:
+                LRUCache.least_used.append(key)
+            else:
+                idx = LRUCache.least_used.index(key)
+                key = LRUCache.least_used[idx]
+
+                del LRUCache.least_used[idx]
+                LRUCache.least_used.insert(0, key)
+        else:
+            LRUCache.least_used.insert(0, key)
+
+        if len(self.cache_data) > super().MAX_ITEMS:
+            deleted = LRUCache.least_used.pop()
+            print(f"DISCARD: {deleted}")
+            del self.cache_data[deleted]
+
+    def get(self, key):
+        if key is None or self.cache_data.get(key) is None:
+            return None
+        idx = LRUCache.least_used.index(key)
+        key = LRUCache.least_used[idx]
+        del LRUCache.least_used[idx]
+        LRUCache.least_used.insert(0, key)
+        return self.cache_data[key]
+```
 
 **Implementation Details:**
 - Hash Map (Dictionary): Stores the key-value pairs for O(1) access.
@@ -94,11 +142,11 @@ from collection import orderedDict
 cach = orderedDict()
 ```
 4. ### Most Recently used
-- the most recently accessed data is removed first when the cache reaches its limit. This is the opposite of the Least Recently Used (LRU) strategy. The idea behind MRU is that in some scenarios, the most recently used items are less likely to be accessed again compared to older items.
+- the most recently accessed data is removed first when the cache reaches its limit. This is the opposite of the Least Recently Used (least_used) strategy. The idea behind MRU is that in some scenarios, the most recently used items are less likely to be accessed again compared to older items.
 
 5. ### least frequently accessed
 - A least frequently accessed (LFA) policy looks at the frequency of the objects being requested to determine the order of removal. That is, those objects that are being accessed frequently will be kept, whereas those that are not will be considered for deletion first. 
-- Tie-breaking: When multiple items have the same frequency, additional criteria, such as recency (using LRU as a secondary strategy), can be used to determine which item to evictor the oldest one (based on insertion order) is removed.
+- Tie-breaking: When multiple items have the same frequency, additional criteria, such as recency (using least_used as a secondary strategy), can be used to determine which item to evictor the oldest one (based on insertion order) is removed.
 
 6. ### minimum size and maximum size policy
 - A minimum size (MinS) cache replacement policy takes object size into consideration. The smallest object is removed first. Opposite MinS is another straightforward object size-based strategy, namely a 
