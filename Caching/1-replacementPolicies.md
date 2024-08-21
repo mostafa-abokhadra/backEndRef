@@ -15,8 +15,8 @@
 2. ### LIFO
 - the most recently added data is the first to be removed when the cache reaches its limit. This approach is less common in caching but is used in certain scenarios where the most recent data is likely to be the least needed.
 
-### least recently used
-- A least recently used (LRU) cache replacement policy, where the least fresh object is removed, is a typical freshness-based mechanism ( the least recently used item is evicted to make room for new entries) (The order in which items are accessed. The most recently accessed items are retained, while the least recently accessed items are discarded when the cache is full.)
+3. ### least recently used
+- the least recently accessed data is removed first when the cache reaches its limit. This approach is based on the principle that data accessed least recently is less likely to be needed in the future.
 
 **Implementation Details:**
 - Hash Map (Dictionary): Stores the key-value pairs for O(1) access.
@@ -27,14 +27,13 @@
 from collection import orderedDict
 cach = orderedDict()
 ```
+4. ### Most Recently used
+- the most recently accessed data is removed first when the cache reaches its limit. This is the opposite of the Least Recently Used (LRU) strategy. The idea behind MRU is that in some scenarios, the most recently used items are less likely to be accessed again compared to older items.
 
-### least frequently accessed
+5. ### least frequently accessed
 - A least frequently accessed (LFA) policy looks at the frequency of the objects being requested to determine the order of removal. That is, those objects that are being accessed frequently will be kept, whereas those that are not will be considered for deletion first. 
 - Tie-breaking: When multiple items have the same frequency, additional criteria, such as recency (using LRU as a secondary strategy), can be used to determine which item to evictor the oldest one (based on insertion order) is removed.
 
-### Most Recently used
-- Most Recently Used (MRU) is a caching strategy that evicts the most recently accessed item first when the cache reaches its capacity. This is the opposite of the Least Recently Used (LRU) strategy. The idea behind MRU is that in some scenarios, the most recently used items are less likely to be accessed again compared to older items.
-
-### minimum size and maximum size policy
+6. ### minimum size and maximum size policy
 - A minimum size (MinS) cache replacement policy takes object size into consideration. The smallest object is removed first. Opposite MinS is another straightforward object size-based strategy, namely a 
 maximum size policy (MaxS) whereby the largest object is considered for elimination first.
