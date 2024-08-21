@@ -25,3 +25,6 @@ cach = orderedDict()
 ### least frequently accessed
 - A least frequently accessed (LFA) policy looks at the frequency of the objects being requested to determine the order of removal. That is, those objects that are being accessed frequently will be kept, whereas those that are not will be considered for deletion first. 
 - Tie-breaking: When multiple items have the same frequency, additional criteria, such as recency (using LRU as a secondary strategy), can be used to determine which item to evictor the oldest one (based on insertion order) is removed.
+
+### Most Recently used
+- Most Recently Used (MRU) is a caching strategy that evicts the most recently accessed item first when the cache reaches its capacity. This is the opposite of the Least Recently Used (LRU) strategy. The idea behind MRU is that in some scenarios, the most recently used items are less likely to be accessed again compared to older items.
