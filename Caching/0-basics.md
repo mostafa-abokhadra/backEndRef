@@ -67,6 +67,16 @@
 **implement an authentication mechanism that requires that applications specify the following:**
 - Which identities can access data in the cache.
 - Which operations (read and write) that these identities are allowed to perform.
+
+### Caching systems limitations
+
+1. **Storage Limitations**: Caches have a finite storage capacity, necessitating strategies for evicting old data to make room for new data.
+2. **Staleness**: Cached data can become outdated, leading to potential inconsistencies with the underlying data source.
+3. **Complexity**: Implementing and maintaining an effective caching strategy can be complex, requiring careful consideration of cache size, eviction policies, and data validity.
+4. **Overhead**: Caching introduces additional overhead in terms of memory usage and management logic.
+5. **Cache Misses**: When requested data is not in the cache (cache miss), the system must fetch it from the original source, which can be time-consuming.
+6. **Concurrency Issues**: In systems with high concurrency, ensuring consistency between the cache and the underlying data source can be challenging.
+
 ### Ref
 - [Microsoft] (https://learn.microsoft.com/en-us/azure/architecture/best-practices/caching) \
 still to read from "Considerations for implementing caching in Azure", read from beginning again
