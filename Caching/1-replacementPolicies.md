@@ -28,3 +28,7 @@ cach = orderedDict()
 
 ### Most Recently used
 - Most Recently Used (MRU) is a caching strategy that evicts the most recently accessed item first when the cache reaches its capacity. This is the opposite of the Least Recently Used (LRU) strategy. The idea behind MRU is that in some scenarios, the most recently used items are less likely to be accessed again compared to older items.
+
+### minimum size and maximum size policy
+- A minimum size (MinS) cache replacement policy takes object size into consideration. The smallest object is removed first. Opposite MinS is another straightforward object size-based strategy, namely a 
+maximum size policy (MaxS) whereby the largest object is considered for elimination first.
