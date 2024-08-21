@@ -11,10 +11,13 @@
 - The key to using a cache effectively lies in determining the most appropriate data to cache
 - Caching typically works well with data that is immutable or that changes infrequently e: g reference information such as product and pricing information in an e-commerce application, or shared static resources that are costly to construct.
 - Web clients typically use the URI of a resource as the key in the client-side cache, so if the URI changes, the web client ignores any previously cached versions of a resource and fetches the new version instead.
+
 ### Types of Caching
-- There are several types of caching, including in-memory caching, disk caching, and distributed caching.
-- In-memory caching stores data in memory, while disk caching stores data on a local hard drive.
-- Distributed caching involves storing data across multiple systems to improve availability and performance.
+
+1. **in-memory**:  Storing the cache in the system’s RAM for fast access. This is common in local applications and small-scale systems, Examples: Python dictionaries, JavaScript objects, in-memory databases (e.g., Redis).
+2. **disk caching**: File System Storing the cache as files on disk. This approach is useful for larger data that doesn’t fit in memory, Examples: Serialized objects, JSON files, database files.
+3. **Distributed caching**: Using a distributed system to store the cache, allowing it to be shared across multiple instances or nodes.
+
 ### Distributed Application Caching (2 ways)
 - They use a private cache, where data is held locally on the computer that's running an instance of an application or service.
 - They use a shared cache, serving as a common source that can be accessed by multiple processes and machines.
