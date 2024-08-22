@@ -14,13 +14,19 @@ myString = "mostafa" # iterable
 iterator = iter(myString)
 print(next(myString)) # m
 print(next(mystring)) # o
+
+for letter in "bokhadra":
+# is the same as
+for letter in iter("bokhadra"):
 ```
 
-
-
-### __iter__
-
-### __next__
+**if you want to implement iteration logic for you class**
+```python
+# define these two methods
+__iter__
+__next__
+```
 
 ### Ref
 [w3s](https://www.w3schools.com/python/python_iterators.asp)
+[elzro](https://youtu.be/MwBk42xwjjA?si=zX8oKN24slWSVupz)
