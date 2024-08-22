@@ -143,10 +143,130 @@ cach = orderedDict()
 ```
 4. ### Most Recently used
 - the most recently accessed data is removed first when the cache reaches its limit. This is the opposite of the Least Recently Used (least_used) strategy. The idea behind MRU is that in some scenarios, the most recently used items are less likely to be accessed again compared to older items.
+```python
+class MRUCache(BaseCaching):
+    """ the logic is as follow:
+        literally the same as the least recently used
+        but instead of poping out the last item from the
+        lru list indicating the least recently used, we
+        just poping out the first element of the list
+        indicating most recently used, note that we don't
+        pop list[0] but we pop out list[1] that is because we
+        add the new item to the cache at the beginning of the
+        self.cache_data before we actually empty the space
+        so the item that need to be deleted moves from first
+        postion to the second postion "list[1]"
+    """
+    mru = []
+    def __init__(self):
+        super().__init__()
 
+    def put(self, key, item):
+        if key is None or item is None:
+            return
+        copy = self.cache_data.copy()
+        self.cache_data[key] = item
+        if len(copy) == len(self.cache_data):
+            if not MRUCache.mru:
+                MRUCache.mru.append(key)
+            else:
+                idx = MRUCache.mru.index(key)
+                key = MRUCache.mru[idx]
+                del MRUCache.mru[idx]
+                MRUCache.mru.insert(0, key)
+        else:
+            MRUCache.mru.insert(0, key)
+        if len(self.cache_data) > super().MAX_ITEMS:
+            deleted = MRUCache.mru[1]
+            print(f"DISCARD: {deleted}")
+            del self.cache_data[deleted]
+            del MRUCache.mru[1]
+
+    def get(self, key):
+        """getting an item from cache
+        """
+        if key is None or self.cache_data.get(key) is None:
+            return None
+        idx = MRUCache.mru.index(key)
+        key = MRUCache.mru[idx]
+        del MRUCache.mru[idx]
+        MRUCache.mru.insert(0, key)
+        return self.cache_data[key]
+```
 5. ### least frequently accessed
 - A least frequently accessed (LFA) policy looks at the frequency of the objects being requested to determine the order of removal. That is, those objects that are being accessed frequently will be kept, whereas those that are not will be considered for deletion first. 
 - Tie-breaking: When multiple items have the same frequency, additional criteria, such as recency (using least_used as a secondary strategy), can be used to determine which item to evictor the oldest one (based on insertion order) is removed.
+```python
+class LFUCache(BaseCaching):
+    """ the logic is as follow:
+        - when we first put or add into cahce_data, we will put
+        the same element key in the lfu_lru dictionary with the 
+        value of 1 (indicating only one operation have been
+        done on that key which is the addition operation till now)
+        -whenever that key is used again either by
+        put function(updating it's value) or by get function
+        we will increment it's value by +1 and at the same time
+        we will move it at the beginning of the dictionary indicating
+        the most recently used
+        - when we reach the limits, we will loop on the values of
+        lfu_lru dictionary and find the minimum value which indicates
+        the least frequently used, then we will count how many times this
+        minumum number is repeated as another keys value, if it exists only
+        once then we will just remove this item, if it is repeated
+        more than one time as multiple keys value we will remove the item
+        according to the recency by looping on the dictionary from the end
+        and find the first occurance of the minimum value from the end which
+        indicates the least recently used
+        (lastkeys in the dictionary is the older keys)
+        -Note that when we tried to find the minimum value of dict.values()
+        we started from index 1, because index 0 is for the new item which 
+        is just added right now so it's counter gonna be 1, so exclude that
+    """
+    lfu_lru = {}
+    def __init__(self):
+        super().__init__()
+
+    def put(self, key, item):
+        if key is None or item is None:
+            return
+        copy = self.cache_data.copy()
+        self.cache_data[key] = item
+        if len(copy) == len(self.cache_data):
+            LFUCache.lfu_lru[key] = LFUCache.lfu_lru[key] + 1
+            new_dict = dict({key: LFUCache.lfu_lru[key]})
+            del LFUCache.lfu_lru[key]
+            LFUCache.lfu_lru = {**new_dict, **LFUCache.lfu_lru}
+        else:
+            LFUCache.lfu_lru = {**{key: 1}, **LFUCache.lfu_lru}
+        if len(self.cache_data) > super().MAX_ITEMS:
+            deleted = ""
+            leastFrequent = min(list(LFUCache.lfu_lru.values())[1:])
+            checkSimilarFrequencey = list(
+                LFUCache.lfu_lru.values()).count(leastFrequent)
+            if checkSimilarFrequencey == 1:
+                for key in LFUCache.lfu_lru.keys():
+                    if LFUCache.lfu_lru[key] == leastFrequent:
+                        deleted = key
+                        del LFUCache.lfu_lru[key]
+                        del self.cache_data[key]
+                        break
+            else:
+                for k, v in reversed(LFUCache.lfu_lru.items()):
+                    if v == leastFrequent:
+                        deleted = k
+                        del self.cache_data[k]
+                        del LFUCache.lfu_lru[k]
+                        break
+            print(f"DISCARD: {deleted}")
+    def get(self, key):
+        if key is None or self.cache_data.get(key) is None:
+            return None
+        LFUCache.lfu_lru[key] += 1
+        new_dict = dict({key: LFUCache.lfu_lru[key]})
+        del LFUCache.lfu_lru[key]
+        LFUCache.lfu_lru = {**new_dict, **LFUCache.lfu_lru}
+        return self.cache_data[key]
+```
 
 6. ### minimum size and maximum size policy
 - A minimum size (MinS) cache replacement policy takes object size into consideration. The smallest object is removed first. Opposite MinS is another straightforward object size-based strategy, namely a 
