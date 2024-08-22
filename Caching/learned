@@ -1,2 +1,5 @@
 how to detect if a dictionary has been changed
-how to access the oldest and the newset element in a dictionary
+how to access the oldest and the newset element in a dictionary using algorithms
+how to track the most frequently used item in the key and the most recently used using algorithms
+how to append at the front of the dictionary {**frontKeyValuePair, **restOfDictionary}
+how to loop on the dictionary from the end using reversed()
