@@ -9,7 +9,12 @@
 - when there is no next elements it gives StopIteration
 - it's almost like c++ iterator but in a python easy way
 
-
+```python
+myString = "mostafa" # iterable
+iterator = iter(myString)
+print(next(myString)) # m
+print(next(mystring)) # o
+```
 
 
 
