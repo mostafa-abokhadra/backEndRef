@@ -47,3 +47,26 @@ python -m unittest test_module.TestClass
 python -m unittest test_module.TestClass.test_method
 python -m unittest tests/test_something.py
 ```
+> [!NOTE]
+> This `python -m unittest tests/test_something.py` allows you to use the shell filename completion to specify the test module. The file specified must still be importable as a module.
+> that is because the way this work is by convertint the path to a module name by removing the ‘.py’ and converting path separators '/' into '.',  If you want to execute a test file that isn’t importable as a module you should execute the file directly instead.
+
+**explaination**
+When you use the command:
+```bash
+python -m unittest tests/test_something.py
+```
+Here’s what’s happening:
+1. **`python -m unittest`**: This runs Python’s built-in `unittest` module as a script. The `-m` option tells Python to run a module as if it were a script.
+2. **`tests/test_something.py`**: This is the path to the test file. The command allows you to specify the file using shell filename completion, making it easier to select the test file from your directory structure.
+3. **Module Importation**: The specified file must be importable as a Python module. The path is automatically converted into a module name:
+   - The `.py` extension is removed.
+   - Any directory separators (like `/` or `\`) are replaced with dots (`.`), treating it as a package/module structure.
+For example, `tests/test_something.py` would be treated as the module `tests.test_something`.
+4. **Why Must It Be Importable?**: The file needs to be importable because `unittest` imports and loads the test modules to discover and run the test cases inside.
+### Non-Importable Test Files
+If the file is not structured like an importable module <mark>(for instance, if it’s located in a directory that isn’t a Python package or has unconventional file paths)</mark>, the conversion to a module name might fail. In such cases, you can run the file directly like this:
+```bash
+python tests/test_something.py
+```
+This bypasses the module import and runs the test file directly as a script, allowing you to avoid any issues related to module import paths.
