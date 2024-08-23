@@ -31,3 +31,24 @@ if __name__ == '__main__':
     doctest.testmod()
 ```
 When running this module from the command line as in python module.py, the doctests will run and complain if anything is not behaving as described in the docstrings.
+
+
+### pytest
+- py.test is a no-boilerplate alternative to Python’s standard unittest module.
+- Despite being a fully-featured and extensible test tool, it boasts a simple syntax. Creating a test suite is as easy as writing a module with a couple of functions
+```bash
+ pip install pytest
+```
+```python
+# content of test_sample.py
+def func(x):
+    return x + 1
+
+def test_answer():
+    assert func(3) == 5
+```
+```bash
+# then running the py.test command:
+py.test
+```
+- is far less work than would be required for the equivalent functionality with the unittest module!
