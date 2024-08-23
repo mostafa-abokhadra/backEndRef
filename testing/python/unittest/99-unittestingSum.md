@@ -17,7 +17,7 @@
 - assertIsInstance(a, b) # isinstance(a, b)
 - assertNotIsInstance(a, b) # not isinstance(a, b)
 - assertRaises(typeError) # verify that a specific exception gets raised.
-[!NOTE]
+> [!NOTE]
 > All the assert methods accept a msg argument that, if specified, is used as the error message on failure 
 ### setUp()
 - called immediately before calling the test method
