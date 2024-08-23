@@ -29,15 +29,6 @@ class TestStringMethods(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 ```
-- import unittest
-- subclass from unittest.TestCase
-- start your test functions names with test_something
-
-### assert functions
-- assertEqual(something, correctResult)
-- assertTrue()
-- assertFalse()
-- assertRaises(typeError) # verify that a specific exception gets raised.
 
 ### CLI
 The unittest module can be used from the command line to run tests from modules, classes or even individual test methods:
@@ -70,3 +61,24 @@ If the file is not structured like an importable module <mark>(for instance, if 
 python tests/test_something.py
 ```
 This bypasses the module import and runs the test file directly as a script, allowing you to avoid any issues related to module import paths.
+
+### TestDiscovery
+Test discovery in Python’s unittest framework is a feature that automatically finds and runs test cases within your project. It is especially useful when you have multiple test files and want to run them all without specifying each one individually.
+
+**it works when you simply run**
+```bash
+python -m unitest discover # or
+python -m unitest
+```
+##### Default Behavior
+- **Search Directory**: By default, the discover command looks in the current directory (where you run the command).
+- **Pattern Matching**: The discovery process looks for files that match the pattern test*.py (e.g., test_example.py, test_something.py).
+- **Test Case Identification**: Inside each matching file, unittest looks for classes that inherit from unittest.TestCase. Within those classes, it identifies methods that start with the prefix test as individual test cases.
+##### Customizing Test Discovery
+You can customize the test discovery process by specifying the directory, pattern, and other options. For example:
+
+```bash
+python -m unittest discover -s tests -p "test_*.py"
+```
+1. **-s tests**: Specifies the start directory where the discovery should begin, Traverse the tests directory and its subdirectories. Here, it’s the tests directory.
+2. **-p "test_.py"**: Defines the pattern for test file names. The default is test*.py, but you can customize it to anything like test_*.py, etc.
