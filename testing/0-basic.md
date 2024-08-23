@@ -14,3 +14,4 @@
 ### types of testing
 1. **unit testing**: Unit Testing is the process of testing individual units of code, such as functions or classes.
 2. **integeration testing**: Integration Testing refers to a type of Software Testing that focuses on verifying the interactions and communication between different components, modules, or subsystems of a software system, it helps uncover errors such as Incompatible interfaces, Incorrect data transfers, communication failures
+3. **End-to-End testing**: End-to-end Testing verifies that your software works correctly from the beginning to the end of a particular user flow. It uses a production-equivalent environment, as well as, data to simulate real-world situations, and may also involve the integrations your software has with external applications.
