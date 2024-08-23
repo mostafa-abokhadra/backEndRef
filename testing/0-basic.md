@@ -11,3 +11,5 @@
 6. Building User Confidence
 7. Reducing Costs
 
+### types of testing
+1. **unit testing**: Unit Testing is the process of testing individual units of code, such as functions or classes.
