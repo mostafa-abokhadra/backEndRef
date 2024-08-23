@@ -42,3 +42,6 @@ class ExpectedFailureTestCase(unittest.TestCase):
     def test_fail(self):
         self.assertEqual(1, 0, "broken")
 ```
+
+### subTests
+[docs](https://docs.python.org/3/library/unittest.html#distinguishing-test-iterations-using-subtests)
