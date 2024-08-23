@@ -38,3 +38,12 @@ if __name__ == '__main__':
 - assertTrue()
 - assertFalse()
 - assertRaises(typeError) # verify that a specific exception gets raised.
+
+### CLI
+The unittest module can be used from the command line to run tests from modules, classes or even individual test methods:
+```bash
+python -m unittest test_module1 test_module2
+python -m unittest test_module.TestClass
+python -m unittest test_module.TestClass.test_method
+python -m unittest tests/test_something.py
+```
