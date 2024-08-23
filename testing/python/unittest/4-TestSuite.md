@@ -98,3 +98,6 @@ if __name__ == '__main__':
 - Suites are run using a `TestRunner`, usually `TextTestRunner`.
 
 Using `TestSuite` gives you greater control over how your tests are structured and executed, which is beneficial as your test suite grows in complexity.
+
+> [!NOTE]
+> In some cases, the existing tests may have been written using the doctest module. If so, doctest provides a `DocTestSuite class` that can automatically build unittest.TestSuite instances from the existing doctest-based tests.
