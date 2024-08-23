@@ -52,3 +52,15 @@ def test_answer():
 py.test
 ```
 - is far less work than would be required for the equivalent functionality with the unittest module!
+
+### Hypothesis
+- Hypothesis is a library which lets you write tests that are parameterized by a source of examples. It then generates simple and comprehensible examples that make your tests fail, letting you find more bugs with less work.
+```bash
+pip install hypothesis
+```
+
+### tox
+- tox is a tool for automating test environment management and testing against multiple interpreter configurations.
+```bash
+pip install tox
+```
