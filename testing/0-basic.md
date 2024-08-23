@@ -17,4 +17,6 @@
 3. **End-to-End testing**: End-to-end Testing verifies that your software works correctly from the beginning to the end of a particular user flow. It uses a production-equivalent environment, as well as, data to simulate real-world situations, and may also involve the integrations your software has with external applications.
 - End-to-End Testing can be performed at various levels, including:
     - **Component Integration Testing**: checking the interactions between individual components or modules on a page.
+    - **API Integration Testing**: testing the integration and functionality of APIs, verifying that they correctly handle requests, process data, and return the expected responses.
+
 
