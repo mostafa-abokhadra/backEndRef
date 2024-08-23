@@ -4,11 +4,21 @@
 - start your test functions names with test_something
 
 ### assert functions
-- assertEqual(something, correctResult)
-- assertTrue()
-- assertFalse()
+- assertEqual(a, b)
+- assertNotEqual(a, b)
+- assertTrue(x)
+- assertFalse(x)
+- assertIs(a, b) # a is b
+- assertIsNot(a, b) # a is not b
+- assertIsNone(x) x is None
+- assertIsNotNone(x)
+- assertIn(a, b) # a in b
+- assertNotIn(a, b)
+- assertIsInstance(a, b) # isinstance(a, b)
+- assertNotIsInstance(a, b) # not isinstance(a, b)
 - assertRaises(typeError) # verify that a specific exception gets raised.
-
+[!NOTE]
+> All the assert methods accept a msg argument that, if specified, is used as the error message on failure 
 ### setUp()
 - called immediately before calling the test method
 - any exception raised by this method will be considered an error rather than a test failure. 
