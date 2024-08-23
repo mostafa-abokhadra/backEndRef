@@ -10,7 +10,11 @@ class MyTest(unittest.TestCase):
     def test(self):
         self.assertEqual(fun(3), 4)
 ```
-
+### mock
+- **unittest.mock**: It allows you to replace parts of your system under test with mock objects and make assertions about how they have been used.
+```bash
+ pip install mock
+```
 ### Doctest
 - The doctest module searches for pieces of text that look like interactive Python sessions in docstrings.
 - Doctests have a different use case than proper unit tests: they are usually less detailed and don’t catch special cases or obscure regression bugs. They are useful as an expressive documentation of the main use cases of a module and its components. However, doctests should run automatically each time the full test suite runs.
