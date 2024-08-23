@@ -19,4 +19,5 @@
     - **Component Integration Testing**: checking the interactions between individual components or modules on a page.
     - **API Integration Testing**: testing the integration and functionality of APIs, verifying that they correctly handle requests, process data, and return the expected responses.
     - **Database Integration Testing**: interaction between the application and the database. It ensures that data is properly stored, retrieved, and updated, in addition to ensuring that the database schema aligns with the application's requirements.
+    - **System Integration Testing**: he integration of all components and subsystems that make up the entire software system. It validates the end-to-end functionality, data flow, and interoperability of the system by simulating real-world scenarios and user interactions.
 
