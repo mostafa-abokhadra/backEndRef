@@ -22,5 +22,19 @@
 - In order to provide effective testing, mock server is required. Mock server cut out the dependency on a real server and allows tester to do testing independently. Figure gives a virtual Representation of Mock server. 
 [photo](https://media.geeksforgeeks.org/wp-content/uploads/20190424215004/mockgeeks1.jpg)
 
+### pattern to be followed for Unit testing with Mock objects:
+1. Build an Instance or object of Mock object.
+2. Define States of Mock objects under defined environment.
+3. Set expectations, status codes, responses, error display in mock object.
+4. Set Mock object as parameter under domain code.
+5. Verify Mock objects under unit testing.
+
+### key feauters of mock object
+1. **Mocking Objects**: It allows you to replace real objects in your code with mock objects. This is useful when you want to isolate the code you are testing from its dependencies.
+
+2. **Simulating Behavior**: You can specify how the mock should behave, what it should return, and what side effects it should have. For example, you can mock a database call or an HTTP request so that your tests run quickly and don't depend on external resources.
+
+3. **Making Assertions**: unittest.mock provides built-in methods for checking how a mock was used, such as checking if a method was called, how many times it was called, and with what arguments.
+
 ### unittest.mock
-- . It allows you to replace parts of your system under test with mock objects and make assertions about how they have been used.
+- It allows you to replace parts of your system under test with mock objects and make assertions about how they have been used.
