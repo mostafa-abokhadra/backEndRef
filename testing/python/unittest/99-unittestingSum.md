@@ -1,3 +1,15 @@
+### unitTest
+- test written for testing a unit of code
+- one unit test runs independently of any other unit test, code, etc..
+- external dependencies are managed with doubles(Mocks/Fakes/Stubs)
+- should complete within milliseconds as there is a lot of unit tests for a project or a module
+- unittest should be able to execute independently e:g the below code don't make any sense if it's treated as individual lines, you need minimum the two lines to test the execution
+```c++
+int num;
+cin >> num;
+```
+
+
 ### steps
 - import unittest
 - subclass from unittest.TestCase
