@@ -9,6 +9,21 @@ int num;
 cin >> num;
 ```
 
+### how to write unittests (AAA)
+- each individual unittest should have: Arrange - Act - Assert
+```py
+from module import add
+class Testing(unittest.TestCase):
+    def test_add():
+        # arrange
+        n1, n2 = 1, 2
+        # act
+        res = sum(n1, n2)
+        # assert
+        assertEqual(res, n1 + n2)
+```
+
+
 
 ### steps
 - import unittest
