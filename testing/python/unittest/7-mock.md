@@ -104,3 +104,30 @@ class Tests(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 ```
+
+### mocking exceptions
+```py
+    import requests.exceptions
+    from requests.exceptions import Timeout
+    def get_joke():
+        url = "https://url.com"
+        try:
+            res = requests.get(url, timeout=30)
+        except requests.exceptions.Timout:
+            return 'No joke'
+        except requests.exceptions.ConnectionError:
+            pass
+        else:
+            if res.status_code == 200:
+                joke = res.json()['value']['joke']
+            else:
+                joke = "noJokes"
+            return joke
+
+    @patch('requests')
+    def test_timout_ex(self, mock_requests):
+        # you can pass the attributes in the constructor
+        mock_requests.exceptions = requests.exceptions
+        mock_requests.get.side_effect = Timeout("seems that the server is down")
+        self.assertEqual(get_joke(), 'No joke')
+```
