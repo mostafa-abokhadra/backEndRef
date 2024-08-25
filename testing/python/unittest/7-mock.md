@@ -38,3 +38,36 @@
 
 ### unittest.mock
 - It allows you to replace parts of your system under test with mock objects and make assertions about how they have been used.
+
+```py
+import unittest
+import requests
+
+def add(a, b):
+    return a + b
+
+class Tests(unittest.TestCase):
+
+    def len_joke():
+        joke = get_joke()
+        return len(joke)
+        # this function should be refactored as it depends on get_joke()
+        # instead we should pass the joke as a parameter
+        # this function depends on get_joke functoin that make a call to an externl api
+        # but what if the server is down? what if my internet provider is down?
+        # we use mock to isolate our len_joke from it's dependencies by mocking get_joke function
+        
+    def get_joke():
+        url = "https://usl.com"
+        res = requests.get(url)
+        # if res.ok: 
+        # or
+        if res.status_code == 200:
+            joke = res.json()['somekey']
+        else:
+            joke = "noJokes"
+        return joke
+
+if __name__ == '__main__':
+    unittest.main()
+```
