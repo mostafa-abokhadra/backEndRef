@@ -138,3 +138,7 @@ if __name__ == '__main__':
         mock_requests.get.return_value = mock_res
         self.assertEqual(get_joke(), 'HTTP Error was raised')
 ```
+
+# Ref
+- [1](https://www.youtube.com/watch?v=xT4SV7AH3G8&t=901s)
+- [1](https://www.youtube.com/watch?v=RqR0AvEujrU)
