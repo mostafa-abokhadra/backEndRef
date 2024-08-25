@@ -92,7 +92,7 @@ class Tests(unittest.TestCase):
         mock_requests.get.return_value = mock_response
         self.assertEqual(get_joke(), 'somejoke')
     
-        @patch('requests')
+    @patch('requests')
     def test_fialed_get_joke(self, mock_requests):
          # you can pass the attributes in the constructor
         mock_response = MagicMock(status_code=404)
