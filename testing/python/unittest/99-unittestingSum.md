@@ -72,6 +72,9 @@ class Testing(unittest.TestCase):
 - assertSetEqual(a, b)
 > [!NOTE]
 > All the assert methods accept a msg argument that, if specified, is used as the error message on failure 
+```
+self.assertEqual(a, b, msg="a message when error occur")
+```
 
 ### setUp()
 - called immediately before calling the test method
@@ -103,7 +106,26 @@ Test that an exception is raised when callable is called with any positional or 
 - assertSequenceEqual(first, second, msg=None, seq_type=None)
 - Tests that two sequences are equal. If a seq_type is supplied, both first and second must be instances of seq_type or a failure will be raised.
 
+### test code that raises an exception
+```py
+def throw_ex(var):
+    if var == 100:
+        raise Exception("not valid")
+    else:
+        return True
+
+def test_ex(self):
+    self.assertRaises(Exception, throw_ex, 100)# or
+    with self.assertRaises(Exception) as context:
+        throw_ex(100)
+    print(context.exception)
+
+```
+
 # Ref
-[expertRef](https://www.youtube.com/watch?v=NPp2pvhGbkM)
-[expertRef2](https://www.youtube.com/watch?v=HKTyOUx9Wf4)
+- [expertRef](https://www.youtube.com/watch?v=NPp2pvhGbkM)
+- [expertRef2](https://www.youtube.com/watch?v=HKTyOUx9Wf4)
+- [expertRef3](https://www.youtube.com/watch?v=TKDnkQSyg2M&list=PL_dsdStdDXbodu-2ZNCdzzxQF9YkBRtwb&index=2)
+- [expertRef4](https://www.youtube.com/watch?v=LxbiAHGkPhk&list=PL_dsdStdDXbodu-2ZNCdzzxQF9YkBRtwb&index=3)
+
 
