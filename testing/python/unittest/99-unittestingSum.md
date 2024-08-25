@@ -14,13 +14,20 @@ cin >> num;
 ```py
 from module import add
 class Testing(unittest.TestCase):
-    def test_add():
+    def setUp(self):
         # arrange
-        n1, n2 = 1, 2
+        self.a = 10
+        self.b = 20
+    
+    def tearDown(self):
+        self.a = 0
+        self.b = 0
+
+    def test_add():
         # act
         res = sum(n1, n2)
         # assert
-        assertEqual(res, n1 + n2)
+        self.assertEqual(res, n1 + n2)
 ```
 ### Test Doubles
 - we use them to test our code that depend on certain external responses, e:i if the database server has some problems we don't want our code to fail as the problem is in the backend not with our code, so mock server replace that for you
@@ -65,6 +72,7 @@ class Testing(unittest.TestCase):
 - assertSetEqual(a, b)
 > [!NOTE]
 > All the assert methods accept a msg argument that, if specified, is used as the error message on failure 
+
 ### setUp()
 - called immediately before calling the test method
 - any exception raised by this method will be considered an error rather than a test failure. 
@@ -94,3 +102,8 @@ Test that an exception is raised when callable is called with any positional or 
 ### assertSequenceEqual()
 - assertSequenceEqual(first, second, msg=None, seq_type=None)
 - Tests that two sequences are equal. If a seq_type is supplied, both first and second must be instances of seq_type or a failure will be raised.
+
+# Ref
+[expertRef](https://www.youtube.com/watch?v=NPp2pvhGbkM)
+[expertRef2](https://www.youtube.com/watch?v=HKTyOUx9Wf4)
+
