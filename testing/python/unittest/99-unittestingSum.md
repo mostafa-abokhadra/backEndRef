@@ -22,12 +22,18 @@ class Testing(unittest.TestCase):
         # assert
         assertEqual(res, n1 + n2)
 ```
-
 ### Test Doubles
+- we use them to test our code that depend on certain external responses, e:i if the database server has some problems we don't want our code to fail as the problem is in the backend not with our code, so mock server replace that for you
 - used in lieu of بدلا من external dependencies
 - e:g database, api, library, network connections
 - easy to simulate different scenarios
 - **E:g**: Mocks, Fasckes, Stubs
+
+### Mocks
+- replaces external interface
+- it is not used for checking function behaviour or return values from the function call
+- but it is used instead to check whether or not mock function called or not, wheter or not your function called the conncetion socket or not, how many times it gets called, it number of calls is as expected or not, what parameters are passed when it called
+- so it asserts right call, right number of times with the right parameters
 
 ### steps
 - import unittest
