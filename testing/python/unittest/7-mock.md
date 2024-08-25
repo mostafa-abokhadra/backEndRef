@@ -42,11 +42,10 @@
 ```py
 import unittest
 import requests
+from unittest.mock import patch, MagicMock
 
 def add(a, b):
     return a + b
-
-class Tests(unittest.TestCase):
 
     def len_joke():
         joke = get_joke()
@@ -56,17 +55,51 @@ class Tests(unittest.TestCase):
         # this function depends on get_joke functoin that make a call to an externl api
         # but what if the server is down? what if my internet provider is down?
         # we use mock to isolate our len_joke from it's dependencies by mocking get_joke function
-        
+        # from unittest.mock import patch
+
     def get_joke():
         url = "https://usl.com"
         res = requests.get(url)
         # if res.ok: 
         # or
         if res.status_code == 200:
-            joke = res.json()['somekey']
+            joke = res.json()['value']['joke']
         else:
             joke = "noJokes"
         return joke
+
+class Tests(unittest.TestCase):
+
+    @patch('get_joke')
+    # takes a string parameter -> a path to the object you want to mock, e:g if the needed to mock object is in another file
+    # @patch('module.get_joke')
+    # the decerator patch create a special fake object a MagicMock() object and pass the reference to it to the decorated function, in this example to the mock_get_joke parameter
+    def test_len_joke(self, mock_get_joke):
+        mock_get_joke.return_value = 'one' # set the return value of the mock or fack get_jock fucntion
+        self.assetEqual(len_joke(), 3)
+    
+    # now let's test get_joke itself as it also has dependencies
+    # e:i requests.get fucntion
+    @patch('requests')
+    def test_get_joke(self, mock_requests):
+        # mocking get function from requests
+        # get function returns a response object from the response class
+        # so we have to mock respons object too
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        # json is a method that parses a json object and returns a py dictionary so return value is dictionary
+        mock_response.json.return_value = {'value': {'joke': "somejoke"}}
+        mock_requests.get.return_value = mock_response
+        self.assertEqual(get_joke(), 'somejoke')
+    
+        @patch('requests')
+    def test_fialed_get_joke(self, mock_requests):
+         # you can pass the attributes in the constructor
+        mock_response = MagicMock(status_code=404)
+        # json is a method that parses a json object and returns a py dictionary so return value is dictionary
+        mock_response.json.return_value = {'value': {'joke': "somejoke"}}
+        mock_requests.get.return_value = mock_response
+        self.assertEqual(get_joke(), 'No joke')
 
 if __name__ == '__main__':
     unittest.main()
