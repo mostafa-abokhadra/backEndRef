@@ -23,7 +23,11 @@ class Testing(unittest.TestCase):
         assertEqual(res, n1 + n2)
 ```
 
-
+### Test Doubles
+- used in lieu of بدلا من external dependencies
+- e:g database, api, library, network connections
+- easy to simulate different scenarios
+- **E:g**: Mocks, Fasckes, Stubs
 
 ### steps
 - import unittest
