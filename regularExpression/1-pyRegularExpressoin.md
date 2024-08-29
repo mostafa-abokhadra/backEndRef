@@ -125,4 +125,16 @@ x = re.findall("\AThe", txt) # it's function similar to ^
 txt = "The rain in Spain"
 #Check if "ain" is present at the beginning of a WORD:
 x = re.findall(r"\bain", txt) # output []
+
+#Check if "ain" is present at the end of a WORD:
+re.findall(r"ain\b", txt) # ['ain', 'ain']
 ```
+> [!NOTE]
+> find more special sequence and sets here [w3s](https://www.w3schools.com/python/python_regex.asp)
+
+### findall()
+### search()
+### split()
+
+### Ref
+- [w3s](https://www.w3schools.com/python/python_regex.asp)
