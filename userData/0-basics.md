@@ -31,7 +31,7 @@ concerns indirect identifiers or quasi-identifiers. They may not be able to iden
 
 ![photo](https://piwik.pro/wp-content/uploads/2020/10/PII_vs_personal_data_Diagram_2-1536x826.png)
 
-3. sensetive PII:
+3. **sensetive PII**:
 
 **Examples**
 
@@ -72,7 +72,7 @@ is a subset of PII that refers explicitly to information processed by HIPAA-cove
 
 ![photo](https://piwik.pro/wp-content/uploads/2020/10/PII_vs_personal_data_Diagram_3-1536x1496.png)
 
-[Us-Departement-OfHuman-Services](https://www.hhs.gov/hipaa/index.html)
+[Us-Departement-Of-Human-Services](https://www.hhs.gov/hipaa/index.html)\
 [HIPAAP-rivacy-Policy](https://www.hhs.gov/sites/default/files/ocr/privacy/hipaa/administrative/combined/hipaa-simplification-201303.pdf)
 
 The HIPAA Privacy Rule ensures that PHI is shared and used only with patient permission or to coordinate patient care and services between covered entities. Organizations covered by HIPAA, such as healthcare providers, hospitals, insurers and their business associates, must follow strict rules specifying the types of PHI they can collect from individuals, disclose with others, or use for marketing purposes.
