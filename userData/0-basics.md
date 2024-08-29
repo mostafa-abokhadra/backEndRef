@@ -21,7 +21,7 @@ Direct identifiers are unique to a person and can be used to identify an individ
 
 **examples**
 
-[photo](https://piwik.pro/wp-content/uploads/2020/10/PII_vs_personal_data_Diagram_1-1536x1164.png)
+![photo](https://piwik.pro/wp-content/uploads/2020/10/PII_vs_personal_data_Diagram_1-1536x1164.png)
 
 2. **Linkable information**:
 
@@ -29,7 +29,7 @@ concerns indirect identifiers or quasi-identifiers. They may not be able to iden
 
 **exmples**
 
-[photo](https://piwik.pro/wp-content/uploads/2020/10/PII_vs_personal_data_Diagram_2-1536x826.png)
+![photo](https://piwik.pro/wp-content/uploads/2020/10/PII_vs_personal_data_Diagram_2-1536x826.png)
 
 3. sensetive PII:
 
@@ -63,3 +63,20 @@ concerns indirect identifiers or quasi-identifiers. They may not be able to iden
 10. Email address or mailing address.
 11. Race or ethnicity.
 12. Religion.
+
+### protected health information (PHI)
+
+is a subset of PII that refers explicitly to information processed by HIPAA-covered entities. When health information is combined with a personal identifier, the data becomes PHI.
+
+**Identifiers recognized by Health Insurance Portability and Accountability Act (HIPAA) include:**
+
+![photo](https://piwik.pro/wp-content/uploads/2020/10/PII_vs_personal_data_Diagram_3-1536x1496.png)
+
+[Us-Departement-OfHuman-Services](https://www.hhs.gov/hipaa/index.html)
+[HIPAAP-rivacy-Policy](https://www.hhs.gov/sites/default/files/ocr/privacy/hipaa/administrative/combined/hipaa-simplification-201303.pdf)
+
+The HIPAA Privacy Rule ensures that PHI is shared and used only with patient permission or to coordinate patient care and services between covered entities. Organizations covered by HIPAA, such as healthcare providers, hospitals, insurers and their business associates, must follow strict rules specifying the types of PHI they can collect from individuals, disclose with others, or use for marketing purposes.
+
+### Ref
+- [PII](https://piwik.pro/blog/what-is-pii-personal-data/)
+- [PHI](https://piwik.pro/glossary/protected-health-information-phi/)
