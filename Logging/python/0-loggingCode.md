@@ -75,6 +75,16 @@ myFileHandler.setFormatter(myFormatter)
 # if you want only a specific level to get logged in your file you can setLevel for you file handler
 myFileHandler.setLevle(logging.ERROR)
 
+def divison(a, b):
+    try:
+        result = a/b
+    except ZeroDivisionError:
+        logger.error("tried To Divide By Zero")
+        # or if you want to include the trace back message
+        # use logger.excption()
+        logger.exception("a message")
+    else:
+        return result
 ```
 
 # Ref
