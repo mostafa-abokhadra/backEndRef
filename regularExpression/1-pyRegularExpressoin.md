@@ -117,3 +117,12 @@ txt = "The rain in Spain"
 #Check if the string starts with "The":
 x = re.findall("\AThe", txt) # it's function similar to ^
 ```
+
+2. \b
+- Returns a match where the specified characters are at the beginning or at the end of a word
+- (the "r" in the beginning is making sure that the string is being treated as a "raw string")
+```py
+txt = "The rain in Spain"
+#Check if "ain" is present at the beginning of a WORD:
+x = re.findall(r"\bain", txt) # output []
+```
