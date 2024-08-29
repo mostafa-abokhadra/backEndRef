@@ -47,3 +47,14 @@ else:
   print("No match")
 # output Yes, the string starts with 'hello'
 ```
+5. $ Ends with e:g "planet$"
+```py
+txt = "hello planet"
+#Check if the string ends with 'planet':
+x = re.findall("planet$", txt)
+if x:
+  print("Yes, the string ends with 'planet'")
+else:
+  print("No match")
+#ouput Yes, the string ends with 'planet'
+```
