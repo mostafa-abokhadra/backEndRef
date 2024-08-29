@@ -107,3 +107,13 @@ else:
 # Yes, there is at least one match!
 ```
 11. () Capture and group
+
+### Special Sequence
+- it is A \ followed by one of the characters in the list below, and has a special meaning:
+
+1. \A Returns a match if the specified characters are at the beginning of the string
+```py
+txt = "The rain in Spain"
+#Check if the string starts with "The":
+x = re.findall("\AThe", txt) # it's function similar to ^
+```
