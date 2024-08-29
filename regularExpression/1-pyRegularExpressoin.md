@@ -20,3 +20,11 @@ x = re.findall("[a-m]", txt)
 print(x)
 # output ['h', 'e', 'a', 'i', 'i', 'a', 'i']
 ```
+2. \ Signals a special sequence (can also be used to escape special characters) e:g `"\d"`
+```py
+txt = "That will be 59 dollars"
+#Find all digit characters:
+x = re.findall("\d", txt)
+print(x)
+# output ['5', '9']
+```
