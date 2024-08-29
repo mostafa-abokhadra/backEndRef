@@ -77,6 +77,17 @@ is a subset of PII that refers explicitly to information processed by HIPAA-cove
 
 The HIPAA Privacy Rule ensures that PHI is shared and used only with patient permission or to coordinate patient care and services between covered entities. Organizations covered by HIPAA, such as healthcare providers, hospitals, insurers and their business associates, must follow strict rules specifying the types of PHI they can collect from individuals, disclose with others, or use for marketing purposes.
 
+### Non-PII
+
+- data that cannot be used on its own to trace, or identify a person.
+
+**Examples**
+1. Aggregated statistics on the use of product/service.
+2. Partially or fully masked IP addresses.
+
+>[!IMPORTANT]
+> However, the classification of PII and non-PII is vague. Moreover, <mark>NIST doesn’t reference cookie IDs and device IDs</mark>, so many AdTech companies, advertisers, and publishers consider them non-PII. As we’ll see, this is in contrast to the definition of personal data, which treats such digital tackers as information that could identify an individual.
+
 ### Ref
 - [PII](https://piwik.pro/blog/what-is-pii-personal-data/)
 - [PHI](https://piwik.pro/glossary/protected-health-information-phi/)
