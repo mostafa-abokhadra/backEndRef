@@ -55,16 +55,22 @@ but for example if you changed your log statements in module1.py to use INFO ins
 ```py
 import logging
 
-# you can actully specify any name you want instead of __name__, but the convention to use __name__
-# now you can use this logger to run your logging methods instead of using the module name itself
-# which will runs the root lgger not your new logger
 myLogger = logging.getLogger(__name__)
+# you can actully specify any name you want instead of __name__, but the convention to use __name__
+# now you can use this logger to run your logging methods instead of using the module name 'logging'itself which will runs the root logger not your new logger
 
 myLogger.info("message") # not logging.info()
+
+# to set the logger level
+myLogger.setLevel(logging.INFO)
 
 # to put your new logger messages in a file you should create a filehandler
 myFileHandler = logging.fileHandler('file.log')
 myLogger.addHandler(myFileHandler)
+
+# to specify a new format, you create new formater and pass to the filehandler
+myFromatter = logging.Formatter("%(asctime)s:%(levelname)s:%(message)s")
+myFileHandler.setFormatter(myFormatter)
 
 ```
 
