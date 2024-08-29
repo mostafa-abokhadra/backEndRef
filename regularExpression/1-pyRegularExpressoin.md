@@ -84,3 +84,11 @@ print(x)
 # but two characters between "he" and the "o"
 # output []
 ```
+9. {} Exactly the specified number of occurrences e:g "he.{2}o"
+```py
+txt = "hello planet"
+#Search for a sequence that starts with "he", followed excactly 2 (any) characters, and an "o":
+x = re.findall("he.{2}o", txt)
+print(x)
+# output ['hello']
+```
