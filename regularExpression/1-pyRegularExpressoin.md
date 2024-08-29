@@ -36,3 +36,14 @@ x = re.findall("he..o", txt)
 print(x)
 # output ['hello']
 ```
+4. ^ Starts with e:g `"^hello"`
+```py
+txt = "hello planet"
+#Check if the string starts with 'hello':
+x = re.findall("^hello", txt)
+if x:
+  print("Yes, the string starts with 'hello'")
+else:
+  print("No match")
+# output Yes, the string starts with 'hello'
+```
