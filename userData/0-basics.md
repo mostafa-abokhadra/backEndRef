@@ -15,7 +15,7 @@ But why is all that so important? As a website admin, app creator or product own
 
 ### Types of PII
 
-1. **LInked Information also called direct identifiers**
+### **LInked Information also called direct identifiers**
 
 Direct identifiers are unique to a person and can be used to identify an individual. A single direct identifier is typically enough to determine someone’s identity.
 
@@ -23,7 +23,7 @@ Direct identifiers are unique to a person and can be used to identify an individ
 
 ![photo](https://piwik.pro/wp-content/uploads/2020/10/PII_vs_personal_data_Diagram_1-1536x1164.png)
 
-2. **Linkable information**:
+### **Linkable information**:
 
 concerns indirect identifiers or quasi-identifiers. They may not be able to identify a person on their own, but identification becomes possible when combined with another piece of information. For example, research shows that 87% of US citizens could be identified based on just their gender, ZIP code and date of birth. De-anonymization and re-identification techniques typically work when multiple sets of quasi-identifiers are connected and can be used to distinguish one person from another.
 
@@ -31,7 +31,7 @@ concerns indirect identifiers or quasi-identifiers. They may not be able to iden
 
 ![photo](https://piwik.pro/wp-content/uploads/2020/10/PII_vs_personal_data_Diagram_2-1536x826.png)
 
-3. **sensetive PII**:
+### **sensetive PII**:
 
 **Examples**
 
@@ -44,7 +44,7 @@ concerns indirect identifiers or quasi-identifiers. They may not be able to iden
 7. Password information.
 8. School identification numbers.
 
-4. **non sensetive PII:**
+### **non sensetive PII:**
 - is information that may or may not be unique to an individual person. This type of data can be transmitted without being encrypted, and disclosure of it will not cause harm to the individuals that the data concerns.
 - Non-sensitive PII tends to be publicly available
 - Some data privacy regulations don’t require the protection of non-sensitive PII, but companies should still employ safeguards to limit the risks to individuals. 
@@ -72,7 +72,8 @@ is a subset of PII that refers explicitly to information processed by HIPAA-cove
 
 ![photo](https://piwik.pro/wp-content/uploads/2020/10/PII_vs_personal_data_Diagram_3-1536x1496.png)
 
-[Us-Departement-Of-Human-Services](https://www.hhs.gov/hipaa/index.html)\
+[Us-Departement-Of-Human-Services](https://www.hhs.gov/hipaa/index.html)
+
 [HIPAAP-rivacy-Policy](https://www.hhs.gov/sites/default/files/ocr/privacy/hipaa/administrative/combined/hipaa-simplification-201303.pdf)
 
 The HIPAA Privacy Rule ensures that PHI is shared and used only with patient permission or to coordinate patient care and services between covered entities. Organizations covered by HIPAA, such as healthcare providers, hospitals, insurers and their business associates, must follow strict rules specifying the types of PHI they can collect from individuals, disclose with others, or use for marketing purposes.
