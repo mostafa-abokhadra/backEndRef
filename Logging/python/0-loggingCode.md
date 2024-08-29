@@ -85,6 +85,15 @@ def divison(a, b):
         logger.exception("a message")
     else:
         return result
+
+    """
+        you can create multiple handler to a logger, for example the example above uses the file handler to log all error messages to a file, let's say now that you wnat to display all debug messages to the console you can add a stream handler
+    """
+    myStreamHandler = logging.streamHandler()
+    # you can also add the formatter to the stream handler
+    myStreamHandler.setFromatter(myFormatter)
+    logger.addHandler(myStreamHandler)
+    # this will actually print debug messages and also error messages in the console but will also log erro message in the file
 ```
 
 # Ref
