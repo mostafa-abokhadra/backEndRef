@@ -72,6 +72,9 @@ myLogger.addHandler(myFileHandler)
 myFromatter = logging.Formatter("%(asctime)s:%(levelname)s:%(message)s")
 myFileHandler.setFormatter(myFormatter)
 
+# if you want only a specific level to get logged in your file you can setLevel for you file handler
+myFileHandler.setLevle(logging.ERROR)
+
 ```
 
 # Ref
