@@ -30,12 +30,16 @@ logging.debug("some message")
         DEBUG:root:some message
     the above format code will change default format to be something like this:
         data-time:levleName:the message
+    the loggger "root" because we don't actually specified a specific logger so it use
+        root as default, but best practice is to specify a logger for each module
 """
 ```
 
 check all of the `format` basicConfig attribute formats in this [link](https://docs.python.org/3/library/logging.html#logrecord-attributes)
 
 
+```py
 
+```
 # Ref
 - [corey] (https://www.youtube.com/watch?v=-ARI4Cz-awo)
