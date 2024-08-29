@@ -30,3 +30,36 @@ concerns indirect identifiers or quasi-identifiers. They may not be able to iden
 **exmples**
 
 [photo](https://piwik.pro/wp-content/uploads/2020/10/PII_vs_personal_data_Diagram_2-1536x826.png)
+
+3. sensetive PII:
+
+**Examples**
+
+1. Unique identification numbers, such as driver’s license numbers, social security numbers (SSN), passport numbers and other government-issued ID numbers.
+2. Biometric data, such as fingerprints and retinal scans.
+3. inancial information, including bank account numbers and credit card numbers.
+4. Medical records.
+5. Electronic and digital account information, such as email addresses and internet account numbers.
+6. Employee personnel records.
+7. Password information.
+8. School identification numbers.
+
+4. **non sensetive PII:**
+- is information that may or may not be unique to an individual person. This type of data can be transmitted without being encrypted, and disclosure of it will not cause harm to the individuals that the data concerns.
+- Non-sensitive PII tends to be publicly available
+- Some data privacy regulations don’t require the protection of non-sensitive PII, but companies should still employ safeguards to limit the risks to individuals. 
+
+**examples**:
+
+1. A person’s full name.
+2. Mother’s maiden name.
+3. Social media nickname.
+4. Telephone number.
+5. IP address.
+6. Place of birth.
+7. Date of birth.
+8. Geographical details (ZIP code, city, state, country, etc.).
+9. Employment information.
+10. Email address or mailing address.
+11. Race or ethnicity.
+12. Religion.
