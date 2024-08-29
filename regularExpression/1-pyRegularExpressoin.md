@@ -58,3 +58,11 @@ else:
   print("No match")
 #ouput Yes, the string ends with 'planet'
 ```
+6. * Zero or more occurrences e:g "he.*o"
+```py
+txt = "hello planet"
+#Search for a sequence that starts with "he", followed by 0 or more  (any) characters, and an "o":
+x = re.findall("he.*o", txt)
+print(x)
+# output ['hello']
+```
