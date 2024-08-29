@@ -51,6 +51,15 @@ when you import a module its code actually runs when you import it, so root logg
 so all of your log statements that in module1.py will not get logged in the file1.log or even file2.log because it's level is higher that the preset level in module2.py e:i level=logging.INFO
 but for example if you changed your log statements in module1.py to use INFO instead of DEBUG it will get logged in file2.log
 
+### to create a new logger
+```py
+import logging
+myLogger = logging.getLogger(__name__)
+# you can actully specify any name you want instead of __name__, but the convention to use __name__
+# now you can use this logger to run your logging methods instead of using the module name itself
+# which will runs the root lgger not your new logger
+myLogger.info("message") # not logging.info()
+```
 
 # Ref
 - [corey] (https://www.youtube.com/watch?v=-ARI4Cz-awo)
