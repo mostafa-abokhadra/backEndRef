@@ -89,6 +89,7 @@ The HIPAA Privacy Rule ensures that PHI is shared and used only with patient per
 >[!IMPORTANT]
 > However, the classification of PII and non-PII is vague. Moreover, <mark>NIST doesn’t reference cookie IDs and device IDs</mark>, so many AdTech companies, advertisers, and publishers consider them non-PII. As we’ll see, this is in contrast to the definition of personal data, which treats such digital tackers as information that could identify an individual.
 
+
 ### Ref
 - [PII](https://piwik.pro/blog/what-is-pii-personal-data/)
 - [PHI](https://piwik.pro/glossary/protected-health-information-phi/)
