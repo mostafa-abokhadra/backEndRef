@@ -2,6 +2,7 @@
 
 ## Objectives 
 - What authentication and authorization means
+- stateful and stateless
 - What Base64 is
 - How to encode a string in Base64
 - What Basic authentication means
@@ -13,6 +14,11 @@
 ### authorization
 - to verify permissions of authenticated user
 - server response when not authorized(403 Forbidden)
+
+### statful
+- sessions using a cookie
+### stateless
+- token using JWT / OAuth /other
 
 **watch this**
 
