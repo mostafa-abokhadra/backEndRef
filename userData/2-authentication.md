@@ -26,9 +26,23 @@ data = base64.base64decode(encoded)
 - This header indicates what authentication schemes can be used to access the resource
 
 ##### Syntax
+
 ```
 Authorization: auth-scheme auth-parameter
 e:g Basic Credentials # (username:password but encoded using base64)
+```
+### Digest
+```
+Authorization: Digest username=<username>,
+    realm="<realm>",
+    uri="<url>",
+    algorithm=<algorithm>,
+    nonce="<nonce>",
+    nc=<nc>,
+    cnonce="<cnonce>",
+    qop=<qop>,
+    response="<response>",
+    opaque="<opaque>"
 ```
 
 ### Ref
