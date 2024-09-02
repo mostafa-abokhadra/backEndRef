@@ -2,7 +2,8 @@
 
 ## Objectives 
 - What authentication and authorization means
-- stateful and stateless
+- difference between stateful and stateless
+- sessions work flow
 - What Base64 is
 - How to encode a string in Base64
 - What Basic authentication means
@@ -19,6 +20,15 @@
 - sessions using a cookie
 ### stateless
 - token using JWT / OAuth /other
+
+### Sessions
+1. user submits login credentials
+2. server verifies the credentials against the DB
+3. server creates a temporary user **Session**
+4. server issues a **cookie** with a **session ID**
+5. user sends the cookie with each request
+6. server validates it against the session store and grants access
+7. when user logs out, server destroys the session and clears the cookie
 
 **watch this**
 
