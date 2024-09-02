@@ -25,7 +25,11 @@ data = base64.base64decode(encoded)
 - the server respond with <mark>401 unathorized</mark> message the include at least one <mark>WWW-Authenticate</mark> header
 - This header indicates what authentication schemes can be used to access the resource
 
-
+##### Syntax
+```
+Authorization: auth-scheme auth-parameter
+e:g Basic Credentials # (username:password but encoded using base64)
+```
 
 ### Ref
 - [basic authentification](https://www.youtube.com/watch?v=501dpx2IjGY)
