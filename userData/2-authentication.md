@@ -59,6 +59,16 @@ opaque reference because the session id has no actual data it is just a random s
 - user sends the token and grants acess
 - when user logout token is cleared from client storage
 
+##### Features
+- tokens are not stored server side only on the client (stateless)
+- signed with a secret against tampering العبث
+- tokens can be opaque or self-contained
+    - it is called self-contained when carries user data in its payload
+- it is sent with Authorization header
+- when a token is about to expire it can be refreshed
+    - client send both access and referesh tokens
+- used in single page web applications, web APIs, mobile apps
+
 **watch this**
 
 - [basic authentification](https://www.youtube.com/watch?v=501dpx2IjGY)
