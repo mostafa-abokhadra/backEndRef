@@ -69,9 +69,21 @@ opaque reference because the session id has no actual data it is just a random s
     - client send both access and referesh tokens
 - used in single page web applications, web APIs, mobile apps
 
-**watch this**
+**watch these**
 
 - [basic authentification](https://www.youtube.com/watch?v=501dpx2IjGY)
+- [everyThingAboutAuthentication](https://www.youtube.com/watch?v=j8Yxff6L_po)
+
+# Examples
+
+## Basic Authentication
+For "Basic" authentication the credentials are constructed by first <mark>combining the username and the password with a colon</mark> (aladdin:opensesame), and then by <mark>encoding the resulting string in base64</mark> (YWxhZGRpbjpvcGVuc2VzYW1l)
+
+```
+Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l
+```
+> [!IMPORTANT]
+> Base64-encoding can easily be reversed to obtain the original name and password, so Basic authentication is completely insecure, it is just used to convert any HTTP incompatible characters that may exists in the name:password string. HTTPS is always recommended when using authentication, but is even more so when using Basic authentication.
 
 ### Base64
 
@@ -82,7 +94,6 @@ data = base64.base64decode(encoded)
 ```
 
 ### Authorization Header
-
 - it is used to provide the server with the credentials that authenticate the user
 - it is usually sent after the user attempt to request a protected resource w/o credintials
 - the server respond with <mark>401 unathorized</mark> message the include at least one <mark>WWW-Authenticate</mark> header
@@ -94,6 +105,3 @@ data = base64.base64decode(encoded)
 Authorization: auth-scheme auth-parameter
 e:g Basic Credentials # (username:password but encoded using base64)
 ```
-
-### Ref
-- [basic authentification](https://www.youtube.com/watch?v=501dpx2IjGY)
