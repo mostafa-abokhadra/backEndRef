@@ -3,7 +3,8 @@
 ## Objectives 
 - What authentication and authorization means
 - difference between stateful and stateless
-- sessions work flow
+- sessions based authentication
+- token Based authentication
 - What Base64 is
 - How to encode a string in Base64
 - What Basic authentication means
@@ -21,7 +22,8 @@
 ### stateless
 - token using JWT / OAuth /other
 
-### Sessions
+### Sessions Based Authentication
+
 1. user submits login credentials
 2. server verifies the credentials against the DB
 3. server creates a temporary user **Session**
@@ -47,6 +49,15 @@ opaque reference because the session id has no actual data it is just a random s
 - used in session management, personalization, tracking
 - consists of name, value, and optional attributes / flags
 - set with `Set-Cookie` header by the server, and when sent back again to the server by the browser it exists in the `Cookie` header
+
+### Token Based Authentication
+- user submits login credentials
+- server verifies credentials against DB
+- server generates a temporary **token** and embeds user data into it
+- server responds back with the token in body or header
+- user stores the token in client storage
+- user sends the token and grants acess
+- when user logout token is cleared from client storage
 
 **watch this**
 
