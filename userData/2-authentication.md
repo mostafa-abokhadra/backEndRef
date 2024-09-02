@@ -18,5 +18,14 @@ encoded = base64.base64encode(b'data to be encoded')
 data = base64.base64decode(encoded)
 ```
 
+### Authorization Header
+
+- it is used to provide the server with the credentials that authenticate the user
+- it is usually sent after the user attempt to request a protected resource w/o credintials
+- the server respond with <mark>401 unathorized</mark> message the include at least one <mark>WWW-Authenticate</mark> header
+- This header indicates what authentication schemes can be used to access the resource
+
+
+
 ### Ref
 - [basic authentification](https://www.youtube.com/watch?v=501dpx2IjGY)
