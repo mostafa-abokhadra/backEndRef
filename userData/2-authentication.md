@@ -42,6 +42,11 @@ opaque reference because the session id has no actual data it is just a random s
     - protected with flags
 - used in web apps, and frameworks
 
+### Cookies
+- it just a header just like authorization and Content-Type
+- used in session management, personalization, tracking
+- consists of name, value, and optional attributes / flags
+- set with `Set-Cookie` header by the server, and when sent back again to the server by the browser it exists in the `Cookie` header
 
 **watch this**
 
