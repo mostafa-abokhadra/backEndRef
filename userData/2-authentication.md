@@ -1,10 +1,18 @@
 # Basic Authentificatoin
 
-### What authentication means
-### What Base64 is
-### How to encode a string in Base64
-### What Basic authentication means
-### How to send the Authorization header
+## Objectives 
+- What authentication and authorization means
+- What Base64 is
+- How to encode a string in Base64
+- What Basic authentication means
+- How to send the Authorization header
+
+### authentication
+- to verify the identity of a user
+- server response when not authenticated is (401 Unauthorized)
+### authorization
+- to verify permissions of authenticated user
+- server response when not authorized(403 Forbidden)
 
 **watch this**
 
@@ -30,19 +38,6 @@ data = base64.base64decode(encoded)
 ```
 Authorization: auth-scheme auth-parameter
 e:g Basic Credentials # (username:password but encoded using base64)
-```
-### Digest
-```
-Authorization: Digest username=<username>,
-    realm="<realm>",
-    uri="<url>",
-    algorithm=<algorithm>,
-    nonce="<nonce>",
-    nc=<nc>,
-    cnonce="<cnonce>",
-    qop=<qop>,
-    response="<response>",
-    opaque="<opaque>"
 ```
 
 ### Ref
