@@ -30,6 +30,19 @@
 6. server validates it against the session store and grants access
 7. when user logs out, server destroys the session and clears the cookie
 
+##### Features
+- every user session is stored server-side (stateful)
+    - memory (e:g file system)
+    - cache (e:g redis, Memchached)
+    - DB (e:g postgress, MongoDB)
+- each user is identified by a session ID also know as 
+opaque reference because the session id has no actual data it is just a random string so no 3rd party can extract data out of it, only issued server can map back to data
+- stored in cookie
+    - signed with a secret stored in the server
+    - protected with flags
+- used in web apps, and frameworks
+
+
 **watch this**
 
 - [basic authentification](https://www.youtube.com/watch?v=501dpx2IjGY)
