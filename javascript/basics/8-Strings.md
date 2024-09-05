@@ -53,3 +53,9 @@ name.split(",", 2) ['m', 'o', "s,t,afa"]
 name.substring(2, 9)
 // there is also substr()
 ```
+
+### include
+returns true or false
+```js
+name.include("abokhadra", 8) // true
+```
