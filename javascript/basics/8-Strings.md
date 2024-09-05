@@ -64,3 +64,8 @@ name.include("abokhadra", 8) // true
 ```js
 name.startsWith('m') // true
 ```
+
+### endsWith()
+```js
+name.endsWith('a') // true
+```
