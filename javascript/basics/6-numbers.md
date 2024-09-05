@@ -1,4 +1,4 @@
-### Numbers (23-)
+### Numbers (23-24)
 
 ```js
 console.log(1000000)
