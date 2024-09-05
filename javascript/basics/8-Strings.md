@@ -69,3 +69,25 @@ name.startsWith('m') // true
 ```js
 name.endsWith('a') // true
 ```
+
+### practice
+```js
+let a = "Elzero Web School"
+
+//use above variable to solve the following questions
+
+// output must be -> Zero
+console.log(a.slice(2, 6).charAt(0).toUpperCase())
+
+// output must be -> HHHHHHHH
+console.log(a.charAt(a.indexOf('h')).toUpperCase().repeat(8))
+
+// output must be -> //["Elzero"]
+console.log(a.split(" ", 1))
+
+// output must be -> // Elzero school
+console.log(a.substr(0, 6) + a.substr(10))
+
+// output must be first and last characters are small and the rest of the characters 
+console.log(a[0].toLowerCase() + a.slice(1, -1).toUpperCase() + a.charAt(-1).toLowerCase())
+```
