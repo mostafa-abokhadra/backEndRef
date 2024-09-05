@@ -1,4 +1,5 @@
 ### String methods
+
 ```js
 let name = "mostafa"
 name[0] // m
@@ -13,3 +14,13 @@ lastName.toLowerCase() // all letters to lowercase
 lastName.trim().charAt(3).toUpperCase() // K
 ```
 
+### indexOf() And lastIndexOf()
+returns -1 if don't find the value
+```js
+let name = "mostafa abokhadra"
+name.indexOf("abo") // 8
+name.indexOf("abo", 9) // -1
+name.indexOf("a") // 4
+name.lastIndexOf('a') // 16
+//it start searching from the end of the string 
+```
