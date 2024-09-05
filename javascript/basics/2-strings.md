@@ -1,21 +1,32 @@
-// strings
-// you can put single quotes inside a string that is made using double quotes and vice verca without any requirement from you to use escape character
+### strings (14-16)
+
+you can put single quotes inside a string that is made using double quotes
+and vice verca without any requirement from you to use escape character
+
+```js
 console.log("mostafa 'abokhadra'")
 console.log('mostafa "abokhadra"')
-// otherwise use escape character backslash'\'
+```
+otherwise use escape character backslash'\'
+
+```js
 console.log("mostafa \\	\"abokhadra\"") // mostafa \ "abokhadra"
 console.log("mostafa \
 			abokadra \
-			10.") // in case if you want to fromat your code you can also use the
-				  // the escape character.
+			10.") // in case if you want to fromat your code
+				//in the ide you can also use the
+				// the escape character.
 console.log("mostafa\nabokhadra\n"); // to add new lines
 
 let firstName = "mostafa", lastName = "abokhdara"
 console.log(firstName + " " + lastName) //mostafa abokhadra
 console.log(firstName, lastName) // mostafa abokhadra
+```
 
-// Template literal strings using backtick ``
-console.log(`${firstName} "" // ${lastName}`); // you don't have to scape single \
+### Template literal strings using backtick ``
+
+```js
+console.log(`${firstName} "" ${lastName}`); // you don't have to scape single \
                                               // or double quotess but you have to escape backslash operator
 console.log(`${firstName}
 ${lastName}`); // this will actually print it in the output in new line
@@ -28,3 +39,4 @@ let myElement = `
 	</div>
 `;
 document.write(myElement)
+```
