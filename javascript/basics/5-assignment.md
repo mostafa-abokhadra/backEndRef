@@ -1,4 +1,4 @@
-### assignment operator (21-)
+### assignment operator (21-22)
 
 ```js
 let a = 20;
