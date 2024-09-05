@@ -1,4 +1,4 @@
-### String methods
+### String methods (27-30)
 
 ```js
 let name = "mostafa"
@@ -46,4 +46,10 @@ name.split("") ['m', 'o', etc]
 name.split("someDelimiter", "limitOfSplitting")
 name = "m,o,s,t,afa"
 name.split(",", 2) ['m', 'o', "s,t,afa"]
+```
+
+### substring()
+```js
+name.substring(2, 9)
+// there is also substr()
 ```
