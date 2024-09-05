@@ -20,3 +20,7 @@ console.log(Number.MAX_VALUE) // you can't add on it
 (100).toString()
 (100.45.toString())
 ```
+##### toFixed()
+```js
+(100.11342.toFixed(2)) // returns a string -> 100.11
+```
