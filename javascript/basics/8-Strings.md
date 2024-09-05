@@ -36,3 +36,14 @@ name.slice(-5, -3)
 let ok = "ok"
 ok.repeat(5) // okokokokok
 ```
+
+### split()
+```js
+let name = "mostafa abokhadra"
+name.split() //["msotafa", "abokhadra"]
+name = "mostafa abokhadra"
+name.split("") ['m', 'o', etc]
+name.split("someDelimiter", "limitOfSplitting")
+name = "m,o,s,t,afa"
+name.split(",", 2) ['m', 'o', "s,t,afa"]
+```
