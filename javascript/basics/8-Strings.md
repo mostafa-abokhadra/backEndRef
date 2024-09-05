@@ -24,3 +24,9 @@ name.indexOf("a") // 4
 name.lastIndexOf('a') // 16
 //it start searching from the end of the string 
 ```
+### slice
+```js
+name.slice(5) // fa abokhadra
+name.slice(0, 8) // mostafa
+name.slice(-5, -3)
+```
