@@ -1,9 +1,17 @@
-// if you tried to do some arithmetic operation between a string and a numbre 
-//regardless the + operator that act as concatenation operator
-// you will get an error of NaN (not a number)
+### concatenation (18-20)
+
+if you tried to do some arithmetic operation between a string and a number 
+regardless the + operator that act as concatenation operator
+you will get an error of NaN (not a number)
+
+```js
 console.log(10 - "string") // NaN 
 console.log(10 * "string") // NaN 
-// funny fact: typeof NaN is number :)
+```
+> [!IMPORTANT]
+> funny fact: typeof NaN is number :)
+
+```js
 console.log(2 ** 4) // 16 which is 2 * 2 * 2 * 2
 let num = 5;
 console.log(++num) // 6
@@ -30,3 +38,4 @@ console.log(+a + b + c) // 31
 console.log(20 - "10") // 10
 console.log("10" - 20) // -10
 console.log(20 + "10") // 2010
+```
