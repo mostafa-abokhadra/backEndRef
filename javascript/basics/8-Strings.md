@@ -59,3 +59,8 @@ returns true or false
 ```js
 name.include("abokhadra", 8) // true
 ```
+
+### startsWith()
+```js
+name.startsWith('m') // true
+```
