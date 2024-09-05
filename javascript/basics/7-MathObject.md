@@ -1,4 +1,4 @@
-### most common used Math methods
+### most common used Math methods (25-26)
 - round()
 - ceil()
 - floor() 
@@ -18,4 +18,12 @@ Math.max(1, 2, 3, 4, 5) //  5
 Math.pow((2, 4)) // 16
 Math.random() // random number
 Math.trunc(99.5) // return the integer part -> 99
+```
+
+### practice
+
+```js 
+let a = 2.4
+// use 'a' to get the integer 2 using for different ways
+// hint -> round(), floor(), int(), trunc()
 ```
