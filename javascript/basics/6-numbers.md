@@ -30,3 +30,8 @@ parseInt("100 mostafa") // returns integer from the number in the string -> 100
 parseInt("mostafa100abokhadra") // NaN
 parseFloat("100.500")
 ```
+##### isIntegeer() and isNaN()
+```js
+Number.isInteger(100) // true
+Number.isNaN("mostafa" / 20) // true
+```
