@@ -30,3 +30,9 @@ name.slice(5) // fa abokhadra
 name.slice(0, 8) // mostafa
 name.slice(-5, -3)
 ```
+
+### Repeat()
+```js
+let ok = "ok"
+ok.repeat(5) // okokokokok
+```
