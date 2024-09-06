@@ -19,13 +19,47 @@ myArr.length = length
 ```
 
 ### Array methods
+
 ##### unshift()
 - accept one or more values to add in front
 ```js
 myArr.unshift("value", "anotherValue")
 ```
+
 ##### push()
 - add to end
 ```js
 myArr.push("value")
+```
+
+##### shift()
+- remove first element and returns it
+```js
+myArr.shift()
+```
+
+##### pop()
+- remove last element and returns it
+```js
+myArr.pop()
+```
+
+#####
+```js
+```
+
+#####
+```js
+```
+
+#####
+```js
+```
+
+#####
+```js
+```
+
+#####
+```js
 ```
