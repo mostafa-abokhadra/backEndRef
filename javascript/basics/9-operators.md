@@ -17,3 +17,12 @@ console.log('mostafa' === 'abokhadra') // false
 // so the results become true
 console.log(typeof 'mostafa' === typeof 'abokhadra');
 ```
+
+### logical operators
+```js
+// not operator (!)
+!true // false
+!(10 == "10") // flase
+// others
+&&, ||
+```
