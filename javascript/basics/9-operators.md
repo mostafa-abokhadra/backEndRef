@@ -1,4 +1,4 @@
-### comparison operators (31-)
+### comparison operators (31-32)
 ```js
 100 == "100" // true, because it's compare value only not datatypes
 10 != "10" // false
