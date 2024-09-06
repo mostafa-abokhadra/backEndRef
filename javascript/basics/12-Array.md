@@ -93,3 +93,9 @@ myArr.splice(0, 0, "val1", "val3")
 // will delete 2 element starting from position 2 and add the new values in their places
 myArr.splice(2, 2, "val1", "val3")
 ```
+
+### concat()
+- joining items and arrays
+```js
+myArr.concat(myArr2, myArr3, "stringValue", [1, 2, 3])
+```
