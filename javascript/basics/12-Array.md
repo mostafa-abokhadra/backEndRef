@@ -11,8 +11,11 @@ Array.isArray(myArr) // true
 // and you insert a value in the position number 7
 // now your array length is 8 and the precceding positions are empty
 myArr.length
+// you can use length to append at the end
+myArr[myArr.length] = "newValue"
+// you can also specify your array length
+// even if it's larger
+myArr.length = length
 ```
 
 ### Array methods
-
-- **length**: myArr.length
