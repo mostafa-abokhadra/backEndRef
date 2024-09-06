@@ -1,4 +1,4 @@
-### Array (40-45)
+### Array (40-47)
 ```js
 let myArr = ["mostafa", "abokhadra", [1, 2, 3]]
 myArr[index] // myArr[0][2] 
