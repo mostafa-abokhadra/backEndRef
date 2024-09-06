@@ -84,3 +84,12 @@ myArr.slice(1, 3) // slice array element in positions 1 and 2 in separate array
 myArr.slice(-3) // will start slicing from position -3 to the end
 myArr.slice(-4, -2)
 ```
+
+### splice()
+- splice add and remove
+- it accept starting position, then in the second arg it accept the number of element you want to delete, and the last arg is element you want to add
+```js
+myArr.splice(0, 0, "val1", "val3")
+// will delete 2 element starting from position 2 and add the new values in their places
+myArr.splice(2, 2, "val1", "val3")
+```
