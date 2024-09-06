@@ -57,8 +57,11 @@ myArr.indexOf("mostafa", 3)
 myArr.lastIndexOf("value", -2)
 ```
 
-#####
+##### include()
+- return true if element exists
+- also accept starting searching position
 ```js
+myArr.include("abokhadra", 6)
 ```
 
 #####
