@@ -1,4 +1,4 @@
-### Array (40)
+### Array (40-45)
 ```js
 let myArr = ["mostafa", "abokhadra", [1, 2, 3]]
 myArr[index] // myArr[0][2] 
@@ -64,10 +64,13 @@ myArr.lastIndexOf("value", -2)
 myArr.include("abokhadra", 6)
 ```
 
-#####
+##### sort()
 ```js
+myArr.sort()
 ```
 
-#####
+##### revers()
+- it reverse the array upside down (not sorting)
 ```js
+myArr.revers()
 ```
