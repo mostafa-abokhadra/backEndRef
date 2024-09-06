@@ -74,6 +74,8 @@ myArr.sort()
 ```js
 myArr.revers()
 ```
+> [!NOTE]
+> when you sort then revese it's like you are sorting from bigger to smaller value
 
 ### slic()
 - slice returns a new array don't change the actual array
