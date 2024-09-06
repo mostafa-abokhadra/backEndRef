@@ -74,3 +74,13 @@ myArr.sort()
 ```js
 myArr.revers()
 ```
+
+### slic()
+- slice returns a new array don't change the actual array
+- accept start and end position both optional
+```js
+myArr.slice() // will slice the whole array (returns it as it is)
+myArr.slice(1, 3) // slice array element in positions 1 and 2 in separate array
+myArr.slice(-3) // will start slicing from position -3 to the end
+myArr.slice(-4, -2)
+```
