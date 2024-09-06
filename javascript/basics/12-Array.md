@@ -19,3 +19,8 @@ myArr.length = length
 ```
 
 ### Array methods
+##### unshift()
+- accept one or more values to add in front
+```js
+myArr.unshift("value", "anotherValue")
+```
