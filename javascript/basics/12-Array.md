@@ -99,3 +99,11 @@ myArr.splice(2, 2, "val1", "val3")
 ```js
 myArr.concat(myArr2, myArr3, "stringValue", [1, 2, 3])
 ```
+
+### join()
+- it concat all array elements in one string separated by a delimeter you choose
+```js
+myArr.join() // default delimeter is comma ,
+myArr.join("") // no separator in between
+myArr.join("|")
+```
