@@ -44,8 +44,11 @@ myArr.shift()
 myArr.pop()
 ```
 
-#####
+##### indexOf()
+- returns the index of the first occurance of element
+- you can also specify the starting searching position
 ```js
+myArr.indexOf("mostafa", 3)
 ```
 
 #####
