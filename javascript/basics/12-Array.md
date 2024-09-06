@@ -51,8 +51,10 @@ myArr.pop()
 myArr.indexOf("mostafa", 3)
 ```
 
-#####
+##### lastIndexOf()
+- start searching from behind
 ```js
+myArr.lastIndexOf("value", -2)
 ```
 
 #####
