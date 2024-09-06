@@ -24,3 +24,8 @@ myArr.length = length
 ```js
 myArr.unshift("value", "anotherValue")
 ```
+##### push()
+- add to end
+```js
+myArr.push("value")
+```
