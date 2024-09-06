@@ -1,3 +1,5 @@
+### Null (36)
+
 ```js
 // always consider to have a default value for your data
 let data = 0;
