@@ -24,9 +24,17 @@
 > - the C++ program we're talking about is nothing but Node js
 
 ### js runtime
-- js runtime is an environment which provides all the necessary components in order to use and run js program
+- js runtime is an environment which provides all the necessary components in order to use and run js program <mark>outside the browser</mark>
 - js runtime consists of js engine, web APIs, Queue and events loop
 - V8 js engine which is a one component of js runtime consists of Call stack where js code get executed and memory to store the variables
 - web APIs refers to DOM, TIMERS e:g setTimeout and setIntervals, promises, and Browser storage that add functionality to the js engine but not a part of js lang itself, these api are provided by the browser
 - QUEUE is where asynchronous tasks wait before get executed
 - Event loop ensures that async tasks are executed in the right order
+
+### what can you build with Node js
+- websites
+- backend services like APIs
+- real time applications
+- streaming services like Netflex
+- CLI tools
+- Multiplayer games
