@@ -4,8 +4,9 @@
 - **cross platform:** available on Mac, windows and linux
 - **javascript runtime environment**: ?
 - it builds end-to-end js application
+- it is not a language, it's not a framework , it's a run time environment
 
-### ECMA SCRIPT stroy
+### ECMA SCRIPT stroy 
 - list to the story and the difference between ECMAscript and js[here](https://youtu.be/HXpPKhWOkAs?si=8LoZL3M57CzPTIpo)
 
 ### JS engine
@@ -31,6 +32,7 @@
 - QUEUE is where asynchronous tasks wait before get executed
 - Event loop ensures that async tasks are executed in the right order
 
+
 ### what can you build with Node js
 - websites
 - backend services like APIs
@@ -38,3 +40,6 @@
 - streaming services like Netflex
 - CLI tools
 - Multiplayer games
+
+### Ref
+- [codeevolution](https://www.youtube.com/watch?v=LAUi8pPlcUM&list=PLC3y8-rFHvwh8shCMHFA5kWxD9PaPwxaY&pp=iAQB) videos 1 - 5
