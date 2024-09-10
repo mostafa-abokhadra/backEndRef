@@ -55,3 +55,15 @@ const {add, sub} = math
 exports.add = (a, b) => {}
 // stick wiht module.exports better
 ```
+> [!caution]
+> don't use export alone, always use <mark>module.exports</mark>
+[see why here](https://youtu.be/ghUIlSNRru0?si=kVFBjdb-FyVUZTsd)
+
+### sum
+- in common js each file is treated as a module
+- variables, functions, classes, etc. are not accessible to other files by default
+- explicitly tell the modules system which parts of your code should be exported via moudle.exports or exports
+- to import code into a file, use the requires() function
+
+### Ref
+- [codeevolution](https://www.youtube.com/watch?v=LAUi8pPlcUM&list=PLC3y8-rFHvwh8shCMHFA5kWxD9PaPwxaY&pp=iAQB) videos 6 - 15
