@@ -49,3 +49,9 @@ module.exports.subtract = (a, b){}
 const math = require("./math")
 const {add, sub} = math
 ```
+
+5. **using just export**
+```js
+exports.add = (a, b) => {}
+// stick wiht module.exports better
+```
