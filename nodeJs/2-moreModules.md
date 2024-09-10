@@ -8,3 +8,10 @@
 ```
 - you write `function(){}` then wrapped with parantheses `(function(){})` to convert it to function exepression, then adding `()` after the expression to immediately invode it, then write your code inside the `{}`
 - using IIFE node can execute each module with it's own private scope
+
+**to specify parameter and pass arguments to IIFE**:
+```js
+(function(param1){
+    console.log(param1) // hellow
+})("hello")
+```
