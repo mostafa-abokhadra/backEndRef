@@ -41,3 +41,11 @@ const {add, subtract} = math;
 add()
 subtract()
 ```
+```js
+// math.js
+module.exports.add = (a, b) => {}
+module.exports.subtract = (a, b){}
+// index.js
+const math = require("./math")
+const {add, sub} = math
+```
