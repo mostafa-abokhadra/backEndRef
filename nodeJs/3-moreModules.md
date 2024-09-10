@@ -33,3 +33,11 @@ math.subtract()
 ```
 > [!NOTE]
 > when we use module.exports we basically attaching properties to export object that exists on every module
+
+4. **destructing the functions from the moudle**
+```js
+const math = require("./math")
+const {add, subtract} = math;
+add()
+subtract()
+```
