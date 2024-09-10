@@ -15,3 +15,14 @@
     console.log(param1) // hellow
 })("hello")
 ```
+
+### Module wrapper
+- before node js executing any modules it wapps it in an IIFE contains 5 parameters ``exports, require, module, __filename, __dirname``
+```js
+(function(exports, require, module, __filename, __dirname){
+    // __filename is tha path to the current file
+    // __dirname is tha path to the current working directory
+    // require and exports are built in functions
+    // module is a reference to the current module
+})()
+```
