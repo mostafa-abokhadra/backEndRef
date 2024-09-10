@@ -23,3 +23,28 @@ node fileName
 1. **local modules**: modules that we create in our application
 2. **Built-in modules**: modules that node js ships with out of the box
 3. **Third Party modules**: written by other developers that we can use in our application
+
+### common js modules way
+```cjs
+// add.js
+const add = (a, b) => {
+    return a + b;
+}
+// index.js
+require("./pathToadd.js")
+```
+> [!NOTE]
+> - when you import a module it's code also get executed
+> - when you use require function you are simply just saying to the interpreter execute this module code (that you will require()) in your file that will be executed using node
+> - right way is to use modules.export
+
+```js
+// add.js
+const add = (a, b) => {
+    return a + b;
+}
+module.exports = add;
+// index.js
+const add = require("./add");
+```
+- when you use module.exports and assign it to a function in a file, then require that file using require function, the function that module.exports has it's value is the one that will be required (imported)
