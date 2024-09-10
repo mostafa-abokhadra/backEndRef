@@ -28,7 +28,7 @@
 ```
 
 ### Mdoule Caching
-- when you require a moudle it get cached, so when you try to import again it's gonna use the previously import it module not the new one
+- when you require a moudle it get cached in require.cache, so when you try to import it again it's gonna use the previously imported module not the new one
 ```js
 // file1.js
 module.exports = new SuperHero("Batman");
@@ -38,4 +38,5 @@ hero.setName = "NewName"
 // now if you tried to import it again
 const hero2 = require("./file1.js") 
 // the imoprted instance will still have newName ast it's name not batman as the moudule is cached once it is imported
+// so don't export an instance import the class if you want to create more instances
 ```
