@@ -14,3 +14,12 @@ node fileName
 - in the browser we don't have all the nice APIs that Node js provides through its modules, for example the filesystem access functionality
 - with node js you control the environment, you know your application dependencies version and all other needed libraries versions
 - with a browser you are at the mercy of what the users choose e:g if he use internet explorer that means more work for us to do
+
+### Modules
+- it is an encapsulated and resuable chunk of code that has its own context
+- in nodejs each file is treated as separate module
+
+##### Types of modules
+1. **local modules**: modules that we create in our application
+2. **Built-in modules**: modules that node js ships with out of the box
+3. **Third Party modules**: written by other developers that we can use in our application
