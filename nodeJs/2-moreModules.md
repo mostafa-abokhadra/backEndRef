@@ -26,3 +26,16 @@
     // module is a reference to the current module
 })()
 ```
+
+### Mdoule Caching
+- when you require a moudle it get cached, so when you try to import again it's gonna use the previously import it module not the new one
+```js
+// file1.js
+module.exports = new SuperHero("Batman");
+// file2.js
+const hero = require("./file1.js")
+hero.setName = "NewName"
+// now if you tried to import it again
+const hero2 = require("./file1.js") 
+// the imoprted instance will still have newName ast it's name not batman as the moudule is cached once it is imported
+```
