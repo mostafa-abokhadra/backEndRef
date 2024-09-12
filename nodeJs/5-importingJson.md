@@ -21,3 +21,13 @@ console.log(data);
 ```bash
 node --watch filename
 ```
+
+### what have been learned so far:
+- what is a moudle and what is the need for moudules?
+- types of modules in Node.js
+- local moudles
+- common js module format
+- module wrapper(IIFE)
+- Module Caching
+- patterns for importing and exporting modules in common js and ESM format
+- importing json data and watch mode
