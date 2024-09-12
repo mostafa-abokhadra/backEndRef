@@ -15,4 +15,8 @@ const path = require("node:path");
 
 console.log(__filename) // path of current file
 console.log(__dirname) // path to dir for current file
+
+console.log(path.basename(__filename)) // will print only the last portion of the file bath (current file name only)
+path.basename(__dirname)
+
 ```
