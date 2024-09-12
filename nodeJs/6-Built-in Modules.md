@@ -28,3 +28,9 @@ console.log(__dirname)
 console.log(path.basename(__filename)) 
 path.basename(__dirname)
 ```
+
+### extname
+- returns the extension name e:g <mark>.js</mark>
+```js
+path.extname(__filename)
+```
