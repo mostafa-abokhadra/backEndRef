@@ -7,16 +7,24 @@
 4. stream
 5. http
 
-### path
+# path
 - it provide utilitis for working with file and directory paths
 ```js
 const path = require("node:path");
-// prefix with node: to indicate that it's a building module
+```
+- prefix with <mark>node:</mark> to indicate that it's a built-in module
 
-console.log(__filename) // path of current file
-console.log(__dirname) // path to dir for current file
+### __filename and __dirname
+- __filename is the path of current file
+- __dirname is the path to dir for current file
+```js
+console.log(__filename)
+console.log(__dirname)
+```
 
-console.log(path.basename(__filename)) // will print only the last portion of the file bath (current file name only)
+### path.basename
+- will print only the last portion of the file bath (current file name only)
+```js
+console.log(path.basename(__filename)) 
 path.basename(__dirname)
-
 ```
