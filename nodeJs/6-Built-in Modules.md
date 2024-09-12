@@ -66,5 +66,11 @@ path.isAbsolute(__filename)
 - accept one or more strings as arguments
 ```js
 path.join("folder1", "folder2", "index.html")
-// flder1/folder2/index.html
+// folder1/folder2/index.html
+path.join("/folder1", "folder2", "index.html")
+// /folder1/folder2/index.html (it normalizes the results)
+path.join("/folder1", "//folder2", "index.html")
+// folder1/folder2/index.html (it normalizes the results)
+path.join("/folder1", "folder2", "../index.html")
+// folder1/index.html (it normalizes the results)
 ```
