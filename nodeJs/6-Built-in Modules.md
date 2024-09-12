@@ -74,3 +74,6 @@ path.join("/folder1", "//folder2", "index.html")
 path.join("/folder1", "folder2", "../index.html")
 // folder1/index.html (it normalizes the results)
 ```
+> [!TIP]
+> `path.join(__dirname, "filename")`
+> this will get you the absolute pathname of a file
