@@ -60,3 +60,11 @@ path.format(path.parse(__filename))
 ```js
 path.isAbsolute(__filename)
 ```
+
+### path.join
+- joins all path segements together using the platform specific separatro as a delimiter and normalizing the resulting path
+- accept one or more strings as arguments
+```js
+path.join("folder1", "folder2", "index.html")
+// flder1/folder2/index.html
+```
