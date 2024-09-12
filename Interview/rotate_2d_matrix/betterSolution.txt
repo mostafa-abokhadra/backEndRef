@@ -1,0 +1,5 @@
+Inplace rotate square matrix by 90 degrees
+https://www.geeksforgeeks.org/inplace-rotate-square-matrix-by-90-degrees/
+
+Transpose a matrix in Single line in Python
+https://www.geeksforgeeks.org/transpose-matrix-single-line-python/
