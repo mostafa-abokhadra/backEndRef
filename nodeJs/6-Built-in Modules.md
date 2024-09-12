@@ -29,13 +29,13 @@ console.log(path.basename(__filename))
 path.basename(__dirname)
 ```
 
-### extname
+### path.extname
 - returns the extension name e:g <mark>.js</mark>
 ```js
 path.extname(__filename)
 ```
 
-### parse
+### path.parse
 - returns object who's properities represents significant elements of the path
 ```js
 path.parse(__filename)
@@ -47,4 +47,10 @@ path.parse(__filename)
 //     ext:
 //     name:
 // }
+```
+
+### path.format
+- it takes 1 object parameter (the bath as in path.parse output) and convert it to a string path
+```js
+path.format(path.parse(__filename))
 ```
