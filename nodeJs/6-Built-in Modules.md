@@ -54,3 +54,9 @@ path.parse(__filename)
 ```js
 path.format(path.parse(__filename))
 ```
+
+### path.isAbosolute
+- returns if a path is absolute or not
+```js
+path.isAbsolute(__filename)
+```
