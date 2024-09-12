@@ -34,3 +34,17 @@ path.basename(__dirname)
 ```js
 path.extname(__filename)
 ```
+
+### parse
+- returns object who's properities represents significant elements of the path
+```js
+path.parse(__filename)
+// output
+// {
+//     root: 
+//     dir:
+//     base:
+//     ext:
+//     name:
+// }
+```
