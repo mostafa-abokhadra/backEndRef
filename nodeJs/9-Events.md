@@ -37,3 +37,10 @@ and in your listener accept the 2 arguments
 ```js
 emitter.on("eventName", (arg1, arg2) => {})
 ```
+
+you can specify multiple listener to an event
+
+```js
+function differentListener(size){}
+emtiter.on("order-pizza", differentListener);
+```
