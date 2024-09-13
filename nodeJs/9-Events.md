@@ -44,3 +44,8 @@ you can specify multiple listener to an event
 function differentListener(size){}
 emtiter.on("order-pizza", differentListener);
 ```
+
+> [!NOTE]
+> - we are not blocking execution by writing code in this manner
+> - events allows us to wirte the code in a non-blocking manner
+> - if we you add a console statement for example after the event listener it will get executed before event occurs in the system
