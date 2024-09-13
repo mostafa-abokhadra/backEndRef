@@ -25,3 +25,15 @@ emtter.on("order-pizza", () => {
 })
 ```
 now when you run <mark>node index</mark> you will get in the console `orderRecieved! backing a pizza`
+
+if you want to pass arguments to the listener you can pass it with emit method
+
+```js
+emitter.emit("eventName", "arg1", "arg2")
+```
+
+and in your listener accept the 2 arguments
+
+```js
+emitter.on("eventName", (arg1, arg2) => {})
+```
