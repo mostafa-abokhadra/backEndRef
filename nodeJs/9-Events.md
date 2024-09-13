@@ -13,3 +13,15 @@ const emitter = new Event()
 ```js
 emitter.emit("order-pizza")
 ```
+
+### add listener
+- to respond to an event we need to register a <mark>listener</mark>
+- a listner is a call back function that get executed when corrosponding event is emitted
+- for that we use the <mark>on</mark> method that accept <mark> eventName and listner </mark>
+
+```js
+emtter.on("order-pizza", () => {
+    console.log("orderRecieved! backing a pizza");
+})
+```
+now when you run <mark>node index</mark> you will get in the console `orderRecieved! backing a pizza`
