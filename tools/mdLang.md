@@ -10,13 +10,14 @@ this is a <sub>subscript</sub> text
 
 this is a <sup>super</sup> text
 
-to add new line at the end of the line just use \\
+to add new line at the end of the line just press enter
 
 > this is a qoute using >
 
 ```
 backticks to format code ``` ``` or just ``
 ```
+
 #### creating links:
 This site was built using [GitHubPages](https://pages.github.com/).
 
@@ -63,6 +64,7 @@ code:
 `- [x] Add delight to the experience when all tasks are complete :tada:`
 - [ ] Add delight to the experience when all tasks are complete :tada:
 - [x] Add delight to the experience when all tasks are complete :tada:
+
 ### alerts
 ```
 > [!NOTE] > Useful information that users should know, even when skimming content.
@@ -89,4 +91,5 @@ code:
 ```
 horizontal line using 3 underscores ___
 ```
+
 ___
