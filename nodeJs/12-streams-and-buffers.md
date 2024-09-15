@@ -25,9 +25,14 @@ in doing so we prevent unnescessary data downloads and memmory usage
 - once the buffer is filled up and the data is processed, the video player shows the video
 - while the video is playing, more data will continue to arrive and wait in the buffer
 
+#### buffer.from()
 ```js
 // holding data in a buffer
 const buffer = Buffer.from("Vishwas", 'utf-8')
+```
+
+#### buffer.toJSON()
+```js
 console.log(buffer.toJSON())
 ```
 **output**
@@ -44,6 +49,7 @@ console.log(buffer.toJSON())
 > [!NOTE]
 > each number is the data key is a <mark>Unicode character code</mark> of the string Vishwas
 
+#### buffer object
 ```js
 console.log(buffer);
 ```
@@ -55,9 +61,13 @@ console.log(buffer);
 - But isn't binary just 0 and 1 ? yes it is
 - what nodejs is print the hexadecimal representation(base16) of the number, as printing 8 bytes binary format for each number will flood you terminal
 
+#### buffer.toString()
 ```js
-buffer.toString() // print the string representation of the binary data in the buffer
+buffer.toString()
 ```
+print the string representation of the binary data in the buffer
+
+#### buffer.write()
 ```js
 buffer.write("code")
 ```
