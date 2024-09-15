@@ -58,3 +58,8 @@ console.log(buffer);
 ```js
 buffer.toString() // print the string representation of the binary data in the buffer
 ```
+```js
+buffer.write("code")
+```
+- buffer now will contatin binary representation of codeafa
+- because buffers has limited memmory
