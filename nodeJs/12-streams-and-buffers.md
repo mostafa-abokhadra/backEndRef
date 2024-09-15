@@ -54,3 +54,7 @@ console.log(buffer);
 - buffer object contains raw binary data
 - But isn't binary just 0 and 1 ? yes it is
 - what nodejs is print the hexadecimal representation(base16) of the number, as printing 8 bytes binary format for each number will flood you terminal
+
+```js
+buffer.toString() // print the string representation of the binary data in the buffer
+```
