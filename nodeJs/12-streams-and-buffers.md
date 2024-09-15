@@ -43,3 +43,14 @@ console.log(buffer.toJSON())
 ```
 > [!NOTE]
 > each number is the data key is a <mark>Unicode character code</mark> of the string Vishwas
+
+```js
+console.log(buffer);
+```
+**output**
+```
+<Buffer 56 69 73 68 77 61 73>
+```
+- buffer object contains raw binary data
+- But isn't binary just 0 and 1 ? yes it is
+- what nodejs is print the hexadecimal representation(base16) of the number, as printing 8 bytes binary format for each number will flood you terminal
