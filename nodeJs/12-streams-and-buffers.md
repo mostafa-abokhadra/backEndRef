@@ -24,3 +24,8 @@ in doing so we prevent unnescessary data downloads and memmory usage
 - if your connection is slow, after processing the first chunk of data taht arrived, the video player will display s aloading spinner which indicates it is waiting for more data to arrive
 - once the buffer is filled up and the data is processed, the video player shows the video
 - while the video is playing, more data will continue to arrive and wait in the buffer
+
+```js
+// holding data in a buffer
+const buffer = Buffer.from("Vishwas", 'utf-8')
+```
