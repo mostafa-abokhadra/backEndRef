@@ -7,6 +7,9 @@
 const Event = require("node:events")
 const emitter = new Event()
 ```
+> [!NOTE]
+> when you require events module it retrurns back <mark>EventEmitter</mark>class
+
 ### emitting an event
 - use <mark>emit<mark> method
 - emit method accept <mark>eventName<mark> as an argument
@@ -48,4 +51,4 @@ emtiter.on("order-pizza", differentListener);
 > [!NOTE]
 > - we are not blocking execution by writing code in this manner
 > - events allows us to wirte the code in a non-blocking manner
-> - if we you add a console statement for example after the event listener it will get executed before event occurs in the system
+> - if you add a console statement for example after the event listener it will get executed before event occurs in the system
