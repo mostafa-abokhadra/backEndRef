@@ -28,4 +28,18 @@ in doing so we prevent unnescessary data downloads and memmory usage
 ```js
 // holding data in a buffer
 const buffer = Buffer.from("Vishwas", 'utf-8')
+console.log(buffer.toJSON())
 ```
+**output**
+```
+{ 
+    type: 'buffer',
+    data: '{
+        86, 105, 115,
+        104, 119, 79,
+        115
+    }
+}
+```
+> [!NOTE]
+> each number is the data key is a <mark>Unicode character code</mark> of the string Vishwas
