@@ -28,3 +28,24 @@ const readableStream = fs.createReadStream("./file.txt", {
 const wirtableStream = fs.createWriteStream("./file2.txt")
 ```
 
+- streams extends from eventEmitter class which allows us to add listeners to events
+- the readable stream emit a data event to which we can listen
+```js
+readableStream.on("data", (chunk) => {
+    console.log(chunk)
+    writableStream.write(chunk)
+})
+```
+> [!NOTE]
+> now if your file1.txt is small the chunk will be the whole file, because the buffer that streams use has a default size of 64 kilobytes, if you want to see the data being read and transferred in chunk you can set another option when you read the data <mark>highWaterMark: size</mark>
+```js
+const readableStream = fs.createReadStream("filePath", {
+    encoding: "utf-8",
+    highWaterMark: 2
+})
+readableStream.on("data", (chunk) => {
+    console.log(chunk)
+    writableStream.write(chunk)
+})
+```
+- now you will notice that the data being logged to the console is 2 characters at a time which indicates that data is being read and transfered to  file2 2-characters at a time
