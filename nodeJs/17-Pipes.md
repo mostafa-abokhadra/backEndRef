@@ -7,5 +7,4 @@
 ```js
 readableStream.pipe(writableStream)
 ```
-
 - pipe returns the destenation stream which enables chaining, but the the destination stream has to be <mark>readable, duplex or transform</mark> stream, in the above example we have a writable stream so we can't chain by calling pipe again
