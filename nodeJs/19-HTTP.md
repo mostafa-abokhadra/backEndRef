@@ -12,3 +12,10 @@ t be understood by the client ? this where HTTP comes into picture
 - htperText Transfer Protocol
 - it's a protocol that defines a format for clients and servers to speak to each other
 - the client sends an http request and the server respond with an HTTP response
+
+### HTTP and Node
+- we can create a web server using Node.js
+- nodejs has access to operating system functionality like networking
+- node has an event loop to run task asynchronously and is perfect for creating web servers that can simultaneously handle large volume of requests
+- the node server we create should still respect the HTTP format
+- the HTTP module allows creation of web servers that can transfer data over HTTP
