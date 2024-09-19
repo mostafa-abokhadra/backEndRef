@@ -49,3 +49,19 @@ readableStream.on("data", (chunk) => {
 })
 ```
 - now you will notice that the data being logged to the console is 2 characters at a time which indicates that data is being read and transfered to  file2 2-characters at a time
+
+### Types of streams
+1. **Readable stream** from which data can be read
+2. **writable stream** to which we can write data
+3. **Duplex stream** that are both readable and writable
+4. **Transform stream** that can modify or transform the data as it is written and read
+
+### **examples**
+- reading from a file as a <mark>readable stream</mark>
+- wirting to a file as <mark>writable stream</mark>
+- sockets as a <mark>duplex stream</mark>
+- file compression where you can write compressed data and read de-compressed data to and from a file as a <mark>transform stream</mark>
+
+### sum
+> [!IMPORTANT]
+> the concept of <mark>streams</mark> allows us to work with small chunks of data rather than large amount of data at once
