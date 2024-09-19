@@ -21,5 +21,10 @@ const readableStream = fs.createReadStream("./file.txt", {
 ```
 - this readable stream now will read data in chunks from file.txt
 
-
+### createWriteStream()
+- to create writable stream
+- it accept the <mark>filePath</mark>
+```js
+const wirtableStream = fs.createWriteStream("./file2.txt")
+```
 
