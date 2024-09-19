@@ -6,4 +6,9 @@
 - a copy of that page is downloaded from the server and sent as a response to the client to be displayed in the web browser
 - this model is popularly called <mark>client-server</mark> model
 - but in what format is that data being transferred from and to the client? what if the request sent by the client can't be understood by the server or what if the response sent by the server can
-t be understood by the client ?
+t be understood by the client ? this where HTTP comes into picture
+
+### HTTP
+- htperText Transfer Protocol
+- it's a protocol that defines a format for clients and servers to speak to each other
+- the client sends an http request and the server respond with an HTTP response
