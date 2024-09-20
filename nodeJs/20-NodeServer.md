@@ -14,5 +14,7 @@ const http = require ("node:http")
 - so node will handle the request and we have to write code to send back the response
 ```js
 http.createServer((req, res)=>{
+    res.writeHead(200)
+    res.end("hello world")
 })
 ```
