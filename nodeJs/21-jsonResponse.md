@@ -12,5 +12,5 @@ const server = http.createServer((req, res) => {
     res.end(JSON.stringfy(MMA))
     res.end(MMA) // wrong will produce error, instead
 })
-
 ```
+you can convert it back to object using <mark>JSON.parse()</mark>
