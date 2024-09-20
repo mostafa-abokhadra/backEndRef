@@ -13,6 +13,6 @@ const server = http.createServer((req, res) => {
     res.end(MMA) // wrong will produce error, instead
 })
 ```
-you can convert it back to object using <mark>JSON.parse()</mark>
-
-now we have one api endPoint <mark>localhost:3000</mark> that returns some json data? YUP you have written you first API with nodeJS
+- you can convert it back to object using <mark>JSON.parse()</mark>
+- now we have one endPoint <mark>localhost:3000</mark> that returns some json data? YUP you have written you first API with nodeJS
+- not just the browser, any server that is able to make a request can now get this data from our application
