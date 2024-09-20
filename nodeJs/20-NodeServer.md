@@ -24,3 +24,7 @@ server.listen(3000, () => {
 })
 ```
 when you run this file it shows on the console "server is running on port 3000" and the program never exit, it waits for a request from the browser for example
+- although it is not neccessary but it is a good practice to add the content type of your response
+```js
+res.writeHead(200, {"content-Type": "text/plain"})
+```
