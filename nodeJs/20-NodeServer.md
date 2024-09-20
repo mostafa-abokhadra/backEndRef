@@ -23,3 +23,4 @@ server.listen(3000, () => {
     console.log(`server is running on port 3000`)
 })
 ```
+when you run this file it shows on the console "server is running on port 3000" and the program never exit, it waits for a request from the browser for example
