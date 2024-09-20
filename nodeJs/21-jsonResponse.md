@@ -14,3 +14,5 @@ const server = http.createServer((req, res) => {
 })
 ```
 you can convert it back to object using <mark>JSON.parse()</mark>
+
+now we have one api endPoint <mark>localhost:3000</mark> that returns some json data? YUP you have written you first API with nodeJS
