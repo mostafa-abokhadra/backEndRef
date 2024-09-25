@@ -1,6 +1,8 @@
 ### Routing 
 - <mark>req.url</mark> gives us the query string
 - we can use it with if statment to respond differently
+- <mark>req.method</mark> also help you to route properly
+- a combination of both req.url and req.method allows you to handle routing effectively
 ```js
 const server = http.createServer((req, res) => {
     if (req.url === '/') {
@@ -18,3 +20,5 @@ const server = http.createServer((req, res) => {
     }
 })
 ```
+
+in a real world application we will rely on a web Framework to do the routing
