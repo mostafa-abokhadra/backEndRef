@@ -23,3 +23,9 @@ server.listen(3000, () => {
     console.log("listening")
 })
 ```
+
+readFileSync reads the entire html file at once, if we have a very large html file we stores all that content in a temporary buffer which may lead to unneccessary use of memmory, instead we can rely on streams
+
+```js
+fs.createReadStream(__dirName__ + "./index.html").pipe(res)
+```
