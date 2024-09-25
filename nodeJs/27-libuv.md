@@ -19,3 +19,4 @@ process.env.UV_THREADPOOl_SIZE = 5
 - watch [this](https://youtu.be/I1sqnbJ1Fno?si=SGW1DyF2AtVtu2lw) and [this](https://youtu.be/3JYNNf3Iljo?si=4Fbx7DLkXTq5QrHV)
 
 ## Event loop
+watch [this](https://youtu.be/L18RHG2DwwA?si=2PEaTZbAqh0vwdyC)
