@@ -9,6 +9,12 @@ const server = http.createServer((req, res) => {
     } else if (req.url === "/about"){
         res.writeHead(200, "Content-Type": "text/plain")
         res.end("about page")
+    } else if (req.url === "/api"){
+        res.writeHead(200, "Content-Type": "application/json")
+        res.end(JSON.stringfy({name: "mostafa Abokhadra"}))
+    } else {
+        res.writeHead(404)
+        res.end("page not found")
     }
 })
 ```
