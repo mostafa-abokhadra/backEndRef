@@ -15,10 +15,20 @@ app.get('/path', (req, res) => {
     res.send("hi")
     res.json({})
     res.download("fileForUserToDownload")
-    res.render('filePath.html')
+    res.render('filePath.html') // all your html files should be in views folder
 })
+```
+- for render to work install view engine either ejs or pug
+```bash
+npm i ejs
+```
+```js
+app.set('veiw engine', 'ejs')
+```
+- and now name your html files with the extension .ejs instead of .html
+- install EJS language support in Vs
+
 app.post()
 app.put()
 app.patch()
 app.delete()
-```
