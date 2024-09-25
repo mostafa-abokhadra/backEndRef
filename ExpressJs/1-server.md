@@ -15,6 +15,7 @@ app.get('/path', (req, res) => {
     res.send("hi")
     res.json({})
     res.download("fileForUserToDownload")
+    res.render('filePath.html')
 })
 app.post()
 app.put()
