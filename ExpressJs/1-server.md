@@ -14,6 +14,7 @@ app.get('/path', (req, res) => {
     res.status(500).json({error: "500"})
     res.send("hi")
     res.json({})
+    res.download("fileForUserToDownload")
 })
 app.post()
 app.put()
