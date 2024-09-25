@@ -27,3 +27,12 @@ Gathering and analyzing data is an important part of the software planning proce
 Pick an interval to collect project data on, such as the status of tasks or current expenditures, based on your project schedule. For example, you may collect this information at the end of every week to update the software project plan for the following week. Then, create a system that allows you to collect this data quickly, such as sending out an automated email reminder to team members.
 8. **Make adjustments to ensure success**
 Using your project data, make necessary adjustments to the project scope, how you implement your plan or the delegation of tasks. For software projects, it's important to maintain a flexible plan so that you can adapt it as needed. After you collect data from your team or client, analyze this data to see if you need to make changes. For example, if a client requests changes during production, you may need to adjust the estimated completion date and any milestones within the project.
+
+### Tips for creating software project plans
+1. Use software tools
+There are many software tools available that can help you create a software project plan. These tools provide documents to start your software project plan and can make it easy to share your completed plan with team members. Using software tools can allow you to create project plans faster while ensuring you include all the essential information.
+Related: The 24 Best Free Project Management Software Tools for 2022
+2. Create accessible guide documents
+When creating a software project plan, documents should be accessible to the team. This means they can easily find the documents, open them on their devices and browse through them. It also means the documents are well-organized and easy to read. Before sending your completed software project plan to your team, look for ways to improve the language or format that may make it easier to read. After you send it, ask your team for feedback to ensure they can access the documents.
+3. Review the plan at the end of the project
+After successfully completing a software project, it's important to review your process and look for improvement opportunities. This includes reviewing your software project plan. Read your plan again and determine whether it met your needs for the project. Brainstorm ideas for how you can create a better software project plan next time and ask your team if there's anything they'd like to change for future plans.
