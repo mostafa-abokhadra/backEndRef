@@ -63,6 +63,10 @@ router.get("/users/:id", (req, res) => {})
 res.send(`get user ${req.params.id}`)
 ```
 
+- to specify deferent method for the same route
+```js
+router.route("/:id").get("getcodeNormally").put("putcode").delete()
+```
 app.post()
 app.put()
 app.patch()
