@@ -9,3 +9,8 @@ For example, use the following code to serve images, CSS files, and JavaScript f
 ```js
 app.use(express.static('public'))
 ```
+To use multiple static assets directories, call the express.static middleware function multiple times:
+```js
+app.use(express.static('public'))
+app.use(express.static('files'))
+```
