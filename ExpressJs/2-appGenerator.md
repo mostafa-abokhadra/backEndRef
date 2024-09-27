@@ -30,3 +30,7 @@ then install dependencies
 cd myapp
 npm install
 ```
+- on mac or linux
+```bash
+DEBUG=myapp:* npm start
+```
