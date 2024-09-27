@@ -25,4 +25,5 @@ app.put('/users/:id', (req, res) => {
 app.delete('/users/:id', (req, res) => {
     // code
 })
+app.all() // all http methods
 ```

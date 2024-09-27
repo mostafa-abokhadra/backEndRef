@@ -23,4 +23,8 @@ To create a virtual path prefix (where the path does not actually exist in the f
 ```js
 app.use('/static', express.static('public'))
 ```
-Now, you can load the files that are in the public directory from the /static path prefix.
+- Now, you can load the files that are in the public directory from the /static path prefix.
+- it’s safer to use the absolute path of the directory that you want to serve
+```js
+app.use('/static', express.static(path.join(__dirname, 'public')))
+```
