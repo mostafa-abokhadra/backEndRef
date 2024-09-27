@@ -29,7 +29,34 @@ app.all('/someThing', (req, res) => {
 
 }) // all http methods
 ```
+### multiple handlers
 - the routing methods can have more than one callback function as arguments. With multiple callback functions, it is important to provide next as an argument to the callback function and then call next() within the body of the function to hand off control to the next callback.
+```js
+app.get('/example/b', (req, res, next) => {
+  console.log('the response will be sent by the next function ...')
+  next()
+}, (req, res) => {
+  res.send('Hello from B!')
+})
+```
+### array of handlers
+```js
+const cb0 = function (req, res, next) {
+  console.log('CB0')
+  next()
+}
+
+const cb1 = function (req, res, next) {
+  console.log('CB1')
+  next()
+}
+
+const cb2 = function (req, res) {
+  res.send('Hello from C!')
+}
+
+app.get('/example/c', [cb0, cb1, cb2])
+```
 
 ### route paths
 - Route paths can be strings, string patterns, or regular expressions.
@@ -44,3 +71,6 @@ app.get('/users/:userId/books/:bookId', (req, res) => {
 - Route path: /users/:userId/books/:bookId
 - Request URL: http://localhost:3000/users/34/books/8989
 - req.params: { "userId": "34", "bookId": "8989" }
+
+> [!NOTE]
+> The name of route parameters must be made up of “word characters” ([A-Za-z0-9_]).
