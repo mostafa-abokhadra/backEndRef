@@ -67,6 +67,22 @@ res.send(`get user ${req.params.id}`)
 ```js
 router.route("/:id").get("getcodeNormally").put("putcode").delete()
 ```
+
+- to run specific code whenever certain paramter is send with the request
+- you should call next() function after your code
+```js
+router.param("id", (req, res, next, id) => {
+    // code
+    next()
+})
+```
+
+- to access post request information
+```js
+app.use(express.urlencoded({extended: true}))
+
+req.body.tagName
+```
 app.post()
 app.put()
 app.patch()
