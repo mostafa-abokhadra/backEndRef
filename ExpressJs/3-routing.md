@@ -19,6 +19,9 @@ app.get('/', (req, res) => {
 app.post('/signIn', (req, res) => {
     // code
 })
+app.put('/users/:id', (req, res) => {
+    // code
+})
 app.delete('/users/:id', (req, res) => {
     // code
 })
