@@ -83,3 +83,18 @@ app.get('/users/:userId/books/:bookId', (req, res) => {
 
 > [!NOTE]
 > The name of route parameters must be made up of “word characters” ([A-Za-z0-9_]).
+
+### app.route()
+You can create chainable route handlers for a route path by using app.route()
+```js
+app.route('/book')
+  .get((req, res) => {
+    res.send('Get a random book')
+  })
+  .post((req, res) => {
+    res.send('Add a book')
+  })
+  .put((req, res) => {
+    res.send('Update the book')
+  })
+```
