@@ -58,6 +58,15 @@ const cb2 = function (req, res) {
 app.get('/example/c', [cb0, cb1, cb2])
 ```
 
+### combination of array and independent function
+```js
+app.get('/example/d', [cb0, cb1], (req, res, next) => {
+  console.log('the response will be sent by the next function ...')
+  next()
+}, (req, res) => {
+  res.send('Hello from D!')
+})
+```
 ### route paths
 - Route paths can be strings, string patterns, or regular expressions.
 
