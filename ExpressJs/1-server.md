@@ -39,8 +39,30 @@ res.render('index', {name: "mostafa abokhadra"})
 ```html
 <% locals.name || "default" %>
 ```
+- create folder named <mark>routes</mark> and inside create routes related to something in separate files
+
+### Routers
+- router works exactly as you 
+```js
+//users.js
+const express = require("express")
+const router = express.Router()
+// routes related to users
+router.get("/users", (req, res)=>{})
+router.get("/users/new", (req, res)=>{})
+moudle.exports = router
+// in the bottom of your server file
+// const userRouter = require('./routes/users')
+// to link all these routes
+app.use('/users', userRouter)
+```
+instead of always write users before each route e:g users/new, users/delete etc.. , you can simply just type the after user part e:i /new or /delete and the router will know that it is users route from your file name
+-----
 
 app.post()
 app.put()
 app.patch()
 app.delete()
+
+### Ref
+[express](https://www.youtube.com/watch?v=SccSCuHhOw0)
