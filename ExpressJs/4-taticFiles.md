@@ -14,3 +14,6 @@ To use multiple static assets directories, call the express.static middleware fu
 app.use(express.static('public'))
 app.use(express.static('files'))
 ```
+Express looks up the files in the order in which you set the static directories with the express.static middleware function.
+> [!NOTE]
+> NOTE: For best results, use a <mark>reverse proxy</mark> cache to improve performance of serving static assets.
