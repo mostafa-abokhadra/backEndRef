@@ -25,5 +25,11 @@ app.put('/users/:id', (req, res) => {
 app.delete('/users/:id', (req, res) => {
     // code
 })
-app.all() // all http methods
+app.all('/someThing', (req, res) => {
+
+}) // all http methods
 ```
+- the routing methods can have more than one callback function as arguments. With multiple callback functions, it is important to provide next as an argument to the callback function and then call next() within the body of the function to hand off control to the next callback.
+
+### route paths
+- Route paths can be strings, string patterns, or regular expressions.
