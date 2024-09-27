@@ -83,6 +83,11 @@ app.use(express.urlencoded({extended: true}))
 
 req.body.tagName
 ```
+
+- to redirect
+```js
+res.redirect("newroute")
+```
 app.post()
 app.put()
 app.patch()
