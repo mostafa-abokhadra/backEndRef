@@ -16,4 +16,7 @@ app.METHOD(PATH, HANDLER)
 app.get('/', (req, res) => {
     // code
 })
+app.post('/signIn', (req, res) => {
+    // code
+})
 ```
