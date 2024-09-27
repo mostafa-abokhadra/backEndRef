@@ -57,7 +57,11 @@ moudle.exports = router
 app.use('/users', userRouter)
 ```
 instead of always write users before each route e:g users/new, users/delete etc.. , you can simply just type the after user part e:i /new or /delete and the router will know that it is users route from your file name
------
+
+```js
+router.get("/users/:id", (req, res) => {})
+res.send(`get user ${req.params.id}`)
+```
 
 app.post()
 app.put()
