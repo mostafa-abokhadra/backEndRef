@@ -1,6 +1,8 @@
 ### installing packages
 - once you install your first package, a node_modules folder will be created and the package installed will be inside it.
 - also package.json file will be updated, dependencies field will be added with the package installed e:g
+- dependencies field used to track the packages that are required for our code
+- don't forget to gitignore node_modules directory
 ```json
 {
     "dependencies": {
@@ -21,3 +23,6 @@ npm uninstall pacakgeName
 ```js
 const upperCase = require("upper-case").upperCase; 
 ```
+
+> [!NOTE]
+> our project in github doesn't have node_modules directory, so when someone clone our repo how does the project work? well here comes package.json into play, when user runs the command `npm install` it will install all the dependecies needed for the project to work from the depenedenceis field in package.json
