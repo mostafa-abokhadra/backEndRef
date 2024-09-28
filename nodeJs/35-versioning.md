@@ -9,3 +9,14 @@ npm install upper-case@2.0.0
 - a simple set of rules and requirements that dictate how version numbers are assingned and incremented
 - it is crucial to keep a semantic and historical track of changes
 - version numbers and the way they change convey meaning about the undelying code and what has been modified from one version to the next
+
+### Format
+#### X.Y.Z
+- x stands for major version
+- y for minor version
+- z for patch
+
+### versioning rules
+- when you fix a bug and the code stays backwards-compatible you increment the patch version e:g <mark>1.1.1</mark> to <makr>1.1.2</mark>
+- when you add new functionality but the code still stays backwards-compatible you increment the minor version, you also reset the patch version to zero e:g <mark>1.1.1</mark> to <mark>1.2.0</mark>
+- when you make changes and the code is no more backwards compatible, you increment the major version, you have to reset the minor and patch version to zero e:g <mark>1.1.1</mark> to <mark>2.0.0</mark>
