@@ -6,3 +6,8 @@
 ### nodemon
 - it is a simple monitor of script, it automatically restart the node application when file changes in the dir is detected
 - the recently added watch mode serve the same purpose
+```bash
+npm install -g nodemon
+```
+<mark>-g</mark> insturct npm to install nodemon globally in your system path
+this allows us to run the command from command line regardeless where you run the command from
