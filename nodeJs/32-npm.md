@@ -1,7 +1,10 @@
 ### npm
+- the default package manager of nodejs
 - the world's largest software library (registry)
 - it is a software package manager
-
+```bash
+npm -v
+```
 ### npm is a software library
 - npm is a library or a registry which contains code packages written by various developers
 - it is a large3 public database of js code that developers from all over the world can use to share and borrow code
