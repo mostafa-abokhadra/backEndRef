@@ -5,3 +5,13 @@
 - they also ensure that everyone is using the same command with the same options
 - common use cases for npm scripts include building your project, starting a development server, compiling Css, linting and minifying
 - npm scripts are executed using the command npm run scritpName
+```json
+{
+    "scripts": {
+        "start": "node index.js"
+    }
+}
+```
+```bash
+npm run start
+```
