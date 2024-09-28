@@ -18,5 +18,7 @@ touch package.json
     "name": "package-name",
     // version fromat X.X.X
     "version": "1.0.0",
+    // use to search and describe packages in npm registry
+    "description": "mostafaAbokhadra package",
 }
 ```
