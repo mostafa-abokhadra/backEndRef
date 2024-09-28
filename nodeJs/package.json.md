@@ -25,6 +25,8 @@ touch package.json
         "mostafa",
         "abokhadra",
         "abokhadraPackage"
-    ]
+    ],
+    // the entry point of the project
+    "main": "index.js"
 }
 ```
