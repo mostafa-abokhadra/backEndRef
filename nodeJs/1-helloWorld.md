@@ -1,7 +1,8 @@
 ```bash
 node -v # to verify installation
-node # open the node interactive shell, it is called Node REPL as it READ js code the user type EVALUATE the result of interpreting the line of code PRINT the output to use and LOOP unitll the user signaling to quit ctrl + C
+node
 ```
+`node` command open the node interactive shell, it is called Node REPL as it **READ** js code the user type **EVALUATE** the result of interpreting the line of code **PRINT** the output to use and **LOOP** unitll the user signaling to quit (ctrl + C)
 **to run your js file using node:**
 ```bash
 node fileName.js # or
@@ -34,9 +35,9 @@ const add = (a, b) => {
 require("./pathToadd.js")
 ```
 > [!NOTE]
-> - when you import a module it's code also get executed
+> - when you import a module all of it's code get executed
 > - when you use require function you are simply just saying to the interpreter execute this module code (that you will require()) in your file that will be executed using node
-> - right way is to use modules.export
+> - right way is to use <mark>modules.export</mark>
 
 ```js
 // add.js
@@ -44,7 +45,8 @@ const add = (a, b) => {
     return a + b;
 }
 module.exports = add;
+
 // index.js
 const add = require("./add");
 ```
-- when you use module.exports and assign it to a function in a file, then require that file using require function, the function that module.exports has it's value is the one that will be required (imported)
+- when you use module.exports and assign a function value to it, then require the file containing that function using require, the function that module.exports has it's value is the one that will be required (imported)
