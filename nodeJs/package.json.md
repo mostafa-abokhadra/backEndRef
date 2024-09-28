@@ -20,5 +20,11 @@ touch package.json
     "version": "1.0.0",
     // use to search and describe packages in npm registry
     "description": "mostafaAbokhadra package",
+    // keywords helps to find your package when someone is searching for them
+    "keywords": [
+        "mostafa",
+        "abokhadra",
+        "abokhadraPackage"
+    ]
 }
 ```
