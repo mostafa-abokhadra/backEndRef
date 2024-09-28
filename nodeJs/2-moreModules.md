@@ -6,13 +6,13 @@
     // module code actually live in here
 })()
 ```
-- you write `function(){}` then wrapped with parantheses `(function(){})` to convert it to function exepression, then adding `()` after the expression to immediately invode it, then write your code inside the `{}`
+- you write `function(){}` then wrapped with parantheses `(function(){})` to convert it to function exepression, then adding `()` after the expression to immediately invoke it, then write your code inside the `{}`
 - using IIFE node can execute each module with it's own private scope
 
 **to specify parameter and pass arguments to IIFE**:
 ```js
 (function(param1){
-    console.log(param1) // hellow
+    console.log(param1) // hello
 })("hello")
 ```
 
@@ -37,6 +37,5 @@ const hero = require("./file1.js")
 hero.setName = "NewName"
 // now if you tried to import it again
 const hero2 = require("./file1.js") 
-// the imoprted instance will still have newName ast it's name not batman as the moudule is cached once it is imported
-// so don't export an instance import the class if you want to create more instances
 ```
+the imoprted instance will still have newName as it's name not batman as the moudule is cached once it is imported, so don't export an instance import the class
