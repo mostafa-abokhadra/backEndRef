@@ -42,5 +42,5 @@ console.log(pizza.listeners("orderPizza"))
 console.log(`afterOrder: ${pizza.displayOrder()}`);
 ```
 > [!TIP]
-> listeners("eventName") returns a list of all listeners of an event
-> console.log(pizza.listeners("orderPizza"))
+> - listeners("eventName") returns a list of all listeners of an event
+> - console.log(pizza.listeners("orderPizza"))
