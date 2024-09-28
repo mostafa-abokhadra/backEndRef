@@ -20,3 +20,9 @@ npm install upper-case@2.0.0
 - when you fix a bug and the code stays backwards-compatible you increment the patch version e:g <mark>1.1.1</mark> to <makr>1.1.2</mark>
 - when you add new functionality but the code still stays backwards-compatible you increment the minor version, you also reset the patch version to zero e:g <mark>1.1.1</mark> to <mark>1.2.0</mark>
 - when you make changes and the code is no more backwards compatible, you increment the major version, you have to reset the minor and patch version to zero e:g <mark>1.1.1</mark> to <mark>2.0.0</mark>
+
+### few more points
+- semantic versioning always starts with 0.1.0
+- 0.Y.Z (a major version of zero) is used for initial development
+- when the code is production-ready, you increment to version 1.0.0
+- even the simplest of changes has to be done with an increase  in the version number
