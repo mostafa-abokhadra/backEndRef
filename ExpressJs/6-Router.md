@@ -182,3 +182,21 @@ app.listen(3000, () => {
 4. **Middleware Scoping**: Middleware can be applied to specific routers, making it easier to handle logic specific to certain routes or groups of routes.
 
 By organizing your routes with `Express.Router()`, you can keep your codebase modular, maintainable, and scalable, especially as the app grows in complexity!
+
+### router.route
+- to specify deferent method for the same route
+```js
+router.route("/:id")
+  .get("getcodeNormally")
+  .put("putcode")
+  .delete()
+```
+### router.param
+- to run specific code whenever certain paramter is send with the request
+- you should call next() function after your code
+```js
+router.param("id", (req, res, next, id) => {
+    // code
+    next()
+})
+```
