@@ -8,7 +8,7 @@ const Event = require("node:events")
 const emitter = new Event()
 ```
 > [!NOTE]
-> when you require events module it retrurns back <mark>EventEmitter</mark>class
+> when you require events module, ther returned value is the <mark>EventEmitter</mark> class
 
 ### emitting an event
 - use <mark>emit<mark> method
