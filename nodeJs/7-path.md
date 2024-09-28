@@ -7,7 +7,7 @@ const path = require("node:path");
 ```
 
 ### path.basename
-- will print only the last portion of the file bath (current file name only)
+- will print only the last portion of the file path (current file name only)
 ```js
 console.log(path.basename(__filename)) 
 path.basename(__dirname)
@@ -34,7 +34,7 @@ path.parse(__filename)
 ```
 
 ### path.format
-- it takes 1 object parameter (the bath as in path.parse output) and convert it to a string path
+- it takes 1 object parameter (the path as in path.parse output) and convert it to a string path
 ```js
 path.format(path.parse(__filename))
 ```
