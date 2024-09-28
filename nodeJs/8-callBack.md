@@ -1,5 +1,5 @@
 ### Call-Backs
-- in js functions are first class objects
+- in js, functions are first class objects
 - a function can be passed as an argument to a function
 - a function can also be returned as values from other functions
 - any function that is passed to another function is called <mark>a call back function </mark> in js
@@ -17,9 +17,9 @@ higherOrderFunction(greet)
 #### why do we need callbacks?
 
 ### Types of CallBacks
-1. synchronous
+1. **synchronous**
     - it is a call back which is executed immediately e:g the above example, or functionos that is passed to methods like sort, filter and map
-2. asynchronous
+2. **asynchronous**
     - it is often used to continue or resume code execution after an asynchronous operation has completed
     - are used to delay the execution of a function until a particular time or event has occurred
     - in node.js have an asynchronous nature to prevent blocking of execution
