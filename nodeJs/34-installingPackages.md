@@ -9,3 +9,8 @@
 }
 ```
 - also package-lock.json file will be created once you installed your first package, then the same file will be updated for subsequent packages, this file simpley keeps track of the packages and version you install using npm in the project and ensuring there is no inconsistincies when some one else install the same packages
+
+### uninstall
+```bash
+npm uninstall pacakgeName
+```
