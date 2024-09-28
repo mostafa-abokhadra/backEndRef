@@ -30,3 +30,7 @@ touch package.json
     "main": "index.js"
 }
 ```
+- you don't have to create package.json manually, instead use npm to initialize a project with package.json
+```bash
+npm init
+```
