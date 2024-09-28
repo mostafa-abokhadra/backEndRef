@@ -33,4 +33,6 @@ touch package.json
 - you don't have to create package.json manually, instead use npm to initialize a project with package.json
 ```bash
 npm init
+# or
+npm init --yes # to use default setting
 ```
