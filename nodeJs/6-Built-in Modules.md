@@ -11,7 +11,7 @@
 const path = require("node:moduleName");
 ```
 - prefix with <mark>node:</mark> to indicate that it's a built-in module
-- <mark>node:</mar> is optional
+- node: is <mark>optional</mark>
 
 ### __filename and __dirname
 - __filename is the path of current file
