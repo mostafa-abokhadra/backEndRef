@@ -1,7 +1,8 @@
 ### Expressjs
+
 - install node first
-- setUp a basic package.json 
-```shell
+- setUp a basic package.json
+```bash
 npm init -y
 ```
 - install library
