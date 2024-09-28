@@ -14,3 +14,10 @@
 ```bash
 npm uninstall pacakgeName
 ```
+
+### using packages
+- any package you install is basically a module in js
+- a package is called a third-party module, it's not a built-in module or local moudle
+```js
+const upperCase = require("upper-case").upperCase; 
+```
