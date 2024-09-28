@@ -7,7 +7,7 @@
 - it is not a language, it's not a framework , it's a run time environment
 
 ### ECMA SCRIPT stroy 
-- list to the story and the difference between ECMAscript and js[here](https://youtu.be/HXpPKhWOkAs?si=8LoZL3M57CzPTIpo)
+- list to the story and the difference between ECMAscript and js [here](https://youtu.be/HXpPKhWOkAs?si=8LoZL3M57CzPTIpo)
 
 ### JS engine
 - it is the program that converts js code to the machine code, each browser has it's own engine
@@ -18,7 +18,7 @@
 
 > [!NOTE]
 > V8 engine is written using C++, so you can embed V8 engine in your C++ application
-> you can write C++ code that get executed when the user write js code, in other words you can add new features for js itself
+> you can write C++ code that get executed when the user write js code, in other words you can add new features to js itself
 
 > [!TIP]
 > - since C++ is great for lower level operations like file handling, database conncetions and network operations, by embedding V8 into your own C++ program you have the power to add all of that functionaliy in js
