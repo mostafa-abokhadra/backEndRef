@@ -11,7 +11,7 @@ module.exports = (a, b) {
 }
 // then const add = require('./add')
 ```
-3. **more that one function**
+3. **more than one function**
 ```js
 // math.js
 module.exports = {
