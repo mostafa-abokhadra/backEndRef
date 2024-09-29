@@ -32,3 +32,7 @@ Set-Cookie: tasty_cookie=strawberry
 ### cookie Expiration
 - Permanent cookies are deleted after the date specified in the <mark>Expires</mark> attribute
 - or after the period specified in the <mark>Max-Age</mark> attribute:
+``
+Set-Cookie: id=a3fWa; Expires=Thu, 31 Oct 2021 07:28:00 GMT;
+Set-Cookie: id=a3fWa; Max-Age=2592000
+``
