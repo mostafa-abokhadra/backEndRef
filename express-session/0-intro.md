@@ -3,3 +3,6 @@
 ```bash
 npm install express-session
 ```
+```js
+const session = require('express-session');
+```
