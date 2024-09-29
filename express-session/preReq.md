@@ -20,6 +20,11 @@
 
 ### sending cookies
 After receiving an HTTP request, a server can send one or more Set-Cookie headers with the response, each one of which will set a separate cookie. to instructs the receiving browser to store a pair of cookies: A simple cookie is set by specifying a name-value pair like this, 
-```http
-Set-Cookie: <cookie-name>=<cookie-value>
 ```
+Set-Cookie: <cookie-name>=<cookie-value>
+et-Cookie: yummy_cookie=choco
+Set-Cookie: tasty_cookie=strawberry
+```
+
+- When a new request is made, the browser usually sends previously stored cookies for the current domain back to the server within a Cookie HTTP header:
+<mark>Cookie: yummy_cookie=choco; tasty_cookie=strawberry</mark>
