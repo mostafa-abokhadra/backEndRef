@@ -36,3 +36,24 @@ Set-Cookie: tasty_cookie=strawberry
 Set-Cookie: id=a3fWa; Expires=Thu, 31 Oct 2021 07:28:00 GMT;
 Set-Cookie: id=a3fWa; Max-Age=2592000
 ``
+
+> [!NOTE]
+> Expires has been available for longer than Max-Age, however Max-Age is less error-prone, and takes precedence when both are set. The rationale behind this is that when you set an Expires date and time, they're relative to the client the cookie is being set on. If the server is set to a different time, this could cause errors.
+
+### Explanation:
+
+1. **Expires Attribute**: 
+   - The `Expires` attribute defines the exact date and time when the cookie should expire. It's set in a specific format (usually GMT/UTC).
+   - Example: `Expires=Wed, 21 Oct 2024 07:28:00 GMT`
+   - **Issue**: The expiration is dependent on the client's system clock. If the client's clock is not synchronized with the server's clock (or is set to a different time zone), this can result in unexpected behavior, such as the cookie expiring too early or too late. This is why `Expires` can be error-prone.
+
+2. **Max-Age Attribute**: 
+   - The `Max-Age` attribute specifies the cookie's lifetime in seconds, starting from the moment it is set. After this duration, the cookie is considered expired.
+   - Example: `Max-Age=3600` (sets the cookie to expire in 1 hour).
+   - **Advantage**: Because `Max-Age` is relative (based on how many seconds from now), it avoids issues with time zone differences or clock synchronization between the server and the client. This makes it **less error-prone** than `Expires`.
+
+3. **Precedence**:
+   - When both `Expires` and `Max-Age` are set, **Max-Age takes precedence** because it's more reliable. This ensures that even if there is a discrepancy in the server-client clock synchronization, the cookie will still expire after the correct amount of time has passed.
+
+### Key Point:
+- **Expires** has been around longer and is still supported, but **Max-Age** is preferred for its reliability in avoiding time synchronization errors.
