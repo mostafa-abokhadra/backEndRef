@@ -57,3 +57,32 @@ Set-Cookie: id=a3fWa; Max-Age=2592000
 
 ### Key Point:
 - **Expires** has been around longer and is still supported, but **Max-Age** is preferred for its reliability in avoiding time synchronization errors.
+
+> [!NOTE]
+> Session cookies are cookies without a Max-Age or Expires attribute, they are deleted when the current session ends. The browser defines when the "current session" ends, and some browsers use session restoring when restarting. This can cause session cookies to last indefinitely.
+
+### Breakdown:
+
+1. **Session Cookies**:
+   - Session cookies are meant to last only for the duration of the user's session, meaning they should be deleted when the user closes the browser.
+   - These cookies do not specify an expiration time (i.e., no `Max-Age` or `Expires` attribute).
+
+2. **Browser-Defined Session**:
+   - Different browsers have their own ways of determining when a session ends.
+   - For most browsers, closing all tabs or windows will typically end the session and delete session cookies.
+   - Some browsers might define the session differently, such as based on whether the user is logged in or if any browser process is still running.
+
+3. **Session Restoring**:
+   - Modern browsers often include a **session restore** feature, where tabs and their contents (including cookies) are saved when the browser is closed and restored when the browser is restarted.
+   - This means that session cookies might be retained even after a browser is closed, causing the session to **persist indefinitely** if the browser restores it.
+   - Essentially, the session doesn't truly "end" until the user manually clears the session data or disables session restoring, leading to cookies that were meant to be temporary lasting much longer than expected.
+
+### Implications:
+- While session cookies are supposed to be temporary, the use of session restore features in modern browsers can lead to **unexpected behavior**, where cookies persist across browser restarts.
+- This can introduce security concerns, as a user might expect their session (and its cookies) to expire when they close the browser, but session restoring can extend their lifespan.
+
+### Solutions:
+- If it's critical that cookies expire after a certain time, using the **Max-Age** or **Expires** attribute is a better approach to ensure cookies are removed after a fixed duration.
+- For extra security, web applications can implement server-side session management that explicitly invalidates session cookies when the server detects the session has ended or after a timeout.
+
+In summary, while session cookies are intended to be temporary, features like session restoring can cause them to last longer than intended. Using explicit expiration attributes (like `Max-Age`) can help prevent this.

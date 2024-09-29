@@ -30,3 +30,10 @@ Instead of using **MemoryStore**, you would typically use more robust session st
 
 ### option
 - express-session accepts these properties in the <mark>options object</mark>.
+
+### cookie
+- Settings object for the session ID cookie.
+- The default value is `{ path: '/', httpOnly: true, secure: false, maxAge: null }`
+- **another options can be set in this object**
+    - **cookie.domain**
+Specifies the value for the Domain Set-Cookie attribute. By default, no domain is set, and most clients will consider the cookie to apply to only the current domain.
