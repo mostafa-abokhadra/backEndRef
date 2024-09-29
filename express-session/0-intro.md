@@ -27,3 +27,6 @@ Instead of using **MemoryStore**, you would typically use more robust session st
 - **Redis**: An in-memory data store that supports scalability and persistence.
 - **Database-backed sessions**: Storing session data in a database like PostgreSQL or MySQL.
 - **File-based sessions**: Storing sessions on disk.
+
+### option
+- express-session accepts these properties in the <mark>options object</mark>.
