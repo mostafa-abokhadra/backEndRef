@@ -28,3 +28,7 @@ Set-Cookie: tasty_cookie=strawberry
 
 - When a new request is made, the browser usually sends previously stored cookies for the current domain back to the server within a Cookie HTTP header:
 <mark>Cookie: yummy_cookie=choco; tasty_cookie=strawberry</mark>
+
+### cookie Expiration
+- Permanent cookies are deleted after the date specified in the <mark>Expires</mark> attribute
+- or after the period specified in the <mark>Max-Age</mark> attribute:
