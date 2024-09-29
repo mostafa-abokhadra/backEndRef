@@ -7,3 +7,10 @@
 - If the credentials are correct, the server updates the UI to indicate that the user is signed in, and responds with a cookie containing a session ID that records their sign-in status on the browser.
 - At a later time, the user moves to a different page on the same site. The browser sends the cookie containing the session ID along with the corresponding request to indicate that it still thinks the user is signed in.
 - The server checks the session ID and, if it is still valid, sends the user a personalized version of the new page. If it is not valid, the session ID is deleted and the user is shown a generic version of the page (or perhaps shown an "access denied" message and asked to sign in again).
+
+![](./imgs/cookie-basic-example.png)
+
+### uses of cookies
+- **Session management**: User sign-in status, shopping cart contents, game scores, or any other user session-related details that the server needs to remember.
+- **Personalization**: User preferences such as display language and UI theme.
+- **Tracking**: Recording and analyzing user behavior.
