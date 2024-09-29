@@ -263,3 +263,4 @@ This can be used for **client-specific** data like preferences or non-sensitive 
 - For client-only storage needs, **Web Storage** (e.g., `localStorage`, `sessionStorage`) can be used instead of cookies, which are automatically sent with every HTTP request.
 
 This mechanism helps ensure that the application can reflect changes in user data both server-side and client-side.
+
