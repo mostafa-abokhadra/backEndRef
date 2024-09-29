@@ -183,3 +183,83 @@ To further secure session cookies and authentication, you should also consider t
 - **Mitigating Session Fixation**: Eliminates the risk of an attacker pre-setting or manipulating the session before authentication.
 
 By following these practices, you protect your application from session fixation and provide more secure session management for your users.
+
+### Updating cookies value
+To update a cookie via HTTP, the server can send a Set-Cookie header with the existing cookie's name and a new value. For example:
+
+<mark>Set-Cookie: id=new-value</mark>
+
+When a server sends a `Set-Cookie` header with the same cookie name but a new value, it **updates the existing cookie** stored in the user's browser. This can be useful in various scenarios, such as when user preferences change or session data needs to be modified.
+
+### How Cookie Updating Works:
+
+- **Updating the Cookie**:
+  When the server sends an HTTP response that includes a `Set-Cookie` header with the same cookie name but a different value, the browser automatically replaces the old cookie with the new one. Here's an example:
+
+  ```http
+  Set-Cookie: id=new-value
+  ```
+
+  In this case, the server updates the `id` cookie with the value `new-value`. If the browser previously had a cookie named `id` with a different value, the new value will overwrite the old one.
+
+### Example Use Cases for Updating Cookies:
+
+1. **User Preference Changes**:
+   - If a user updates their preferences (e.g., changes language settings, theme preferences, or notification settings), the server can update the cookie to store the new preference.
+   - Example: If a user changes their language setting from English to Spanish:
+     ```http
+     Set-Cookie: language=es
+     ```
+     The `language` cookie is updated to reflect the user's new choice.
+
+2. **Session Updates**:
+   - If session-related data needs to be updated (e.g., after the user logs in or extends their session), the server can update the session cookie.
+   - Example: If the user extends their session by interacting with the website, the server could refresh the session token:
+     ```http
+     Set-Cookie: session_token=updated_session_token; Max-Age=3600
+     ```
+     This would extend the session cookie’s expiration time.
+
+3. **Tracking Changes**:
+   - Cookies can also be used to track user actions, like adding items to a shopping cart. If the user adds or removes items, the server can update a cookie that stores the cart information.
+   - Example: If the user adds a new item to the cart, the server can send:
+     ```http
+     Set-Cookie: cart=updated_cart_data
+     ```
+
+4. **Security Purposes**:
+   - If there are security changes (e.g., a user updates their password or enables multi-factor authentication), session cookies or authentication tokens might need to be updated to reflect the change.
+   - Example: After a password change:
+     ```http
+     Set-Cookie: auth_token=new_secure_token; Secure; HttpOnly
+     ```
+
+### Overwriting a Cookie:
+When updating a cookie, all properties of the cookie (such as `Path`, `Domain`, `Secure`, `HttpOnly`, and `SameSite`) need to be consistent with the original cookie if you want to overwrite it. If the attributes differ (e.g., different `Path` or `Domain`), the browser might create a new cookie instead of updating the existing one.
+
+For example, the following header updates the cookie's value and specifies an expiration time:
+```http
+Set-Cookie: id=new-value; Expires=Wed, 21 Oct 2025 07:28:00 GMT; HttpOnly; Secure
+```
+
+If you omit `Expires` or `Max-Age`, the cookie will be a **session cookie** and will be deleted when the browser session ends.
+
+### Client-Side Storage Mechanism:
+
+As an alternative to using cookies, some applications prefer to store client-side data using the **Web Storage API**:
+- **LocalStorage**: Stores data persistently in the browser even after the session ends (until explicitly deleted).
+- **SessionStorage**: Stores data for the duration of the session (deleted when the session ends).
+
+Example of setting data with `LocalStorage`:
+```javascript
+localStorage.setItem('language', 'es');  // Stores language preference
+```
+
+This can be used for **client-specific** data like preferences or non-sensitive information, while cookies are better suited for **server-side** purposes like sessions, authentication, and data that needs to be sent with every request to the server.
+
+### Summary:
+- **Updating cookies via `Set-Cookie`** allows the server to modify cookie values on the client when necessary (e.g., after a user updates preferences or authentication details).
+- Make sure to keep attributes consistent when updating cookies to prevent unintended cookie duplication.
+- For client-only storage needs, **Web Storage** (e.g., `localStorage`, `sessionStorage`) can be used instead of cookies, which are automatically sent with every HTTP request.
+
+This mechanism helps ensure that the application can reflect changes in user data both server-side and client-side.
