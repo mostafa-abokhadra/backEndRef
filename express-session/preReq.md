@@ -14,3 +14,12 @@
 - **Session management**: User sign-in status, shopping cart contents, game scores, or any other user session-related details that the server needs to remember.
 - **Personalization**: User preferences such as display language and UI theme.
 - **Tracking**: Recording and analyzing user behavior.
+
+> [!NOTE]
+> you can see stored cookies in the <mark>Application</mark> panel in Chrome Developer Tools.
+
+### sending cookies
+After receiving an HTTP request, a server can send one or more Set-Cookie headers with the response, each one of which will set a separate cookie. to instructs the receiving browser to store a pair of cookies: A simple cookie is set by specifying a name-value pair like this, 
+```http
+Set-Cookie: <cookie-name>=<cookie-value>
+```
