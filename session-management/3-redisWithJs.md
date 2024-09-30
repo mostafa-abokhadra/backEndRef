@@ -6,3 +6,10 @@ npm i redis connect-redis
 const redis = require("redis")
 const connectRedis = require("connect-redis")
 ```
+```js
+const redisStrore = connectRedis(session)
+const redisClient = redis.createClient({
+    port: 6379,
+    host: "localhost"
+})
+```
