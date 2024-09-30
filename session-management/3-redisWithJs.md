@@ -13,3 +13,7 @@ const redisClient = redis.createClient({
     host: "localhost"
 })
 ```
+```js
+// in session object use
+store: redisStore({client: redisClient})
+```
