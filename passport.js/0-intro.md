@@ -9,3 +9,7 @@
 npm install passport
 npm install passport-local
 ```
+```js
+const passport = require('passport')
+const LocalStrategy = require('passport-local')
+```
