@@ -3,3 +3,9 @@
 - Extremely flexible and modular
 - Passport can be dropped in to any Express-based web application.
 - A comprehensive set of **strategies** support authentication using a username and password, Facebook, Twitter, and more.
+
+### username and password
+```bash
+npm install passport
+npm install passport-local
+```
