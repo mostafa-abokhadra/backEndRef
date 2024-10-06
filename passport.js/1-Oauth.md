@@ -79,3 +79,6 @@ passport.use(new GoogleStrategy({
 4. return cb(null, user);
     - This line calls the callback function with null as the error argument and the user object as the user argument.
     - This indicates that authentication was successful and the authenticated user is ready to be used in the application.
+
+### adding session support to maintain state
+When a user signs in to the app with Google, they are redirected to Google. Google takes care of authenticating the user and then redirects them back to the app. For security reasons, it is important that state is maintained and validated between these two redirects.
