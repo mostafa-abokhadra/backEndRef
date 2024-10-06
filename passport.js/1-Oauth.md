@@ -47,3 +47,35 @@ cat .env
 GOOGLE_CLIENT_ID=yourClientId
 GOOGLE_CLIENT_SECRET=yourClientSecret
 ```
+```js
+// in routes/auth.js
+passport.use(new GoogleStrategy({
+  clientID: process.env['GOOGLE_CLIENT_ID'],
+  clientSecret: process.env['GOOGLE_CLIENT_SECRET'],
+  callbackURL: '/oauth2/redirect/google',
+  //The URL that Google will redirect the user to after successful authentication.
+  scope: [ 'profile' ] // The permissions requested from the user. In this case, only the "profile" scope is requested, which grants access to the user's basic profile information.
+}, function verify(issuer, profile, cb) {
+    // This function is the callback function that is called by the GoogleStrategy when authentication is successful.
+          var user = {
+            id: id,
+            name: profile.displayName
+          };
+          return cb(null, user);
+}
+```
+**verify function It receives three arguments**
+
+1. **issuer**: The issuer of the ID token (typically https://accounts.google.com).
+2. **profile**: An object containing the user's profile information, including their ID, name, email, and other details.
+3. **cb**: A callback function that should be called with the following arguments:
+    - **err**: An error object if something went wrong.
+    - **user**: The authenticated user object, or false if authentication failed.
+    - **info**: Additional information about the authentication process (optional).
+3. var user = { id: profile.id, name: profile.displayName };
+    - This line creates a new object representing the authenticated user.
+    - The id property is set to the user's Google ID, which is unique for each user.
+    - The name property is set to the user's display name, which is the name they use on Google.
+4. return cb(null, user);
+    - This line calls the callback function with null as the error argument and the user object as the user argument.
+    - This indicates that authentication was successful and the authenticated user is ready to be used in the application.
