@@ -62,7 +62,7 @@ passport.use(new GoogleStrategy({
             name: profile.displayName
           };
           return cb(null, user);
-}
+}))
 ```
 **verify function It receives three arguments**
 

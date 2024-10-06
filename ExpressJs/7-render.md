@@ -4,7 +4,7 @@
 npm i ejs
 ```
 ```js
-app.set('veiw engine', 'ejs')
+app.set('view engine', 'ejs')
 ```
 - and now name your html files with the extension .ejs instead of .html
 - install EJS language support in Vs
