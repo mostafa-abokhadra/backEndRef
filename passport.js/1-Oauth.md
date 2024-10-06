@@ -82,3 +82,14 @@ passport.use(new GoogleStrategy({
 
 ### adding session support to maintain state
 When a user signs in to the app with Google, they are redirected to Google. Google takes care of authenticating the user and then redirects them back to the app. For security reasons, it is important that state is maintained and validated between these two redirects.
+
+```js
+var session = require('express-session');
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: false,
+  store: new SQLiteStore({ db: 'sessions.db', dir: './var/db' })
+}));
+```
