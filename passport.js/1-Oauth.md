@@ -93,3 +93,12 @@ app.use(session({
   store: new SQLiteStore({ db: 'sessions.db', dir: './var/db' })
 }));
 ```
+Now that the app has session support, the next step is to
+### handle the redirect back from Google to the app.
+- add a route that authenticates the user when Google redirects them back to the app.
+```js
+router.get('/oauth2/redirect/google', passport.authenticate('google', {
+  successRedirect: '/',
+  failureRedirect: '/login'
+}));
+```
