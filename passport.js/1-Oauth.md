@@ -102,3 +102,10 @@ router.get('/oauth2/redirect/google', passport.authenticate('google', {
   failureRedirect: '/login'
 }));
 ```
+if you tried to run all of the above code you will still get an error, the app fails with an error related to sessions. so Next, you will fix that error by configuring Passport to establish a sessoin
+### configure passport to establish a session
+- you'll establish a login session which will maintain the user's authenticated state as they navigate the app.
+- add this line after session middleware configuration object in server.js file or whatever
+```js
+app.use(passport.authenticate('session'));
+```
