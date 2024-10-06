@@ -171,3 +171,13 @@ This function is responsible for retrieving the user object from the session dat
 * Consider using secure session storage mechanisms to protect user data.
 
 I hope this explanation clarifies the roles of `passport.serializeUser` and `passport.deserializeUser` in Passport.js!
+
+### logout
+```js
+router.post('/logout', function(req, res, next) {
+  req.logout(function(err) {
+    if (err) { return next(err); }
+    res.redirect('/');
+  });
+});
+```
