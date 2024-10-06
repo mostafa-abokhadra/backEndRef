@@ -37,3 +37,13 @@ router.get('/login/federated/google', passport.authenticate('google'));
 8. Click Add URI under Authorized Redirect URIs. Enter http://localhost:3000/
 9. Click Create to create the OAuth client. The following screen will display your client ID and secret.
 10. Proceed to configure the strategy.
+
+### configure Passport
+- configure Passport with the information obtained during registration.
+- First, create a `.env` file to store the client ID and secret that were obtained from Google.
+```bash
+touch .env
+cat .env
+GOOGLE_CLIENT_ID=yourClientId
+GOOGLE_CLIENT_SECRET=yourClientSecret
+```
