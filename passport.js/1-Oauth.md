@@ -18,5 +18,5 @@ npm install passport-google-oidc
 // in routes/auth.js
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oidc');
-
+router.get('/login/federated/google', passport.authenticate('google'));
 ```
