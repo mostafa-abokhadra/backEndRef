@@ -1,54 +1,61 @@
-"""mysql cheatsheet"""
-https://devhints.io/mysql
+### mysql
+mysql [cheatsheet](https://devhints.io/mysql)
 
-"""to check mysql version"""
+### basics
+```bash
 SELECT VERSION();
+```
+sql key words can be written in upper or lower case and the code will work just fine,
+but the best practice is to write key words in UPPERCASE so you can differentiate between
+other words and mysql key words:
 
-"""
-    sql key words can be written in upper or lower case and the code will work just fine,
-    but the best practice is to write key words in UPPERCASE so you can differentiate between
-    other words and mysql key words:
-"""
+```sql
 SELECT name, email FROM data_base_name WHERE== id=73
-
-"""
+```
 another good syntax is to write the key word in one line and it's attributes in the next line:
-"""
+```sql
 SELECT
     name, email
 FROM
 	data_base_name 
 WHERE
 	id=73
-
-"""to start, stop or restart, check status of sql service"""
+```
+**to start, stop or restart, check status of sql service**
+```bash
 sudo service mysql stop
 sudo service mysql start
 sudo service mysql restart
 sudo service mysql status
+```
+**to change prompt**
+```bash
+prompt @;
+```
+will change the prompt from mysql> to @
 
--- to change prompt
-prompt @; --will change the prompt from mysql> to @
-
---to log in to sql shell
+**to log in to sql shell**
+```bash
 sudo mysql -u 'root' -p (then you will be asked to write your password "mostafa")
+```
 
--- DB
+### database operations
+```sql
 CREATE database IF NOT EXISTS dbName;
 SHOW databases;
 DROP database IF EXISTS dbName;
 USE dbName
 SHOW tables FROM dbName;
+```
 
---tables
-https://dev.mysql.com/doc/refman/5.7/en/create-table.html
+### tables operations
+read [this](https://dev.mysql.com/doc/refman/5.7/en/create-table.html)
+```sql
 CREATE TABLE IF NOT EXISTS table_name (
 	id INT UNIQUE NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	name VARCHAR(256)
     country ENUM('EGYPT', 'SAUDI', 'US') DEFAULT 'EGYPT' 
-    -- enum allow you to define a datatype that can only hold
-    -- certian values
-
+    -- enum allow you to define a datatype that can only hold certian values
 );
 
 DESCRIBE table_name; --will show table rows and columns
@@ -56,44 +63,74 @@ EXPLAIN table_name --do the same as above
 SHOW CREATE TABLE table_name --will show full description of the table
 DELETE FROM table_name; -- delete the whole table
 TRUNCATE TABLE table_name; --removes all rows from a table, but the table structure and its columns,
-                            --constraints, indexes, and so on, remain
+                            --constraints, indexes, and so on, remains
 ALTER TABLE table_name RENAME TO new_name;
 ALTER TABLE table_name RENAME COLUMN old_name To new_name;
 ALTER TABLE table_name ADD column_name data_type;
 ALTER TABLE table_name DROP COLUMN column_name;
 ALTER TABLE table_name MODIFY column_name column_data_type;
-ALTER TABLE `first_table` CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-ALTER COLUMN status SET DEFAULT 'active';
+ALTER TABLE users ALTER COLUMN status SET DEFAULT 'active';
+```
+The upcoming command is used to **alter a table** in MySQL and change its **character set** and **collation**. 
 
--- insertion
-INSERT INTO personal_data (name, call_number)
-VALUES ('mostafa', '01154199659'), ("name", "0123456789");
+### Command:
+```sql
+ALTER TABLE `someTable` CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
 
--- retrieve
+### Explanation:
+
+1. **`CONVERT TO CHARACTER SET utf8mb4`**: This converts the table to use the **UTF-8 MB4** character set, which is a superset of UTF-8 and allows for storing 4-byte characters like emojis or certain non-Latin scripts.
+
+2. **`COLLATE utf8mb4_unicode_ci`**: This changes the table’s collation to **utf8mb4_unicode_ci**. 
+   - **`utf8mb4_unicode_ci`**: This collation is case-insensitive (`ci` stands for "case-insensitive") and uses the Unicode sorting rules.
+
+### Why Use `utf8mb4`?
+
+- **UTF-8** (`utf8` in MySQL) can store characters using 1-3 bytes, which means it cannot store certain special characters like emojis or some less common Chinese characters.
+- **UTF-8 MB4** (`utf8mb4`) extends this to 4 bytes per character, allowing for a wider range of characters, including emojis.
+
+### When to Use This Command:
+
+- When you need to ensure that your database can store a broader range of Unicode characters, such as emojis or symbols.
+- When you want to update a table’s character set and collation to align with modern best practices (many applications now use `utf8mb4`).
+
+### Example:
+
+If your table currently uses the older `utf8` character set and you want to upgrade it to `utf8mb4` to support emojis, you would run:
+
+### insertion
+```sql
+INSERT INTO
+    personal_data (name, call_number)
+VALUES
+    ('mostafa', '01154199659'), ("name", "0123456789");
+```
+### reading
+```sql
 SELECT * FROM personal_data;
 SELECT name, call_number, another_attr FROM personl_data;
 SELECT id, score FROM table_name order by score;
-SELECT score, name FROM second_table ORDER BY score DESC;
---this will show from greatest to smallest, ,you can change DESC= key word to ASC
-SELECT score, name FROM table_name WHER score >=10 ORDER BY score DESC;
+SELECT score, name FROM table_name ORDER BY score DESC;
+--this will show from greatest to smallest, ,you can change DESC key word to ASC
+SELECT score, name FROM table_name WHERE score >=10 ORDER BY score DESC;
+```
 
--- update
+### updatae
+```sql
 update personal_data set name = 'ahmed' where name = 'mostafa';
+```
 
--- delete row
+### delete
+```sql
 DELETE FROM personal_data where name = 'ahmed';
 -- if you didn't specify where, then every row of the table will be delelted
+```
 
--- to get the number of rows in your table:
-SELECT COUNT(*) FROM personal_data;
-
--- to get the number of specified value in your table
-SELECT COUNT(*) FROM personal_data where name = 'mostafa';
-
-"""
-    In database management an aggregate function is a function where the values of multiple rows
-    are grouped together as input on certain criteria to form a single value of more significant meaning.
-"""
+### aggregate functions
+In database management an aggregate function is a function where the values of multiple rows
+are grouped together as input on certain criteria to form a single value of more significant meaning.
+```sql
 count(), sum(), avg(), min(), max()
 SELECT avg(score) FROM second_table;
 SELECT sum(sales) FROM table_name;
@@ -102,40 +139,49 @@ SELECT MAX(score) AS winner FROM table_name;
 SELECT SUM(distinct score) FROM table_name -- here replicated score values will not be summed up
 SELECT score, count(score) AS number FROM second_table group by score ORDER BY score DESC;
 SELECT score, name FROM second_table WHERE name!='' ORDER BY score DESC;
+```
+- to get the number of rows in your table:
+```sql
+SELECT COUNT(*) FROM personal_data;
+```
+- to get the number of specified value in your table
+```sql
+SELECT COUNT(*) FROM personal_data where name = 'mostafa';
+```
+### JOIN
+- it's used to combine data or rows from two tables or more based on common field between them.
+- JOIN is a clause used in SQL to link data from one table to another table using one or more data column shared between two tables, In other words, we combine data of the two existing tables into one.
 
-JOIN
-"""
-    it's used to combine data or rows from two tables or more based on common field between them.
-    JOIN is a clause used in SQL to link data from one table to another table using one or more data column
-    shared between two tables, In other words, we combine data of the two existing tables into one.
+**some good ref**
 
-    https://tableplus.com/blog/2018/09/a-beginners-guide-to-seven-types-of-sql-joins.html
-    https://www.geeksforgeeks.org/sql-join-set-1-inner-left-right-and-full-joins/
-    https://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=sql/join.php
+[tableplus](https://tableplus.com/blog/2018/09/a-beginners-guide-to-seven-types-of-sql-joins.html) 
+[GFG](https://www.geeksforgeeks.org/sql-join-set-1-inner-left-right-and-full-joins/)
+[csulb](https://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=sql/join.php)
 
-    it has several types like:
-    1-INEER JOIN
-        returns only connected rows when there is a matching between both tables 
-    2-RIGHT JOIN
-        returns each row from the right table even if there is no matching row with the left table,
-        if right table has no match with the left table row , it will returns null for all the columns
-        in the left table 
-    3-LEFT JOIN
-        will return each row from the left table even if there is no matching row with the right table,
-        if left table row has no match with a right table row it will return null for all the columns in
-        the right table
-    4-FULL JOIN
-        it is combination between right and left joins, it returns every row from the left table and from
-        the right table, when they match the rows are connected but when there isn't a match the row is still
-        included in the join with nulls from the columns of other table
-    5-NATURAL JOIN
-"""
+**it has several types like:**
+
+1. **INEER JOIN**
+returns only connected rows when there is a matching between both tables 
+2. **RIGHT JOIN**
+returns each row from the right table even if there is no matching row with the left table,
+if right table has no match with the left table row , it will returns null for all the columns
+in the left table 
+3. **LEFT JOIN**
+will return each row from the left table even if there is no matching row with the right table,
+if left table row has no match with a right table row it will return null for all the columns in
+the right table
+4. **FULL JOIN**
+it is a combination between right and left joins, it returns every row from the left table and from
+the right table, when they match the rows are connected but when there isn't a match the row is still
+included in the join with nulls from the columns of other table
+5. **NATURAL JOIN**
+```sql
 SELECT *
 FROM martian
 INNER JOIN base
 ON martian.base_id = base.base_id;
-
-
+```
+```sql
 SELECT title, tv_show_genres.genre_id FROM tv_shows
 LEFT JOIN tv_show_genres ON id = tv_show_genres.show_id
 where tv_show_genres.show_id IS NULL
@@ -149,8 +195,10 @@ ORDER BY number_of_shows DESC;
 
 select s_name, score, status, address_city, email_id, accomplishments from students
 inner join marks on s.s_id = m.s_id inner join details d on  d.school_id = m.school_id;
+```
 
--- create Users
+### create Users
+```sql
 CREATE USER 'user_account'@'hostname' IDENTIFIED BY 'password';
 --to allow user account to connect to the database server from any host use '%'
 CREATE USER 'username'@'%' IDENTIFIED BY 'password';
@@ -159,20 +207,22 @@ DROP 'USER'@'host'; -- delete a user
 -- and delete multiple users with one drop statement, just separate them with comma
 -- user() function returns current user name with it's host name used to connect to the server
 SELECT USER();
---to change user pass word
+--to change user password
 ALTER USER 'username'@'hostname' IDENTIFIED BY 'new_pass';
-
-"""
+```
 using the Create User Statement only creates a new user but does not grant any privileges to the user account.
 Therefore to grant privileges to a user account, the GRANT statement is used.
-"""
--- to view permission of a user account:
+
+### Grant permission
+- to view permission of a user account
+```sql
 SHOW GRANTS FOR user_account@'hostname';
-"""
-The `*.*` in the output denotes that the “gfguser1” user account can only login to
+```
+The `*.*` in the output denotes that the newly created user account can only login to
 the database server and has no other privileges.
-"""
--- to grant privilege to a user
+
+- **to grant privilege to a user**
+```sql
 GRANT privilege_name ON object FOR user;
 --to grant all privileges to a user to all databases
 GRANT ALL PRIVILEGES ON *.* To user_name@host
@@ -183,29 +233,34 @@ GRANT SELECT ON nursing.cardio TO user@localhost
 --granting privilege to all users
 GRANT SELECT ON users_table TO '*'@'local host';
 
-"""
-    Granting Privileges on Functions/Procedures: While using functions and procedures, the Grant statement
-    can be used to grant users the ability to execute the functions and procedures in MySQL.
-"""
+
+-- Granting Privileges on Functions/Procedures: While using functions and procedures, the Grant statement can be used to grant users the ability to execute the functions and procedures in MySQL.
 -- Granting Execute Privilege: Execute privilege gives the ability to execute a function or procedure.
 GRANT EXECUTE ON  PROCEDURE | FUNCTION  object TO user;
 GRANT EXECUTE ON FUNCTION Calculatesalary TO 'Amit'@'localhost';
 -- function named CalculateSalary to the user named Amit
+```
+### revoke
+- The Revoke statement is used to revoke some or all of the privileges which have been granted to a user in the past.
 
-"""
-The Revoke statement is used to revoke some or all of the privileges which have been granted to a user in the past.
-"""
+```sql
 REVOKE privileges ON object FROM user;
 REVOKE SELECT, INSERT, DELETE, UPDATE ON Users FROM 'Amit'@'localhost';
 REVOKE ALL ON Users FROM 'Amit'@'localhost';
 REVOKE SELECT  ON Users FROM '*'@'localhost';
 REVOKE EXECUTE ON PROCEDURE DBMSProcedure FROM '*'@'localhost';
+```
 
-"""
-Constraints are the rules that we can apply on the type of data in a table.
-https://www.geeksforgeeks.org/sql-constraints/
-https://www.cockroachlabs.com/blog/what-is-a-foreign-key/ -- FOREIGN KEY GOOD REF
-"""
+### constraints
+- Constraints are the rules that we can apply on the type of data in a table.
+
+**some good ref**
+
+[GFG](https://www.geeksforgeeks.org/sql-constraints/)
+
+[FOREIGN KEY GOOD REF](https://www.cockroachlabs.com/blog/what-is-a-foreign-key/)
+
+```sql
 NOT NULL
 UNIQUE
 PRIMARY KEY
@@ -230,13 +285,13 @@ CREATE TABLE orders (
   user_id INT NOT NULL REFERENCES users(user_id) ON DELETE CASCADE ON UPDATE CASCADE,
   product_sku INT NOT NULL REFERENCES books(product_sku)ON DELETE CASCADE ON UPDATE CASCADE,
 ); 
-"""
-    in the code above, ON DELETE CASCADE and ON UPDATE CASCADE specify that when
-    a row is deleted or a value is updated (respectively) in one table, the same
-    operation should be performed on the linked value or row in other tables.
-"""
+```
+in the code above, ON DELETE CASCADE and ON UPDATE CASCADE specify that when
+a row is deleted or a value is updated (respectively) in one table, the same
+operation should be performed on the linked value or row in other tables.
 
---subqueries
+### subquiry
+```sql
 Select NAME, LOCATION, PHONE_NUMBER from DATABASE 
 WHERE ROLL_NO IN
 (SELECT ROLL_NO from STUDENT where SECTION=’A’);
@@ -250,20 +305,23 @@ DELETE FROM Student2 WHERE ROLL_NO IN ( SELECT ROLL_NO FROM Student1 WHERE LOCAT
 SELECT cities.id, cities.name FROM cities WHERE cities.state_id = (SELECT id FROM states WHERE name = 'California');
 SELECT tv_shows.title, tv_show_genres.genre_id from tv_shows inner join tv_show_genres ON tv_shows.id = 
     (tv_show_genres.show_id) order by tv_shows.title, tv_show_genres.genre_id;
-
--- importing sql dump
-first insure the data base exist so
-create database first
-use database
+```
+### importing sql dump 
+- first insure the data base exist so create database first and use database
+```bash
 source path/to/sqlfile
--- if you want to import from the internet
+```
+if you want to import from the internet
+```bash
 echo "create database db_name" | sudo mysql -u 'root' -p
 curl 'url_for_dbTable_file' -s | sudo mysql -u 'root' -p
--- (-s) stands for silent which suppresses the progress meter and error messages from curl.
--- another way
+# (-s) stands for silent which suppresses the progress meter and error messages from curl.
+# another way
 sudo mysql -u 'root' -p database name < sql_file_path
-
--- to truncate a table that have a reference to foreign key in it
+```
+### truncate a table that have a reference to foreign key in it
+```sql
 SET FOREIGN_KEY_CHECKS = 0;
 truncate table table_name;
 SET FOREIGN_KEY_CHECKS = 1;
+```

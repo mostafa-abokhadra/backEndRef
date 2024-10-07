@@ -18,3 +18,17 @@ model Post {
   authorId  Int
 }
 ```
+
+### connect to your database URL
+- in your prisma.schema file
+```ts
+datasourece db {
+  provider = "mysql" | "postgresql"
+  url      = env("DATABASE_URL")
+}
+```
+> [!NOTE]
+> - databse url format for sql and MariaDB is `"mysql://USER:PASSWORD@HOST:PORT/DATABASE"`
+> - for postgres `"postgresql://admin:secret@localhost:5432/mydb?schema=public"`
+> - for sqlite `"file:./path-to-your-database.db"
+> - for sqlserver (microsoft) `"sqlserver://USER:PASSWORD@HOST:PORT;database=DATABASE;schema=SCHEMA_NAME"`

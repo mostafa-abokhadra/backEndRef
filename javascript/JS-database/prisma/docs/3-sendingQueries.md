@@ -66,3 +66,21 @@ async function main() {
   console.log(user)
 }
 ```
+
+> [!NOTE]
+> By default, Prisma Client only returns scalar fields in the result objects of a query. That's why, even though you also created a new Post record for the new User record, the console only printed an object with three scalar fields: id, email and name.
+
+> In order to also retrieve the Post records that belong to a User, you can use the include option via the posts relation field:
+
+```ts
+async function main() {
+  const usersWithPosts = await prisma.user.findMany({
+    include: {
+      posts: true,
+    },
+  })
+  console.dir(usersWithPosts, { depth: null })
+}
+```
+
+### prisma studio
