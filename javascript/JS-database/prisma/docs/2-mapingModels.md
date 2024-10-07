@@ -6,3 +6,7 @@
 ```bash
 npx prisma migrate dev --name init
 ```
+this command witll create a new SQL migration file for this migration and  runs the SQL migration file against the database
+
+> [!NOTE]
+> generate is called under the hood by default, after running prisma migrate dev. If the prisma-client-js generator is defined in your schema, this will check if @prisma/client is installed and install it if it's missing.
