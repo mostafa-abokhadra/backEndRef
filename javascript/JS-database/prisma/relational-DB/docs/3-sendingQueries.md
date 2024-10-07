@@ -65,5 +65,5 @@ async function main() {
 ```
 ### prisma studio
 ```bash
-npx 
+npx prisma studio
 ```
