@@ -5,7 +5,13 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 async function main() {
-  // ... you will write your Prisma Client queries here
+    const user = await prisma.user.create({
+        data: {
+        name: 'Alice',
+        email: 'alice@prisma.io',
+        },
+  })
+  console.log(user)
 }
 
 main()
@@ -19,3 +25,8 @@ main()
   })
 ```
 This code contains a main function that's invoked at the end of the script. It also instantiates PrismaClient which represents the query interface to your database.
+
+### run code
+```bash
+npx ts-node script.ts
+```
