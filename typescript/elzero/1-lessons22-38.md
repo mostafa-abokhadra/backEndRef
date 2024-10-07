@@ -1,4 +1,5 @@
-// interface
+### interface
+```ts
 interface User {
 	readonly id: number,
 	username: string,
@@ -31,32 +32,24 @@ interface Nurse extends User, anotherInterface {
 	departement: string
 }
 
-// index signature, this allow you when you create an object form this interface to add
-    // new properiteis that you haven't explicitly define in you interface
-interface newType {
-	[key: string]: any
-}
 
 //index signature
-// An index signature in TypeScript allows you to define a type for the keys and values of an object\
-// without needing to specify every possible property explicitly. This is particularly useful when you\
-// want to create flexible and dynamic data structures where the number of properties is not known in advance.
-// Syntax
+// An index signature in TypeScript allows you to define a type for the keys and values of an object
+// without needing to specify every possible property(key and value) explicitly.
+//This is particularly useful when you want to create flexible and dynamic data structures where the number of properties is not known in advance.
+// this allows you to create an object from this interface and to add new properiteis that you haven't explicitly define in you interface
 interface MyObject {
   [key: string]: boolean;
 }
+
 //Components
-// Square Brackets `[key: string]`: This part of the syntax indicates that any property name \
-    // (key) of type `string` can be added to the object.
+// Square Brackets `[key: string]`: This part of the syntax indicates that any property name (key) of type `string` can be added to the object.
 // `key`: A placeholder name for the property key.
 // `string`: The type of the property key (can also be `number` for numeric keys).
-// Value Type `boolean`: This specifies the type of the values that the properties can have.\
-    //In this example, all values associated with keys in `MyObject` must be of type `boolean`.
+// Value Type `boolean`: This specifies the type of the values that the properties can have.
+//In this example, all values associated with keys in `MyObject` must be of type `boolean`.
 // Usage
-// Define Interface with Index Signature
-interface MyObject {
-  [key: string]: boolean;
-}
+
 // Create Object with Arbitrary Properties
 const obj: MyObject = {
   contract: true,
@@ -67,8 +60,7 @@ const obj: MyObject = {
 console.log(obj.contract); // true
 console.log(obj.isActive); // false
 // Use Cases
-// Dynamic Properties**: When you have an object where the property names are not known ahead of time but\
-    //  you know the type of the values.
+// Dynamic Properties**: When you have an object where the property names are not known ahead of time but you know the type of the values.
 interface Config {
     [option: string]: string;
 }
@@ -86,14 +78,15 @@ const scores: StringNumberMap = {
     Bob: 85,
     Charlie: 92,
 };
-//Type Safety
-// While index signatures provide flexibility, they can sometimes reduce type safety.\
-    // For example, if you misspell a property name or assign a value of the wrong type,\
-    // TypeScript may not catch these errors if the index signature is too permissive.\
-    // Therefore, it's essential to balance flexibility with the need for precise typing in your application.
 
-//    class with type Annotation
-//Access modifiers and parameters properties (Encapsulation)
+//Type Safety
+// While index signatures provide flexibility, they can sometimes reduce type safety.
+// For example, if you misspell a property name or assign a value of the wrong type,
+// TypeScript may not catch these errors if the index signature is too permissive.
+// Therefore, it's essential to balance flexibility with the need for precise typing in your application.
+
+// class with type Annotation
+// Access modifiers and parameters properties (Encapsulation)
 
 class User {
 	name: string
@@ -109,7 +102,7 @@ class User {
 		}
 	}
 }
-//another way to specify the types is using parameter properties
+// another way to specify the types is using parameter properties
 // the underscore before user name is just a convention that this var is private in some lang that don't support full oop so don't have private key word
 class User{
 	private static created: number = 0;
@@ -122,15 +115,15 @@ class User{
 		this._username = value
 	}
 } 
-console.log(userOne.username)
 userOne.username = "newName"
+console.log(userOne.username)
 
 //class implement interface: watch
 // https://youtu.be/klcmDKP_34s?si=pICtrHT63mubYXYa
 
 // abstract class and memebers
 // this is the base class that only job is for other subclasses to inherit from 
-    // abstract method is the method that must be overridden by subclasses
+// abstract method is the method that must be overridden by subclasses
 
 abstract class User {
 	constructor(title: string){}
@@ -166,8 +159,8 @@ func<number[]>([1, 2, 3])
 function func<T>(val: T): string {
 	return `the val is ${val}`;
 }
-//this is a function that accept any type of data but you should specify the type of data when you call the\
-    //function inside the <>, you don't have to write "GenericType" between the <>, just write anything
+//this is a function that accept any type of data but you should specify the type of data when you call the
+//function inside the <>, you don't have to write "GenericType" between the <>, just write anything
 // arrow function syntax
 const func = <T>(val: T): T => val;
 
