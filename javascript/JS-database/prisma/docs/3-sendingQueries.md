@@ -30,3 +30,13 @@ This code contains a main function that's invoked at the end of the script. It a
 ```bash
 npx ts-node script.ts
 ```
+
+### reading from database
+#### findMany()
+- returns all records
+```ts
+async function main() {
+  const users = await prisma.user.findMany()
+  console.log(users)
+}
+```
