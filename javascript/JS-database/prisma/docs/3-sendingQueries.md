@@ -34,9 +34,35 @@ npx ts-node script.ts
 ### reading from database
 #### findMany()
 - returns all records
+- it returns an array of objects
 ```ts
 async function main() {
   const users = await prisma.user.findMany()
   console.log(users)
+}
+```
+
+### create a User and a Post record in a nested write query
+```ts
+async function main() {
+  const user = await prisma.user.create({
+    data: {
+      name: 'Bob',
+      email: 'bob@prisma.io',
+      posts: {
+        create: [
+          {
+            title: 'Hello World',
+            published: true
+          },
+          {
+            title: 'My second post',
+            content: 'This is still a draft'
+          }
+        ],
+      },
+    },
+  })
+  console.log(user)
 }
 ```
