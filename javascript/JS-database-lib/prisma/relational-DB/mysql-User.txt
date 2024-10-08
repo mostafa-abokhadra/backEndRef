@@ -1,0 +1,1 @@
+create user 'prismaUser'@"localhost" identified by 'prismaPass123#'
