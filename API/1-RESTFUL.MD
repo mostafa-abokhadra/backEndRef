@@ -1,30 +1,40 @@
-### API
-- every time you visit a page on the Web, you interact with some remote server’s API.
-- An API isn’t the same as the remote server rather **it is the part of the server that receives requests and sends responses**.(ROUTES)
-
-**Example scenario:** Your small business’s website has a form used to sign clients up for appointments. You want to give your clients the ability to automatically create a Google calendar event with the details for that appointment.
-
-**API use:** The idea is to have your website’s server talk directly to Google’s server with a request to create an event with the given details. Your server would then receive Google’s response, process it, and send back relevant information to the browser, such as a confirmation message to the user.
-
-### ref
-- [1](https://www.webopedia.com/definitions/api/)
-- [2](https://www.freecodecamp.org/news/what-is-an-api-in-english-please-b880a3214a82/)
-
 ### RESTFUL API
 
-**What is a REST API?** REST is an acronym for <mark>Representational State Transfer</mark> an almost meaningless description of the most-used web service technology! A REST API is a way for two computer systems to communicate using the HTTP technologies found in web browsers and servers.
+**What is a REST API?** REST is an acronym for **REpresentational State Transfer Application Programming Interface** an almost meaningless description of the most-used web service technology! A REST API is a way for two computer systems to communicate using the HTTP technologies found in web browsers and servers.
 
-restful is an architectural style, design or principles to be followed when designing a web service (API), when these principles are applied while designing the web service we get a RESTful API
+restful is an architectural style, design or principles to be followed when designing a web service (API), when these principles are applied while designing the web service we get a RESTful API, Its purpose is to induce performance, scalability, simplicity, modifiability, visibility, portability, and reliability.
 
 ### principles of a restful api
 
 #### Uniform Interface
 
-1. **resource**: everything is a resource, you can define your modules e:g your database table classes as resources, you can define any data as a resource it's up to you, the key abstraction of information in REST is a resource, any information that can be named can be a resource e:g a document or image and so on
+1. **resource**: REST API is **Resource-based**, a resource is an object and can be access by a URI. An object is “displayed”/transferred via a **representation** (typically JSON). HTTP methods will be actions on a resource.everything is a resource, you can define your modules e:g your database table classes as resources, you can define any data as a resource it's up to you, the key abstraction of information in REST is a resource, any information that can be named can be a resource e:g a document or image and so on
 
 2. you can access any resource by a **URI** (uniform resource identifier), and always name your resource an nouns (good practice) e:g /employees/ and not /get-employees , as the http method will be our verb
+#### URIs - resource name
+
+- `GET /users`: path for listing all user resources
+- `GET /users/12`: path for the user `id = 12`
+- `GET /users/12/addresses`: path for listing all addresses of the user `id = 12`
+- `POST /users`: path for creating a user resource
+- `PUT /users/12`: path for updating the user `id = 12`
+- `DELETE /users/12/addresses/2`: path for deleting the address `id = 2` of the user `id = 12`
 
 3. **use HTTP methods** GET, POST, PUT, DELETE to CRUD
+
+In the HTTP Response, the client should verify the information of two things:
+- status code: result of the action
+- body: JSON or XML representation of resources
+
+Some important status code:
+- `200`: OK
+- `201`: created => after a `POST` request
+- `204`: no content => can be return after a `DELETE` request
+- `400`: bad request => the server doesn’t understand the request
+- `401`: unauthorized => client user can’t be identified
+- `403`: forbidden => client user is identified but not allowed to access a resource
+- `404`: not found => resource doesn’t exist
+- `500`: internal server error
 
 4. manipulation of resources and representations, each resource can have one or more representations e:g XML or application/json, text/html, etc, clients and servers negotiate to select representation by <mark>Accept</mark> header e:g <mark>Accept: PNG</mark> like when you request a photo
 
