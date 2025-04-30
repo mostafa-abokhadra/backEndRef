@@ -325,3 +325,35 @@ SET FOREIGN_KEY_CHECKS = 0;
 truncate table table_name;
 SET FOREIGN_KEY_CHECKS = 1;
 ```
+
+# connecting and disconnecting
+```bash
+mysql -h host -u user -p
+```
+host and user represent the host name where your MySQL server is running and the user name of your MySQL account
+
+If you are logging in on the same machine that MySQL is running on, you can omit the host, and simply use the following
+```bash
+mysql -u user -p
+```
+
+### disconnecting
+```mysql
+/q
+-- or
+quit
+```
+
+### multiple lines queries
+If you decide you do not want to execute a query that you are in the process of entering, cancel it by typing \c
+```sql
+mysql> SELECT
+    -> USER()
+    -> \c
+mysql>
+```
+## queries
+```sql
+select version(), current_date; select now();
+select SIN(PI()/4), (4+1)*5;
+```
