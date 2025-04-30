@@ -49,7 +49,7 @@ SHOW tables FROM dbName;
 ```
 
 ### tables operations
-read [this](https://dev.mysql.com/doc/refman/5.7/en/create-table.html)
+
 ```sql
 CREATE TABLE IF NOT EXISTS table_name (
 	id INT UNIQUE NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -154,9 +154,9 @@ SELECT COUNT(*) FROM personal_data where name = 'mostafa';
 
 **some good ref**
 
-[tableplus](https://tableplus.com/blog/2018/09/a-beginners-guide-to-seven-types-of-sql-joins.html) 
-[GFG](https://www.geeksforgeeks.org/sql-join-set-1-inner-left-right-and-full-joins/)
-[csulb](https://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=sql/join.php)
+- [tableplus](https://tableplus.com/blog/2018/09/a-beginners-guide-to-seven-types-of-sql-joins.html) 
+- [GFG](https://www.geeksforgeeks.org/sql-join-set-1-inner-left-right-and-full-joins/)
+
 
 **it has several types like:**
 
