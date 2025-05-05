@@ -1,61 +1,81 @@
-[Redis docs](https://redis.io/docs/latest/develop/get-started/)\
-[redis crash course](https://www.youtube.com/watch?v=Hbt56gFj998)
-
-1. redis in an open source in memory data structure store which can be use as database or a cache and message broker
-2. NoSQL key/value store
-3. supports multiple data structure
-4. built in replication master/slave
+# Redis
+-  stands for Remote Dictionary Server.
+- redis in an open source in memory data structure store which can be use as database or a cache and message broker
+- NoSQL key/value store
+- supports multiple data structure
+- built in replication master/slave
 
 ### DataTypes
 - strings
 - lists
 - sets
 - sorted sets
-- hashes
+- hashes(dict, maps, obj)
 - bitmaps
 - hyperlogs
 - geospatial indexes
 
-**redis is very flexable and very fast, No predetermined schemas or column names is needed, and can be used as a database, cache, streaming engine, message broker, and mor**
 
-### installation
-1. sudo apt-get update
-2. sudo apt-get upgrade
-3. sudo apt-get install redis-server
+> **redis is very flexable and very fast, No predetermined schemas or column names is needed, and can be used as a database, cache, streaming engine, message broker, and more**
 
+## installation
+```bash
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install redis-server
+```
 **to start you shell interface**
-`redis-cli`
+```bash
+redis-cli
+```
+it is to connect to a Redis server that runs on localhost (-h 127.0.0.1) and listens on the default port (-p 6379):
+```bash
+redis-cli -h 127.0.0.1 -p 6379
+```
 
-**config file** is in /etc/redis/redis.conf
+**config file** is in <mark>/etc/redis/redis.conf</mark>
 
 ### getting started
 **in your redis shell**\
 `ping` it will respond with `pong` indicating established connectin
-```
-echo "something"
-set name mostafa
-get name
-set age 21
-incr age // will increment age to 22
-decr age // decrement
-exists name // check if a key exists
-del name
-flushall // will clear every thing you have set, it is like starting new session, all work you have done will be gone
-type name //return the value type of the key
-mset key1 "hello" key3 "world" // to set multiple key value pair
-mget key1 key2 
-append key1 " world" // appending string to key1 value
-rename key1 greeting
-lpush people "mostafa" // creating lists and adding mostafa, lpush (left push) so it push front
-lrange people 0 -1 // list all items in people from first to last index
-rpush people "ahmed" // push right (at the end)
-llen people // length of list
-lpop people // delete front
-rpop people // delet end
-linsert people before "mostafa" "newName" // insert middle
-linsert people after "ahmed" "newName" // insert middle
+### commands
+```bash
+> echo "something"
+> set name mostafa
+> get name
+> set age 21
+> incr age // will increment age to 22 adn saved in age like ++age
+> decr age // decrement
+> exists name // check if a key exists
+> del name
+> flushall // will clear every thing you have set, it is like starting new session, all work you have done will be gone
+> type name //return the value type of the key
+> mset key1 "hello" key3 "world" // to set multiple key value pair
+> mget key1 key2 
+> append key1 " world" // appending string to key1 value
+> rename key1 greeting
+> lpush people "mostafa" // creating lists and adding mostafa, lpush (left push) so it push front
+> lrange people 0 -1 // list all items in people from first to last index
+> rpush people "ahmed" // push right (at the end)
+> llen people // length of list
+> lpop people // delete front
+> rpop people // delet end
+> linsert people before "mostafa" "newName" // insert middle
+> linsert people after "ahmed" "newName" // insert middle
 ```
 
+### Hash commands
+```bash
+> hset person name mostafa age 22
+(integer) 2
+> hgetall person
+1) "name"
+2) "mostafa"
+3) "age"
+4) "22"
+> hget person name
+"mostafa"
+```
 `quit` **to close connection**
 
 ### key space
@@ -66,22 +86,15 @@ linsert people after "ahmed" "newName" // insert middle
 - The keyspace is just a term for the entire set of keys within a specific Redis database.
 
 ##### key points
-- Keyspace Notifications: Redis can notify you about certain events related to the keys (like when a key is created, updated, or deleted). This is known as keyspace notifications.
-- Multiple Databases: Redis typically has multiple databases, and each one has its own separate keyspace.
+- **Keyspace Notifications**: Redis can notify you about certain events related to the keys (like when a key is created, updated, or deleted). This is known as keyspace notifications.
+- **Multiple Databases**: Redis typically has multiple databases, and each one has its own separate keyspace.
 
 So, when someone talks about the keyspace in Redis, they're simply referring to all the keys that exist in a particular Redis database.
 
-```
-set server:name someserver
-set server: port 8000
-get server: name
-```
-**the keyspace is server (the database) and it has two keys name and port**
-
-### key expiration and persistence
+#### key expiration and persistence
 **Key expiration lets you set a timeout for a key, also known as a "time to live", or "TTL". When the time to live elapses, the key is automatically destroyed.**
 
-```
+```bash
 set greeting "hello"
 expire greeting 10 // expires in 10 seconds
 ttl greeting // will show the time lift
@@ -90,6 +103,7 @@ setx greeting 30 "hello" // expires in 30 sec
 persist greeting // if you want to cancel the expiration while time still not out 
 ```
 ##### A few important notes about key expiration:
+
 
 1. You can specify this expiration time in either seconds or milliseconds. For example, you could say, "This key should expire after 5 seconds" or "This key should expire after 5000 milliseconds" (which is the same as 5 seconds).
 2. Precision of Expiration: Even though you can set the expiration time using either seconds or milliseconds, Redis always checks the expiration with millisecond precision. This means that Redis will track and enforce expirations down to the exact millisecond.
@@ -139,3 +153,7 @@ hlen user: "1"
 
 ### save
 `save` create a snapshot of the data in the desk
+
+# Ref
+[Redis docs](https://redis.io/docs/latest/develop/get-started/)\
+[redis crash course](https://www.youtube.com/watch?v=Hbt56gFj998)
