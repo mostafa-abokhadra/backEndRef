@@ -1,4 +1,4 @@
-# functions (57-62)
+# functions (57-64)
 - default value of functions parameter is undefined
 ```js
 function doSomething(name, age) {
