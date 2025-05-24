@@ -32,4 +32,18 @@ const result = name.split("").map((element, index) => {
   return element === element.toUpperCase() ? element.toLowerCase() : element.toUpperCase();
 }).join("")
 console.log(result)
+
+// convert negatives to positives and vice versa
+let nums = [1, -10, -20, 15, 100, -30]
+const result = nums.map((num) => { return - num })
+console.log(result)
+
+// remove numbers
+
+let stringNum = "Elz123er4o"
+
+const name = stringNum.split("").map((ch) => {
+  return isNaN(ch) ? ch : ""
+}).join('')
+console.log(name)
 ```
