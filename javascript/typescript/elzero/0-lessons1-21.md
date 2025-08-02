@@ -55,6 +55,13 @@ noUnusedParameters: true // raise an error if you don't use a function parameter
 allowUnreachableCode: false // raise an error with unreachable code e:g code that come after a function that never returns
 ```
 
+```bash
+# instead of tsc server.ts use:
+tsc -p tsconfig.json
+# this compile all of your ts files respecting new configuration in you tsconfig.json file
+```
+some times also the constraint you uncomment in tsconfig.json file might not applied to your code, that is because there is\
+no import/export yet in your code so the file is being dealed with as if it is a scipt not a module
 ### Type Annotations(type signature), `Any` data type, functions
 
 - you do it to force the data type checking, if you haven't specified the type the compiler will conclude the type according to the value you provided and if you tried to assign to the variable a value that doesn't match with its type it will generate an error.
