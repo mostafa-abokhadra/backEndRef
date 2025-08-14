@@ -5,15 +5,16 @@
 - supports multiple data structure
 - built in replication master/slave
 
-### DataTypes
-- strings
-- lists
-- sets
-- sorted sets
-- hashes(dict, maps, obj)
-- bitmaps
-- hyperlogs
-- geospatial indexes
+### Keys and values
+
+Every data object that you store in a Redis database has its own unique key. The key is a string that you pass to Redis commands to retrieve the corresponding object or modify its data. The data object associated with a particular key is known as the value and the two together are known as as key-value pair.
+
+### Content of keys 
+A key is typically a textual name that has some meaning within your data model. Unlike variable names in a programming language, Redis keys have few restrictions on their format, so keys with whitespace or punctuation characters are mostly fine (for example, "1st Attempt", or "% of price in $").
+
+Redis doesn't support namespaces or other categories for keys, so you must take care to avoid name collisions. However, there is a **convention for using the colon** ":" character to split keys into sections (for example, "person:1", "person:2", "office:London", "office:NewYork:1"). You can use this as a simple way to collect keys together into categories.
+
+Although keys are usually textual, Redis actually implements binary-safe keys, so you can use any sequence of bytes as a valid key, such as a JPEG file or a struct value from your app. The empty string is also a valid key in Redis.
 
 
 > **redis is very flexable and very fast, No predetermined schemas or column names is needed, and can be used as a database, cache, streaming engine, message broker, and more**
@@ -38,7 +39,10 @@ redis-cli -h 127.0.0.1 -p 6379
 ### getting started
 **in your redis shell**\
 `ping` it will respond with `pong` indicating established connectin
-### commands
+
+Similar to byte arrays, Redis strings store sequences of bytes, including text, serialized objects, counter values, and binary arrays
+
+### Basics
 ```bash
 > echo "something"
 > set name mostafa
@@ -63,22 +67,31 @@ redis-cli -h 127.0.0.1 -p 6379
 > linsert people before "mostafa" "newName" // insert middle
 > linsert people after "ahmed" "newName" // insert middle
 ```
-
-### Hash commands
-```bash
-> hset person name mostafa age 22
-(integer) 2
-> hgetall person
-1) "name"
-2) "mostafa"
-3) "age"
-4) "22"
-> hget person name
-"mostafa"
-```
 `quit` **to close connection**
 
+### Redis Datatypes
+1. Json: differs from Hash, read [this](https://redis.io/docs/latest/develop/data-types/json/)
+2. read about other datatypes in detail [here](https://redis.io/docs/latest/develop/data-types/)
+
+### Key expiration 
+Key expiration lets you set a timeout for a key, also known as a "time to live", or "TTL". When the time to live elapses, the key is automatically destroyed.
+
+- They can be set both using seconds or milliseconds precision.
+- However the expire time resolution is always 1 millisecond.
+- Information about expires are replicated and persisted on disk, the time virtually passes when your Redis server remains stopped (this means that Redis saves the date at which a key will expire).
+
+
+read [this](https://redis.io/docs/latest/develop/using-commands/keyspace/)
+
 ### key space
+
+Each item within Redis has a unique key. All items live within the Redis keyspace. You can scan the Redis keyspace via the SCAN command.
+```bash
+scan 0 # would show all keys set
+scan 0 match "name:*" count 40 # would show 40 keys that match specific match
+```
+SCAN returns a cursor position, allowing you to scan iteratively for the next batch of keys until you reach the cursor value 0.
+
 **In Redis, a keyspace refers to the collection of all the keys stored in a particular database.**
 
 - Redis can store many different keys, each associated with some value, like strings, lists, sets, etc.
@@ -103,7 +116,6 @@ setx greeting 30 "hello" // expires in 30 sec
 persist greeting // if you want to cancel the expiration while time still not out 
 ```
 ##### A few important notes about key expiration:
-
 
 1. You can specify this expiration time in either seconds or milliseconds. For example, you could say, "This key should expire after 5 seconds" or "This key should expire after 5000 milliseconds" (which is the same as 5 seconds).
 2. Precision of Expiration: Even though you can set the expiration time using either seconds or milliseconds, Redis always checks the expiration with millisecond precision. This means that Redis will track and enforce expirations down to the exact millisecond.
@@ -139,18 +151,17 @@ zincrby users 12 "name3" // this will increment 12 to the score of "name3"
 
 ### hash
 ```
-hset user: "1" name: "mostafa-abokadra"
-hset user: "1" email: "email@.com"
-hgetall user: "1"
+hset user:"1" name: "mostafa-abokadra"
+hset user:"1" email: "email@.com"
+hgetall user:"1"
 
-hmset user: "1" name "mostafa-abokhadra" email "email.com"
-hkeys user: "1" // returns just the keys
-hval user: "1" // returns just the values
-hicerby user: "1" age 1 // increment user"1" age by 1
-hdel user: "1" age
-hlen user: "1"
+hmset user:"1" name "mostafa-abokhadra" email "email.com"
+hkeys user:"1" // returns just the keys
+hval user:"1" // returns just the values
+hicerby user:"1" age 1 // increment user"1" age by 1
+hdel user:"1" age
+hlen user:"1"
 ```
-
 ### save
 `save` create a snapshot of the data in the desk
 
