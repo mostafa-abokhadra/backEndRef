@@ -36,9 +36,15 @@ will change the prompt from mysql> to @
 
 **to log in to sql shell**
 ```bash
-sudo mysql -u 'root' -p (then you will be asked to write your password "mostafa")
+sudo mysql -u 'root' -p
 ```
-
+then you will be asked to write your password "mostafa"\
+or just use `sudo mysql` will also prompt for password
+**connecting**
+```bash
+mysql -h localhost -P 3306 -u username -D dbname -p
+```
+then will prompt for user password
 ### database operations
 ```sql
 CREATE database IF NOT EXISTS dbName;
