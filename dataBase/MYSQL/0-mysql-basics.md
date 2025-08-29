@@ -1,7 +1,35 @@
-### mysql
-mysql [cheatsheet](https://devhints.io/mysql)
+## mysql
 
 ### basics
+
+**to start, stop or restart, or check status of mysql service** 
+```bash
+sudo service mysql stop
+sudo service mysql start
+sudo service mysql restart
+sudo service mysql status
+```
+
+**to log in to sql shell**
+```bash
+sudo mysql -u 'root' -p
+```
+then you will be asked to write your password "mostafa"\
+or just use `sudo mysql` will also prompt for the password
+
+**connecting to remoted db**
+```bash
+mysql -h hostAddress -P 3306 -u username -D dbname -p
+```
+then will prompt for user password
+
+**to change prompt**
+```bash
+prompt @;
+```
+will change the prompt from mysql> to @
+
+**to check you mySQl version**
 ```bash
 SELECT VERSION();
 ```
@@ -10,41 +38,18 @@ but the best practice is to write key words in UPPERCASE so you can differentiat
 other words and mysql key words:
 
 ```sql
-SELECT name, email FROM data_base_name WHERE== id=73
+SELECT name, email FROM data_base_name WHERE id=73
 ```
 another good syntax is to write the key word in one line and it's attributes in the next line:
 ```sql
 SELECT
     name, email
 FROM
-	data_base_name 
+	data_base_name
 WHERE
 	id=73
 ```
-**to start, stop or restart, check status of sql service**
-```bash
-sudo service mysql stop
-sudo service mysql start
-sudo service mysql restart
-sudo service mysql status
-```
-**to change prompt**
-```bash
-prompt @;
-```
-will change the prompt from mysql> to @
 
-**to log in to sql shell**
-```bash
-sudo mysql -u 'root' -p
-```
-then you will be asked to write your password "mostafa"\
-or just use `sudo mysql` will also prompt for password
-**connecting**
-```bash
-mysql -h localhost -P 3306 -u username -D dbname -p
-```
-then will prompt for user password
 ### database operations
 ```sql
 CREATE database IF NOT EXISTS dbName;
@@ -101,10 +106,6 @@ ALTER TABLE `someTable` CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode
 - When you need to ensure that your database can store a broader range of Unicode characters, such as emojis or symbols.
 - When you want to update a table’s character set and collation to align with modern best practices (many applications now use `utf8mb4`).
 
-### Example:
-
-If your table currently uses the older `utf8` character set and you want to upgrade it to `utf8mb4` to support emojis, you would run:
-
 ### insertion
 ```sql
 INSERT INTO
@@ -115,7 +116,7 @@ VALUES
 ### reading
 ```sql
 SELECT * FROM personal_data;
-SELECT name, call_number, another_attr FROM personl_data;
+SELECT name, call_number, another_field FROM personl_data;
 SELECT id, score FROM table_name order by score;
 SELECT score, name FROM table_name ORDER BY score DESC;
 --this will show from greatest to smallest, ,you can change DESC key word to ASC
@@ -142,7 +143,7 @@ SELECT avg(score) FROM second_table;
 SELECT sum(sales) FROM table_name;
 SELECT score AS nums FROM second_table; --nums will be the name of the results
 SELECT MAX(score) AS winner FROM table_name;
-SELECT SUM(distinct score) FROM table_name -- here replicated score values will not be summed up
+SELECT SUM(distinct score) FROM table_name -- here replicated score values will not be summed up cause of the word "distinct"
 SELECT score, count(score) AS number FROM second_table group by score ORDER BY score DESC;
 SELECT score, name FROM second_table WHERE name!='' ORDER BY score DESC;
 ```
@@ -150,37 +151,27 @@ SELECT score, name FROM second_table WHERE name!='' ORDER BY score DESC;
 ```sql
 SELECT COUNT(*) FROM personal_data;
 ```
-- to get the number of specified value in your table
+- to get the number of some value in your table
 ```sql
 SELECT COUNT(*) FROM personal_data where name = 'mostafa';
 ```
+this would the number of user whose name is mostafa
+
 ### JOIN
-- it's used to combine data or rows from two tables or more based on common field between them.
+read [this](https://www.geeksforgeeks.org/sql-join-set-1-inner-left-right-and-full-joins/)
+
+- `JOIN` is used to combine data or rows from two tables or more based on common field between them.
 - JOIN is a clause used in SQL to link data from one table to another table using one or more data column shared between two tables, In other words, we combine data of the two existing tables into one.
 
-**some good ref**
+```sql
+SELECT *
+FROM table1
+INNER JOIN table2
+ON table1.col1 = table2.col2;
+```
 
-- [tableplus](https://tableplus.com/blog/2018/09/a-beginners-guide-to-seven-types-of-sql-joins.html) 
-- [GFG](https://www.geeksforgeeks.org/sql-join-set-1-inner-left-right-and-full-joins/)
 
 
-**it has several types like:**
-
-1. **INEER JOIN**
-returns only connected rows when there is a matching between both tables 
-2. **RIGHT JOIN**
-returns each row from the right table even if there is no matching row with the left table,
-if right table has no match with the left table row , it will returns null for all the columns
-in the left table 
-3. **LEFT JOIN**
-will return each row from the left table even if there is no matching row with the right table,
-if left table row has no match with a right table row it will return null for all the columns in
-the right table
-4. **FULL JOIN**
-it is a combination between right and left joins, it returns every row from the left table and from
-the right table, when they match the rows are connected but when there isn't a match the row is still
-included in the join with nulls from the columns of other table
-5. **NATURAL JOIN**
 ```sql
 SELECT *
 FROM martian
@@ -202,7 +193,6 @@ ORDER BY number_of_shows DESC;
 select s_name, score, status, address_city, email_id, accomplishments from students
 inner join marks on s.s_id = m.s_id inner join details d on  d.school_id = m.school_id;
 ```
-
 ### create Users
 ```sql
 CREATE USER 'user_account'@'hostname' IDENTIFIED BY 'password';
@@ -363,3 +353,4 @@ mysql>
 select version(), current_date; select now();
 select SIN(PI()/4), (4+1)*5;
 ```
+mysql [cheatsheet](https://devhints.io/mysql)
