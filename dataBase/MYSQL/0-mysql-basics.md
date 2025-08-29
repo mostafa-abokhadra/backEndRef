@@ -158,10 +158,18 @@ SELECT COUNT(*) FROM personal_data where name = 'mostafa';
 this would the number of user whose name is mostafa
 
 ### JOIN
-read [this](https://www.geeksforgeeks.org/sql-join-set-1-inner-left-right-and-full-joins/)
+- watch [this](https://youtu.be/9yeOJ0ZMUYw?si=5ZlqU6vkyLQDyq8A)
+- wathc [this](https://youtu.be/Jh_pvk48jHA?si=WnF2sXxDy8Np0u5T)
+- watch [this](https://youtu.be/lXQzD09BOH0?si=Xh9H5KBVub3Leg3K)
+- watch [this](https://youtu.be/Yh4CrPHVBdE?si=8ze838rL45y98dyj)
+- wath [this](https://youtu.be/G3lJAxg1cy8?si=uXMSRG9xOixWgwU0)
 
 - `JOIN` is used to combine data or rows from two tables or more based on common field between them.
 - JOIN is a clause used in SQL to link data from one table to another table using one or more data column shared between two tables, In other words, we combine data of the two existing tables into one.
+
+### types of join
+
+<img width="462" height="252" alt="joins" src="https://github.com/user-attachments/assets/8be85a74-e0b9-4096-ba43-e0feb7180c41" />
 
 ```sql
 SELECT *
@@ -169,9 +177,6 @@ FROM table1
 INNER JOIN table2
 ON table1.col1 = table2.col2;
 ```
-
-
-
 ```sql
 SELECT *
 FROM martian
